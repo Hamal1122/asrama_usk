@@ -13,11 +13,4 @@ class kamarController extends Controller
   }
 }
 
-class GenderController extends Controller
-{
-  public function gender(){
-    return view('gender'); 
-  }
-}
-
 
