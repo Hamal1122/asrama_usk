@@ -9,7 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GenderController;
 
 //Route
-Route::get('/login',[LoginController::class, 'index'])->name('Login');
+Route::get('/',[LoginController::class, 'index'])->name('Login');
 
 Route::get('/beranda',[BerandaController::class, 'beranda'])->name('beranda');
 
