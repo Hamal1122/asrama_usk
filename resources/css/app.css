@@ -3,3 +3,62 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
+
+
+/* component */
+@layer components {
+    
+    /* button css */
+    .button {
+     @apply
+        bg-purple text-white  hover:bg-bluehover 
+        transition-all border w-full py-2 mx-auto
+         text-center  rounded-md
+    }
+
+    .menuaktif{
+        @apply
+        transition-all my-6 text-left p-4 cursor-pointer
+         rounded-lg text-base font-Inter text-sm  bg-purple bg-opacity-90  text-white 
+    }
+
+    .menuhover{
+        @apply
+        transition-all my-6 text-left p-4 cursor-pointer rounded-lg 
+        text-base  font-Inter text-sm text-abu hover:bg-bermuda
+         hover:text-purple
+    }
+
+    .logout{
+        @apply
+        transition-all my-28 text-left p-4 cursor-pointer rounded-lg 
+        text-base font-Inter text-gray-dark text-sm hover:bg-red hover:bg-opacity-10 hover:text-red 
+    }
+
+    /* Inputfield css */
+    .field{
+        @apply
+        h-9 px-3 py-1 focus:border-blue focus:outline-none border w-full
+         border-gray-dark rounded-md font-poppins border-opacity-25
+    }
+
+    .badge{
+        @apply
+        text-white  px-2 rounded-md
+    }
+
+    .navoff{
+        @apply
+        flex flex-col text-abu  
+        opacity-50 justify-center items-center 
+        text-base
+    }
+
+    .navon{
+        @apply
+        flex flex-col text-purple 
+        justify-center items-center
+        text-base
+    }
+
+}

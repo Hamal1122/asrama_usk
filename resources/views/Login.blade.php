@@ -27,19 +27,17 @@
 
         <div class="mt-4 font-poppins text-sm">
             <label for="username">NPM</label>
-            <input type="text" id="username" class="h-9 px-3 py-1 focus:border-blue focus:outline-none border w-full
-             border-gray-dark rounded-md font-poppins border-opacity-25"/>
+            <input type="text" id="username" class="field"/>
         </div>
 
         <div class="mt-4 font-poppins text-sm">
             <label for="username">Password</label>
-            <input type="password" id="password" class="h-9 px-3 py-1 focus:border-blue focus:outline-none border w-full
-             border-gray-dark rounded-md font-poppins border-opacity-25"/>
+            <input type="password" id="password" class="field"/>
         </div>
         
 <!-- Button login -->
        <div class="mt-4">
-            <button href="/beranda" type="submit" class="bg-purple text-white  hover:bg-bluehover transition-all border w-full px-3 py-1 text-center h-11 rounded-md ">Login</button>
+            <a href="" type="submit" class="button">Login</a>
         </div>
 
   </div>

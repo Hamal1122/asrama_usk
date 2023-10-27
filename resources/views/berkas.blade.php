@@ -1,8 +1,8 @@
-    @extends('Layout.main')
+@extends('Layout.main')
     
     @section('title')
           <div class="col-span-12 lg:col-span-10 w-full px-4">
               <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-                <h3>Beranda</h3>
+                <h3>Upload Berkas</h3>
          </div>
     @endsection
