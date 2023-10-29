@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>AsramaKita | {{ $title }}</title>
   <style>
     <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
@@ -20,7 +20,7 @@
     <div class="container mx-auto">
       <div class="flex justify-between items-center">
         <div>
-          <h1>USk</h1>
+          <h1>AsramaKita</h1>
         </div>
 
         <div class="flex gap-4 p-2  ">
@@ -112,7 +112,6 @@
 
 
 </body>
-
 </html>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -90,8 +90,8 @@
       <div class="container mx-auto">
         <div class="grid grid-cols-12">
 
-        <div class="col-span-3 hidden sm:block">
-            <nav class="bg-white h-screen w-3/4 text-center shadow-md px-4 rounded-md ">
+        <div class="col-span-2 hidden sm:block">
+            <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md ">
               <h2 class="py-4 mt-16 font-poppins font-bold">Menu</h2>
               <ul class="">
                 <li class="transition-all my-6 text-left p-4 cursor-pointer rounded-lg text-base font-Inter  text-gray-dark hover:bg-bermuda hover:text-blue ">Beranda</li>
@@ -104,7 +104,7 @@
           </div>
 
      
-          <div class="col-span-12 lg:col-span-9 px-4">
+          <div class="col-span-12 lg:col-span-10 px-4">
               <div class="bg-white py-2 my-2 mt-16 rounded-md px-4 text-sm font-poppins text-blue">
                 <h3>Kamar</h3>
               </div>
