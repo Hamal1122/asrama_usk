@@ -91,7 +91,7 @@
         <div class="grid grid-cols-12">
 
           <div class="col-span-3 hidden sm:block">
-            <nav class="bg-white h-screen w-3/4 text-center shadow-md px-4 rounded-md ">
+            <nav class="bg-white fixed w-32 h-screen text-center shadow-md px-4 rounded-md ">
               <h2 class="py-4 mt-16 font-poppins font-bold">Menu</h2>
               <ul class="">
                 <li class="transition-all my-6 text-left p-4 cursor-pointer rounded-lg text-base font-Inter  text-gray-dark hover:bg-bermuda hover:text-blue"><a href="{{route ('beranda') }}">Beranda</a></li>
