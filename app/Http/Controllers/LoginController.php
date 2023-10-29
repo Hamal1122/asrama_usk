@@ -9,6 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 class LoginController extends Controller
 {
   public function index(){
-    return view('Login'); 
+    return view('Login',  [
+      "title" => "Sign In",
+    ]); 
   }
 }

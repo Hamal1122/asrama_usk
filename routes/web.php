@@ -20,6 +20,8 @@ Route::get('/kamarsaya',[KamarsayaController::class, 'kamarsaya'])->name('kamars
 
 Route::get('/profile',[ProfileController::class, 'profile'])->name('profile');
 
-Route::get('/gender',[GenderController::class, 'gender'])->name('gender');
+Route::get('/gender',[KamarController::class, 'gender'])->name('gender');
 
 Route::get('/berkas',[BerkasController::class, 'berkas'])->name('berkas');
+
+Route::get('post/{slug}',[BerandaController::class, 'detail'])->name('postingan');

@@ -16,4 +16,14 @@ class BerandaController extends Controller
       "Beranda" => Beranda::all()
     ]); 
   }
+
+  public function detail($slug)
+  {
+    return view('post', [
+      "title" => "Single Post",
+      "post" => Beranda::find($slug)
+    ]);
+  }
+
+
 }

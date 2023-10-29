@@ -9,6 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 class ProfileController extends Controller
 {
   public function profile(){
-    return view('profile'); 
+    return view('profile',  [
+      "title" => "Profil",
+    ]); 
   }
 }

@@ -9,8 +9,15 @@ use Illuminate\Routing\Controller as BaseController;
 class kamarController extends Controller
 {
   public function kamar(){
-    return view('kamar'); 
+    return view('kamar',  [
+      "title" => "Kamar",
+    ]); 
+  }
+
+  public function gender(){
+    return view('gender',  [
+      "title" => "Kamar",
+    ]);
   }
 }
-
 

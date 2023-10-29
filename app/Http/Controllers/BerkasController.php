@@ -6,10 +6,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
-class kamarController extends Controller
+class BerkasController extends Controller
 {
   public function berkas(){
-    return view('berkas'); 
+    return view('berkas', [
+      "title" => "Berkas",
+    ]); 
   }
 }
 
