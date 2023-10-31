@@ -21,8 +21,22 @@ class BerandaController extends Controller
   {
     return view('post', [
       "title" => "Single Post",
-      "post" => Beranda::find($slug)
+      "post" => Beranda::find($slug) //mencari Postingan Berdasarkan slug
     ]);
+  }
+
+  public function admin()
+  {
+    return view('dashboard_admin', [
+      "title" => "Beranda",
+    ]); 
+  }
+
+  public function informasi()
+  {
+    return view('manage_informasi', [
+      "title" => "Manage Informasi",
+    ]); 
   }
 
 

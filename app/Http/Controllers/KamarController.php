@@ -19,5 +19,11 @@ class kamarController extends Controller
       "title" => "Kamar",
     ]);
   }
+
+  public function manage(){
+    return view('manage_kamar',  [
+      "title" => "Manage Kamar",
+    ]);
+  }
 }
 

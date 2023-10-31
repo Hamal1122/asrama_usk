@@ -13,4 +13,10 @@ class ProfileController extends Controller
       "title" => "Profil",
     ]); 
   }
+
+  public function edit(){
+    return view('edit_profile',  [
+      "title" => "Profil",
+    ]); 
+  }
 }

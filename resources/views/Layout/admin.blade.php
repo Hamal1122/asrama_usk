@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AsramaKita | {{ $title }}</title>
+  <title>Admin | {{ $title }}</title>
   <style>
     <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
@@ -25,7 +25,7 @@
 
         <div class="flex gap-4 p-2  ">
           <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi, Hamal</h2>
+          <h2 class="font-Inter text-sm hidden sm:block ">hi, Admin</h2>
           <ion-icon class=" hidden sm:block " name="person"></ion-icon>
         </div>
       </div>
@@ -46,14 +46,14 @@
         <li>
           <a class="navoff" href="{{route ('kamar') }}">
             <ion-icon class="text-2xl" name="key-outline"></ion-icon>
-            <span class="font-Inter gap-1">Pilih Kamar</span>
+            <span class="font-Inter gap-1">Manage kamar</span>
           </a>
         </li>
 
         <li>
           <a class="navoff" href="{{route ('kamarsaya') }}">
             <ion-icon class="text-2xl" name="pricetags-outline"></ion-icon>
-            <span class="font-normal gap-1">kamar Saya</span>
+            <span class="font-normal gap-1">Manage Pembayaran</span>
           </a>
         </li>
 
@@ -67,8 +67,8 @@
 
       <div x-show="open" class="absolute bottom-[100px] right-4">
         <a class=" bg-red px-8 text-sm py-4 font-Inter text-white rounded-md">Logout</a>
-        <a href="{{route ('profile') }}" class=" bg-white px-8 text-sm py-4 font-Inter text-purple rounded-md">Profil</a>
-        <a href="{{route ('berkas') }}" class=" bg-white px-8 text-sm py-4 font-Inter text-purple rounded-md">Upload Berkas</a>
+        <a href="{{route ('profile') }}" class=" bg-white px-8 text-sm py-4 font-Inter text-purple rounded-md">Manage User</a>
+        <a href="{{route ('berkas') }}" class=" bg-white px-8 text-sm py-4 font-Inter text-purple rounded-md">Manage Info</a>
       </div>
     </div>
   </nav>
@@ -86,12 +86,13 @@
             </div>
             <h2 class="py-4 mt-4 font-Inter font-bold">Menu</h2>
             <ul class="">
-              <li class="menuhover"><a href="{{route ('beranda') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
-              <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Upload Berkas</a></li>
-              <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
-              <li class="menuhover "><a href="{{route ('kamar') }}"><i class="bi bi-door-closed-fill mx-4"></i>Pilih Kamar</a></li>
-              <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
-              <li class="logout"><i class="bi bi-box-arrow-left mx-4"></i>Logout</li>
+              <li class="menuhover"><a href="{{route ('beranda_admin') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Dashboard</a></li>
+              <li class="menuhover"><a href="{{route ('manage_kamar') }}"><i class="bi bi-sliders mx-4"></i>Manage Kamar</a></li>
+              <li class="menuhover"><a href=""><i class="bi bi-wallet-fill mx-4"></i></i>Manage Pembayaran</a></li>
+              <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
+              <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
+              <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
+              <li class="logout "><a href=""><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
           </nav>
         </div>
@@ -99,7 +100,7 @@
 
         <div class="col-span-12 lg:col-span-10 w-full px-4">
           <div class=" py-1 mt-16 rounded-md px-4 text-sm font-poppins text-blue ">
-            <h3>@yield('title')</h3>
+            <h3>@yield('layout')</h3>
           </div>
 
 

@@ -7,7 +7,7 @@
   </div>
 
   <div class="text-3xl font-Inter font bg-purple text-white p-4 rounded-md mt-4">
-    WELCOME,
+    WELCOME, 
   </div>
 
   <div>

@@ -21,16 +21,16 @@ class Beranda
             "tanggal" => "Minggu, 12 Oktober 2023",
             "mulai" => "09:00",
             "selesai" => "11:00",
-            "deskripsi" => "dashgdhagfhgjashgjfhgajhsgjhgjhcjhashvfjawjyavdjhehvrjhavjhvfhdbjaiuhviuydtiaufiuaggdfkgaksgfkjaskjgfjasfasfaghhgda",
+            "deskripsi" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem, autem excepturi tempora quod dolore necessitatibus expedita reiciendis, consectetur voluptatem laboriosam, voluptate quasi sunt veritatis. Hic, aliquid quod. Esse, inventore.",
         ],
 
         [
             "title" => "Makan Besar",
-            "slug" => "makan_besar",
+            "slug" => "makan",
             "tanggal" => "Minggu, 30 Oktober 2023",
             "mulai" => "09:00",
             "selesai" => "11:00",
-            "deskripsi" => "dashgdhagfhgjashgjfhgajhsgjhgjhcjhashvfjawjyavdjhehvrjhavjhvfhdbjaiuhviuydtiaufiuaggdfkgaksgfkjaskjgfjasfasfaghhgda",
+            "deskripsi" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem, autem excepturi tempora quod dolore necessitatibus expedita reiciendis, consectetur voluptatem laboriosam, voluptate quasi sunt veritatis. Hic, aliquid quod. Esse, inventore.",
         ],
 
         [
@@ -39,7 +39,7 @@ class Beranda
             "tanggal" => "Minggu, 30 Oktober 2023",
             "mulai" => "09:00",
             "selesai" => "11:00",
-            "deskripsi" => "dashgdhagfhgjashgjfhgajhsgjhgjhcjhashvfjawjyavdjhehvrjhavjhvfhdbjaiuhviuydtiaufiuaggdfkgaksgfkjaskjgfjasfasfaghhgda",
+            "deskripsi" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem, autem excepturi tempora quod dolore necessitatibus expedita reiciendis, consectetur voluptatem laboriosam, voluptate quasi sunt veritatis. Hic, aliquid quod. Esse, inventore.",
         ],
 
         
@@ -54,6 +54,6 @@ class Beranda
     public static function find($slug)
     {
         $Beranda = static::all();
-        return $Beranda->firstwhere('slug', $slug);
+        return $Beranda->firstwhere('slug', $slug); //mencari yang pertama kali ditemukan dengan slug yang sama
     }
 }

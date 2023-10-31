@@ -31,14 +31,14 @@
 
     .logout{
         @apply
-        transition-all my-28 text-left p-4 cursor-pointer rounded-lg 
+        transition-all text-left p-4 cursor-pointer rounded-lg 
         text-base font-Inter text-gray-dark text-sm hover:bg-red hover:bg-opacity-10 hover:text-red 
     }
 
     /* Inputfield css */
     .field{
         @apply
-        h-9 px-3 py-1 focus:border-blue focus:outline-none border w-full
+        h-9 px-3 py-2 focus:border-blue focus:outline-none border w-full
          border-gray-dark rounded-md font-poppins border-opacity-25
     }
 

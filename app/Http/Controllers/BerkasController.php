@@ -13,6 +13,12 @@ class BerkasController extends Controller
       "title" => "Berkas",
     ]); 
   }
+
+  public function manage(){
+    return view('manage_berkas', [
+      "title" => "Manage Berkas",
+    ]); 
+  }
 }
 
 
