@@ -17,6 +17,7 @@ use App\Models\Beranda;
 
 // login
 Route::get('/',[LoginController::class, 'index'])->name('Login');
+Route::post('/login',[LoginController::class, 'login']);
 // login
 
 // Beranda

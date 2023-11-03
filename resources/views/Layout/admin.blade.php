@@ -33,43 +33,17 @@
 
 
 
-    <div x-show="navOpen" x-data="{open : false}" class="fixed bottom-0 right-0 left-0 p-4 order-5 bg-white  lg:hidden">
-
-      <ul class="flex justify-between items-center">
-        <li>
-          <a class="navoff" href="{{route ('beranda') }}">
-            <ion-icon class="text-2xl" name="albums-outline"></ion-icon>
-            <span class="font-normal gap-1">Beranda</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="navoff" href="{{route ('kamar') }}">
-            <ion-icon class="text-2xl" name="key-outline"></ion-icon>
-            <span class="font-Inter gap-1">Manage kamar</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="navoff" href="{{route ('kamarsaya') }}">
-            <ion-icon class="text-2xl" name="pricetags-outline"></ion-icon>
-            <span class="font-normal gap-1">Manage Pembayaran</span>
-          </a>
-        </li>
-
-        <li>
-          <button @click="open = !open" class="flex flex-col text-gray-dark opacity-50 justify-center items-center text-base" href="">
-            <ion-icon class="text-2xl" name="ellipsis-horizontal-outline"></ion-icon>
-            <span class="font-normal gap-1">More</span>
-          </button>
-        </li>
+    <div x-show="navOpen" x-transition x-data="{open : false}" class="fixed h-screen left-0  order-5 bg-white  lg:hidden">
+      <h2 class="py-4 mt-4 font-Inter font-bold text-center mb-4">Menu</h2>
+      <ul class="">
+        <li class="menuhover"><a href="{{route ('beranda_admin') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Dashboard</a></li>
+        <li class="menuhover"><a href="{{route ('manage_kamar') }}"><i class="bi bi-sliders mx-4"></i>Manage Kamar</a></li>
+        <li class="menuhover"><a href=""><i class="bi bi-wallet-fill mx-4"></i></i>Manage Pembayaran</a></li>
+        <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
+        <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
+        <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
+        <li class="logout "><a href=""><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
       </ul>
-
-      <div x-show="open" class="absolute bottom-[100px] right-4">
-        <a class=" bg-red px-8 text-sm py-4 font-Inter text-white rounded-md">Logout</a>
-        <a href="{{route ('profile') }}" class=" bg-white px-8 text-sm py-4 font-Inter text-purple rounded-md">Manage User</a>
-        <a href="{{route ('berkas') }}" class=" bg-white px-8 text-sm py-4 font-Inter text-purple rounded-md">Manage Info</a>
-      </div>
     </div>
   </nav>
 
@@ -113,6 +87,7 @@
 
 
 </body>
+
 </html>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -33,43 +33,16 @@
 
 
 
-    <div x-show="navOpen" x-data="{open : false}" class="fixed bottom-0 right-0 left-0 p-4 order-5 bg-white  lg:hidden">
-
-      <ul class="flex justify-between items-center">
-        <li>
-          <a class="navoff" href="{{route ('beranda') }}">
-            <ion-icon class="text-2xl" name="albums-outline"></ion-icon>
-            <span class="font-normal gap-1">Beranda</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="navoff" href="{{route ('kamar') }}">
-            <ion-icon class="text-2xl" name="key-outline"></ion-icon>
-            <span class="font-Inter gap-1">Pilih Kamar</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="navoff" href="{{route ('kamarsaya') }}">
-            <ion-icon class="text-2xl" name="pricetags-outline"></ion-icon>
-            <span class="font-normal gap-1">kamar Saya</span>
-          </a>
-        </li>
-
-        <li>
-          <button @click="open = !open" class="flex flex-col text-gray-dark opacity-50 justify-center items-center text-base" href="">
-            <ion-icon class="text-2xl" name="ellipsis-horizontal-outline"></ion-icon>
-            <span class="font-normal gap-1">More</span>
-          </button>
-        </li>
+    <div x-show="navOpen"  x-transition x-data="{open : false}" class="fixed left-0 p-4 order-5  bg-white h-screen lg:hidden">
+      <h2 class="py-4 mt-4 mb-4 font-Inter font-bold text-center">Menu</h2>
+      <ul class="">
+        <li class="menuhover" ><a href="{{route ('beranda') }}"> <i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
+        <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Upload Berkas</a></li>
+        <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
+        <li class="menuhover "><a href="{{route ('kamar') }}"><i class="bi bi-door-closed-fill mx-4"></i>Pilih Kamar</a></li>
+        <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
+        <li class="logout"><i class="bi bi-box-arrow-left mx-4"></i>Logout</li>
       </ul>
-
-      <div x-show="open" class="absolute bottom-[100px] right-4">
-        <a class=" bg-red px-8 text-sm py-4 font-Inter text-white rounded-md">Logout</a>
-        <a href="{{route ('profile') }}" class=" bg-white px-8 text-sm py-4 font-Inter text-purple rounded-md">Profil</a>
-        <a href="{{route ('berkas') }}" class=" bg-white px-8 text-sm py-4 font-Inter text-purple rounded-md">Upload Berkas</a>
-      </div>
     </div>
   </nav>
 
@@ -112,6 +85,7 @@
 
 
 </body>
+
 </html>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

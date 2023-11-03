@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -12,5 +14,12 @@ class LoginController extends Controller
     return view('Login',  [
       "title" => "Sign In",
     ]); 
+  }
+
+  public function login(Request $request){
+      if(Auth::attempt($request->only('email','password'))){
+        return redirect('/beranda');
+      }
+      return \redirect('/');
   }
 }
