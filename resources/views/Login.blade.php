@@ -23,8 +23,8 @@
     </div>
 
     <!-- login -->
-    <form action="/login" method="post">
-      <div class="flex-wrap w-auto h-fit object-center px-8 py-8 m-auto bg-white shadow-md rounded-md z-0">
+    <form action="/login" method="post" class="flex-wrap w-auto h-fit mx-auto bottom-0 px-8 py-8 m-auto bg-white shadow-md rounded-md z-0">
+      <div class="">
         <h1 class="text-center text-xl font-poppins font-semibold">Sign In</h1>
 
         @csrf
