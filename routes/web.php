@@ -22,7 +22,7 @@ Route::post('/login',[LoginController::class, 'login']);
 
 // Beranda
 Route::get('/beranda',[BerandaController::class, 'beranda'])->name('beranda');
-Route::get('post/{slug}',[BerandaController::class, 'detail'])->name('postingan');
+Route::get('post/{id}',[BerandaController::class, 'detail'])->name('postingan');
 // Beranda
 
 // kamar
@@ -56,6 +56,13 @@ Route::get('/manage_kamar',[KamarController::class, 'manage'])->name('manage_kam
 
 // Manage Informasi
 Route::get('/manage_informasi',[BerandaController::class, 'informasi'])->name('manage_informasi');
+Route::get('/tambah_informasi',[BerandaController::class, 'tambahInformasi'])->name('tambahInformasi'); 
+Route::post('/tambah_informasi',[BerandaController::class, 'tambah'])->name('tambah'); // tambah data
+Route::get('/tampil_informasi/{id}',[BerandaController::class, 'show'])->name('show'); // menampilkan data yang ingin diedit
+Route::post('/edit_informasi/{id}',[BerandaController::class, 'edit'])->name('edit'); // update data /edit
+Route::get('/delete_informasi/{id}',[BerandaController::class, 'delete'])->name('delete'); // delete data
+
+
 
 // Manage Berkas
 Route::get('/manage_berkas',[BerkasController::class, 'manage'])->name('manage_berkas');

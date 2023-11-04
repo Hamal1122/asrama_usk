@@ -32,7 +32,7 @@
     /* Inputfield css */
     .field {
         @apply h-9 px-3 py-2 focus:border-blue focus:outline-none border w-full
-         border-gray-dark rounded-md font-poppins border-opacity-25;
+         border-gray-dark rounded-md font-Inter border-opacity-25;
     }
 
     .badge {
@@ -52,8 +52,8 @@
     }
 
     .button2 {
-        @apply bg-bermuda text-purple  hover:bg-purple  hover:text-white
-        transition-all border w-full py-2 mx-auto
-         text-center  rounded-md px-2;
+        @apply 
+        bg-purple bg-opacity-25 text-purple px-4  py-2 
+        rounded-md hover:bg-purple hover:text-white transition-all
     }
 }

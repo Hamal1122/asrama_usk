@@ -24,7 +24,7 @@
 
       </div>
       <div class="">
-        <a class="button h-fit mx-12 md:mx-6 px-4 " href="{{route ('edit_profile') }}"><i class="bi bi-pencil-square mr-2"></i>Edit</a>
+        <a class="button2" href="{{route ('edit_profile') }}"><i class="bi bi-pencil-square mr-2"></i>Edit</a>
       </div>
 
     </div>
