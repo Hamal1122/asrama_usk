@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('time');
             $table->date('tgl_mulai');
             $table->date('tgl_berakhir');
-            $table->string('deskripsi')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }
