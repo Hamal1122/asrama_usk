@@ -48,7 +48,7 @@ Route::get('/berkas',[BerkasController::class, 'berkas'])->name('berkas');
 // Admin
 
 // Dashboard
-Route::get('/beranda_admin',[BerandaController::class, 'admin'])->name('beranda_admin');
+Route::get('/beranda_admin',[BerandaController::class, 'admin'])->name('beranda_admin')->middleware('auth');
 
 
 // Manage Kamar
@@ -59,3 +59,6 @@ Route::get('/manage_informasi',[BerandaController::class, 'informasi'])->name('m
 
 // Manage Berkas
 Route::get('/manage_berkas',[BerkasController::class, 'manage'])->name('manage_berkas');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
