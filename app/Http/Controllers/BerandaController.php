@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Beranda;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,8 +15,9 @@ class BerandaController extends Controller
   // memanggil semua data yang ada di table beranda
   public function beranda()
   {
-    $data = beranda::all();
-    return view('dashboard', compact('data')); 
+    $data = beranda::orderBy('id', 'desc')->get();
+    $user = User::all();
+    return view('dashboard', compact('data', 'user')); 
   }
 
    //mencari Postingan Berdasarkan id
@@ -37,8 +39,8 @@ class BerandaController extends Controller
   // menampilkan view informasi
   public function informasi()
   {
-    $data = beranda::all();
-    return view('manage_informasi', compact('data'));
+    $data = beranda::orderBy('id', 'desc')->get();
+    return view('manage_informasi', compact('data')); 
   }
 
   // menampilkan view tambah informasi
@@ -77,9 +79,8 @@ class BerandaController extends Controller
   public function delete($id)
   {
     $data = beranda::find($id);
-    $data->delete();
+    $data->delete($id);
     return redirect()->route('manage_informasi')->with('berhasil','Selamat!!, Data Telah Berhasil Di Hapus'); 
   }
-
 
 }

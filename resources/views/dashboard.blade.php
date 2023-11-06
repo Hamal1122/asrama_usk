@@ -6,9 +6,9 @@
     <h3>Beranda</h3>
   </div>
 
-  <div class="text-3xl font-Inter font bg-purple text-white p-4 rounded-md mt-4">
-    WELCOME,
-  </div>
+  @foreach ($user as $user)
+  <div class="text-3xl font-Inter font bg-purple text-white p-4 rounded-md mt-4">Selamat Datang,<span>  </span>{{ $user->nama }}</div>
+ @endforeach
 
   <div>
     <h1 class="font-Inter text-sm mt-6 px-4">Informasi Kegiatan :</h1>

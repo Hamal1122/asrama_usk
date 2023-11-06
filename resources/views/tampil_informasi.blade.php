@@ -9,11 +9,6 @@
 
   <form action="/edit_informasi/{{ $data->id }}" method="POST" enctype="multipart/form-data">
     @csrf 
-    <div class="bg-white px-4 py-4 mt-4 rounded-md">
-      <div class="mt-4 font-poppins text-sm text-gray-dark ">
-        <label for="text" class="text-gray-dark">Potingan ke-</label>
-        <input type="number" name="id" id="id" class="field" placeholder="ex: 1,2,3,4, dst" value="{{ $data->id }}" autofocus required />
-      </div>
 
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label for="text" class="text-gray-dark">Judul</label>

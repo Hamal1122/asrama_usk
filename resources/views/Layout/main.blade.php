@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
 </head>
 
-<body class=" bg-bermuda ">
+<body class=" bg-bone ">
 
   <nav class=" fixed w-screen py-2 px-8 bg-white" x-data="{navOpen : false}">
     <div class="container mx-auto">
@@ -25,7 +25,7 @@
 
         <div class="flex gap-4 p-2  ">
           <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi, Hamal</h2>
+          <h2 class="font-Inter text-sm hidden sm:block ">hi,{{ $user->nama }} </h2>
           <ion-icon class=" hidden sm:block " name="person"></ion-icon>
         </div>
       </div>

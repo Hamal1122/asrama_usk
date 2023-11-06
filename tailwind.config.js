@@ -26,6 +26,8 @@ export default {
       'gray-soft': '#F0F0F0',
       'red' : '#EF5656',
       'abu' : '#7F8487',
+      'bone' : '#F1F6F9',
+
 
       
   },
