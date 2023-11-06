@@ -14,7 +14,8 @@ class Users extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
+        $data = [
+            [
             'name' => 'admin',
             'email' => 'admin123@gmail.com',
             'nim' => '11111',
@@ -22,6 +23,19 @@ class Users extends Seeder
             'role' => 'admin',
             'jenis_kelamin' => 'laki-laki',
             'password' => Hash::make('asramausk'),
-          ]);
+          ],
+        [
+            'name' => 'mahasiswa',
+            'email' => 'user123@gmail.com',
+            'nim' => '22222',
+            'no_hp' => '081234567890',
+            'role' => 'mahasiswa',
+            'jenis_kelamin' => 'laki-laki',
+            'password' => Hash::make('mahasiswausk'),
+        ]
+        ];
+        foreach ($data as $key => $value) {
+            DB::table('users')->insert($value);
+        }
     }
 }

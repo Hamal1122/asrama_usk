@@ -23,18 +23,18 @@
     </div>
 
     <!-- login -->
-    <form action="/login" method="post" class="flex-wrap w-auto h-fit mx-auto bottom-0 px-8 py-8 m-auto bg-white shadow-md rounded-md z-0">
+    <form action="{{ route('login') }}" method="POST" class="flex-wrap w-auto h-fit mx-auto bottom-0 px-8 py-8 m-auto bg-white shadow-md rounded-md z-0">
       <div class="">
         <h1 class="text-center text-xl font-poppins font-semibold">Sign In</h1>
 
         @csrf
         <div class="mt-4 font-poppins text-sm">
-          <label for="email">NPM</label>
-          <input type="email" name="email" id="email" class="field" placeholder="email" autofocus required/>
+          <label for="nim">NPM</label>
+          <input type="nim" name="nim" id="nim" class="field" placeholder="nim" autofocus required/>
         </div>
 
         <div class="mt-4 font-poppins text-sm">
-          <label for="username">Password</label>
+          <label for="password">Password</label>
           <input type="password" name="password" id="password" class="field place" placeholder="Password" required />
         </div>
 
@@ -43,7 +43,8 @@
           <button type="submit" class="button">Login</button>
         </div>
     </form>
-
+    <div class="card-body">
+                   
   </div>
   </div>
 </body>
