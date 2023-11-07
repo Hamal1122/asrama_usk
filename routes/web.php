@@ -17,7 +17,7 @@ use App\Models\Beranda;
 
 // login
 Route::get('/',[LoginController::class, 'index'])->name('Login');
-Route::post('/login',[LoginController::class, 'login']);
+// Route::post('/login',[LoginController::class, 'login']);
 // login
 
 // Beranda
@@ -80,3 +80,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
