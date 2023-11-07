@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin</title>
   <style>
-    <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet"
+    <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet" 
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
     />@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
   </style>
@@ -42,7 +42,9 @@
         <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
         <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
         <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
-        <li class="logout "><a href=""><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
+        <li class="logout "><a href="{{ route('logout') }}" onclick=event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
+        
       </ul>
     </div>
   </nav>
@@ -66,7 +68,8 @@
               <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
               <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
               <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
-              <li class="logout "><a href=""><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
+              <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
           </nav>
         </div>
@@ -83,7 +86,9 @@
     </div>
   </section>
 
-
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+         @csrf
+        </form>
 
 
 </body>
