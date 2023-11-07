@@ -25,7 +25,7 @@
 
         <div class="flex gap-4 p-2  ">
           <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi,{{ $user->nama }} </h2>
+          <h2 class="font-Inter text-sm hidden sm:block ">hi,_____ </h2>
           <ion-icon class=" hidden sm:block " name="person"></ion-icon>
         </div>
       </div>

@@ -48,11 +48,18 @@ Route::get('/berkas',[BerkasController::class, 'berkas'])->name('berkas');
 // Admin
 
 // Dashboard
-Route::get('/beranda_admin',[BerandaController::class, 'admin'])->name('beranda_admin')->middleware('auth');
+Route::get('/beranda_admin',[BerandaController::class, 'admin'])->name('beranda_admin');
 
 
 // Manage Kamar
-Route::get('/manage_kamar',[KamarController::class, 'manage'])->name('manage_kamar');
+Route::get('/manage_kamar',[KamarController::class, 'manage'])->name('manage_kamar');// halaman manage kamar
+Route::post('/tambah_gedung',[KamarController::class, 'tambah'])->name('tambah gedung');// menambahkan gedung
+Route::get('/tambah_gedung',[KamarController::class, 'tampil'])->name('tambah gedung');// halaman form tambah gedung
+
+Route::get('/tampil_gedung/{id}',[KamarController::class, 'tampilgedung'])->name('tampilgedung');// menampilkan data gendung
+Route::post('/edit_gedung/{id}',[KamarController::class, 'editgedung'])->name('tampilgedung');// delete data gedung
+Route::get('/delete_gedung/{id}',[KamarController::class, 'deletegedung'])->name('deletegedung'); // delete data gedung
+
 
 // Manage Informasi
 Route::get('/manage_informasi',[BerandaController::class, 'informasi'])->name('manage_informasi');
