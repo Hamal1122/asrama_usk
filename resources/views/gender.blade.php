@@ -15,13 +15,13 @@
 </div>
 
 <div class="my-2 font-poppins text-sm text-blue">
-  <h3>Silahkan memilih Jenis Kelamin Anda :</h3>
+  <h3>Silahkan memilih sesuai dengan gender Anda :</h3>
 </div>
 
-<div class="bg-white py-4 my-2 rounded-md px-4 text-md hover:bg-green transition-all hover:text-white font-poppins text-green flex gap-4 cursor-pointer">
+<a href="" class="bg-white py-4 my-2 rounded-md px-4 text-md hover:bg-green transition-all hover:text-white font-poppins text-green flex gap-4 cursor-pointer">
   <i class="bi bi-gender-male"></i>
   <h3>Laki-laki</h3>
-</div>
+</a>
 
 <div class="bg-white py-4 my-2 rounded-md transition-all hover:bg-pink hover:text-white px-4 text-md font-poppins text-pink flex gap-4 cursor-pointer ">
   <i class="bi bi-gender-female"></i>

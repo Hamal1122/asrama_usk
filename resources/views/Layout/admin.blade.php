@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin | {{ $title }}</title>
+  <title>Admin</title>
   <style>
     <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet" 
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
 </head>
 
-<body class=" bg-bermuda ">
+<body class=" bg-bone ">
 
   <nav class=" fixed w-screen py-2 px-8 bg-white" x-data="{navOpen : false}">
     <div class="container mx-auto">

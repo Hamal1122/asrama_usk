@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AsramaKita | {{ $title }}</title>
+  <title>AsramaKita</title>
   <style>
     <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
 </head>
 
-<body class=" bg-bermuda ">
+<body class=" bg-bone ">
 
   <nav class=" fixed w-screen py-2 px-8 bg-white" x-data="{navOpen : false}">
     <div class="container mx-auto">
@@ -25,7 +25,7 @@
 
         <div class="flex gap-4 p-2  ">
           <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi, Hamal</h2>
+          <h2 class="font-Inter text-sm hidden sm:block ">hi,{{ $user->nama }} </h2>
           <ion-icon class=" hidden sm:block " name="person"></ion-icon>
         </div>
       </div>
@@ -39,7 +39,7 @@
         <li class="menuhover" ><a href="{{route ('beranda') }}"> <i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
         <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Upload Berkas</a></li>
         <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
-        <li class="menuhover "><a href="{{route ('kamar') }}"><i class="bi bi-door-closed-fill mx-4"></i>Pilih Kamar</a></li>
+        <li class="menuhover "><a href="{{route ('gender') }}"><i class="bi bi-door-closed-fill mx-4"></i>Pilih Kamar</a></li>
         <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
         <li class="logout"><i class="bi bi-box-arrow-left mx-4"></i>Logout</li>
       </ul>
@@ -62,7 +62,7 @@
               <li class="menuhover"><a href="{{route ('beranda') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
               <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Upload Berkas</a></li>
               <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
-              <li class="menuhover "><a href="{{route ('kamar') }}"><i class="bi bi-door-closed-fill mx-4"></i>Pilih Kamar</a></li>
+              <li class="menuhover "><a href="{{route ('gender') }}"><i class="bi bi-door-closed-fill mx-4"></i>Pilih Kamar</a></li>
               <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
               <li class="logout"><i class="bi bi-box-arrow-left mx-4"></i>Logout</li>
             </ul>
