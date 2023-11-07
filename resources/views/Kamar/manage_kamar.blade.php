@@ -58,11 +58,11 @@
         .then((willDelete) => {
           if (willDelete) {
             window.location = "/delete_gedung/" + gedungid + ""
-            swal("Postingan data telah berhasi dihapus!", {
+            swal("Data telah berhasi dihapus!", {
               icon: "success",
             });
           } else {
-            swal("hufft! gedung tidak jadi dihapus");
+            swal(" Data tidak jadi dihapus");
           }
         });
     });
