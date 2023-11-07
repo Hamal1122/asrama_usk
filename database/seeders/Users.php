@@ -28,7 +28,7 @@ class Users extends Seeder
             'name' => 'mahasiswa',
             'email' => 'user123@gmail.com',
             'nim' => '22222',
-            'no_hp' => '081234567890',
+            'no_hp' => '081234567898',
             'role' => 'mahasiswa',
             'jenis_kelamin' => 'laki-laki',
             'password' => Hash::make('mahasiswausk'),
