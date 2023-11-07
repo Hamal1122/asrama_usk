@@ -14,11 +14,11 @@ class ProfileController extends Controller
 {
   public function profile(){
     $data = user::all();
-    return view('profile', compact('data'));
+    return view('/profile/profile', compact('data'));
   }
 
   public function edit(){
-    return view('edit_profile',  [
+    return view('/profile/edit_profile',  [
       "title" => "Profil",
     ]); 
   }

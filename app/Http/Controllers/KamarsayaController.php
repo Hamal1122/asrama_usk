@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 class kamarsayaController extends Controller
 {
   public function kamarsaya(){
-    return view('kamarsaya',  [
+    return view('/kamarsaya/kamarsaya',  [
       "title" => "Kamar Saya",
     ]); 
   }

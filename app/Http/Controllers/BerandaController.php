@@ -17,13 +17,13 @@ class BerandaController extends Controller
   {
     $data = beranda::orderBy('id', 'desc')->get();
     $user = User::all();
-    return view('dashboard', compact('data', 'user')); 
+    return view('/beranda/dashboard', compact('data', 'user')); 
   }
 
    //mencari Postingan Berdasarkan id
   public function detail($id)
   {
-    return view('post', [
+    return view('/beranda/post', [
       "post" => beranda::find($id)
     ]);
   }
@@ -31,7 +31,7 @@ class BerandaController extends Controller
 // menampilkan view dasboard admin
   public function admin()
   {
-    return view('dashboard_admin', [
+    return view('/beranda/dashboard_admin', [
       "title" => "Beranda",
     ]); 
   }
@@ -40,30 +40,30 @@ class BerandaController extends Controller
   public function informasi()
   {
     $data = beranda::orderBy('id', 'desc')->get();
-    return view('manage_informasi', compact('data')); 
+    return view('/manage informasi/manage_informasi', compact('data')); 
   }
 
   // menampilkan view tambah informasi
   public function tambahInformasi()
   {
-    return view('tambah_informasi', [
+    return view('/manage informasi/tambah_informasi', [
       "title" => "Tambah Informasi",
     ]); 
   }
 
 
-// menambah informasi
+// menambah data
   public function tambah(Request $request)
   {
       beranda::create($request->all());
-      return redirect()->route('manage_informasi')->with('berhasil','Selamat!!, Data Telah Berhasil Ditambahkan');
+      return redirect()->route('manage_informasi')->with('berhasil','Data Telah Berhasil Ditambahkan');
   }
 
   // menampilkan data yang mau di edit berdasarkan id
   public function show(Request $request, $id)
   {
     $data = beranda::find($id);
-    return view('tampil_informasi', compact('data'));
+    return view('/manage informasi/tampil_informasi', compact('data'));
   }
 
   // mengedit data berdasarkan id
@@ -71,7 +71,7 @@ class BerandaController extends Controller
   {
     $data = beranda::find($id);
     $data->update($request->all());
-    return redirect()->route('manage_informasi')->with('berhasil','Selamat!!, Data Telah Berhasil Di Update'); 
+    return redirect()->route('manage_informasi')->with('berhasil','Data Telah Berhasil Di Update'); 
   }
 
 
@@ -80,7 +80,7 @@ class BerandaController extends Controller
   {
     $data = beranda::find($id);
     $data->delete($id);
-    return redirect()->route('manage_informasi')->with('berhasil','Selamat!!, Data Telah Berhasil Di Hapus'); 
+    return redirect()->route('manage_informasi')->with('berhasil','Data Telah Berhasil Di Hapus'); 
   }
 
 }

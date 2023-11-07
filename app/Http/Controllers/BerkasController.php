@@ -9,13 +9,13 @@ use Illuminate\Routing\Controller as BaseController;
 class BerkasController extends Controller
 {
   public function berkas(){
-    return view('berkas', [
+    return view('/berkas/berkas', [
       "title" => "Berkas",
     ]); 
   }
 
   public function manage(){
-    return view('manage_berkas', [
+    return view('/berkas/manage_berkas', [
       "title" => "Manage Berkas",
     ]); 
   }
