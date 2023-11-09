@@ -15,14 +15,20 @@ use App\Models\Beranda;
 // User
 
 
+<<<<<<< HEAD
 // login
 Route::get('/',[LoginController::class, 'index'])->name('Login');
 Route::get('/loginproses',[LoginController::class, 'index'])->name('loginproses');
+=======
+// // login
+// Route::get('/',[LoginController::class, 'index'])->name('Login');
+// Route::get('/loginproses',[LoginController::class, 'index'])->name('loginproses');
+>>>>>>> 1243f048fe72ba87c6bbcf8c2f38eeb13333e4ce
 
 
 
 // Beranda
-Route::get('/beranda',[BerandaController::class, 'beranda'])->name('beranda');
+Route::get('/',[BerandaController::class, 'beranda'])->middleware('auth')->name('beranda');
 Route::get('post/{id}',[BerandaController::class, 'detail'])->name('postingan');
 // Beranda
 
