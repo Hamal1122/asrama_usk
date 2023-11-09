@@ -2,13 +2,13 @@
 
 @section('title')
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-    <h3>Beranda</h3>
+  <div class="bg-white py-2   rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
+    <h3 class="py-2">Beranda</h3>
   </div>
 
-  @foreach ($user as $user)
-  <div class="text-3xl font-Inter font bg-purple text-white p-4 rounded-md mt-4">Selamat Datang,<span>  </span>{{ $user->nama }}</div>
- @endforeach
+ 
+  <div class="text-3xl font-Inter font bg-purple text-white p-4 rounded-md mt-4">Selamat Datang,<span>  </span></div>
+ 
 
   <div>
     <h1 class="font-Inter text-sm mt-6 px-4">Informasi Kegiatan :</h1>

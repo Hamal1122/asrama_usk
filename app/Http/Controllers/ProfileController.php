@@ -13,8 +13,8 @@ use Dflydev\DotAccessData\Data;
 class ProfileController extends Controller
 {
   public function profile(){
-    $data = user::all();
-    return view('/profile/profile', compact('data'));
+    // $data = user::all();
+    return view('/profile/profile');
   }
 
   public function edit(){

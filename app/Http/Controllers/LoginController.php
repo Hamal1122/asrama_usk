@@ -9,18 +9,19 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
+use function Laravel\Prompts\password;
+
 class LoginController extends Controller
 {
   public function index(){
-    return view('Login',  [
-      "title" => "Sign In",
-    ]); 
+    return view('Login');
   }
 
-  public function login(Request $request){
-      if(Auth::attempt($request->only('email','password'))){
+  public function loginproses(Request $request){
+    if(Auth::attempt($request->only('email', 'password'))){
         return redirect('/beranda');
-      }
-      return \redirect('/');
+    }
+
   }
-}
+  
+};

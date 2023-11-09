@@ -8,7 +8,7 @@
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-    <h3>Manage Informasi</h3>
+    <h3 class="py-2">Manage Informasi</h3>
   </div>
 
 

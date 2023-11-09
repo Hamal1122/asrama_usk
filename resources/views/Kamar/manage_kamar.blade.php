@@ -10,70 +10,76 @@
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-    <h3>Manage Kamar</h3>
+    <h3 class="py-2">Manage Kamar</h3>
   </div>
 
-  <div class="mt-4 p-4 bg-gray-soft">
+  <div class="mt-4 p-4 bg-gray-soft rounded-md">
 
-  <div class="my-4">
+    <div class="my-4">
       <a class="button bg-green hover:bg-tahiti py-2 px-4 " href="{{route ('tambah gedung') }}"><i class="bi bi-plus"></i>Tambah Gedung</a>
     </div>
-    <div class="bg-purple text-white flex mt-4 px-4 py-2 rounded-md">
-      <div class="flex gap-8">
-        <div>ID </div>
-        <div>Nama Gedung</div>
-      </div>
-    </div>
-
-    @foreach ($gedung as $gedung)
-    <div class="bg-white flex mt-4 p-4 rounded-md justify-between">
-      <div class="flex gap-8">
-        <div>{{ $gedung->id }}</div>
-        <div>{{ $gedung->nama }}</div>
-      </div>
-      <div>
-        <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href=""><i class="bi bi-door-closed-fill mx-2"></i></i>Kamar</a>
-        <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all"  href="/tampil_gedung/{{ $gedung->id }}"><i class="bi bi-pencil-square mx-2"></i>Edit</a>
-        <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $gedung->id }}" type="" data-nama="{{ $gedung->nama }}"><i class=" bi bi-trash-fill mx-2"></i>Delete</a>
-      </div>
-    </div>
-    @endforeach
 
 
+
+    <table class="table-auto border-collapse justify-end font-semibold text-sm w-full rounded-md">
+      <thead class="rounded-md">
+        <tr>
+          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">No</th>
+          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Nama Gedung</th>
+          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left "> Kategori</th>
+          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left "> Jumlah Kamar </th>
+          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left "></th>
+        </tr>
+      </thead>
+      @foreach ($gedung as $gedung)
+      <tbody>
+        <tr>
+          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ ++$i }}</td>
+          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $gedung->nama }}</td>
+          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $gedung->kategori_gedung }}</td>
+          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green">25 Kamar</span></td>
+          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
+            <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href=""><i class="bi bi-door-closed-fill mx-2"></i></i></a>
+            <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/tampil_gedung/{{ $gedung->id }}"><i class="bi bi-pencil-square mx-2"></i></a>
+            <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $gedung->id }}" type="" data-nama="{{ $gedung->nama }}"><i class=" bi bi-trash-fill mx-2"></i></a>
+          </td>
+        </tr>
+        @endforeach
+
+      </tbody>
+    </table>
   </div>
 
 
 </div>
 <script>
-    $('.delete').click(function() {
-      var gedungid = $(this).attr('data-id');
-      var nama = $(this).attr('data-nama');
-      swal({
-          title: "Kamu Yakin ?",
-          text: "Kamu akan menghapus gedung dengan nama " + nama + " ",
-          icon: "warning",
-          buttons: true,
-          dangerMode: true,
-        })
-        .then((willDelete) => {
-          if (willDelete) {
-            window.location = "/delete_gedung/" + gedungid + ""
-            swal("Data telah berhasi dihapus!", {
-              icon: "success",
-            });
-          } else {
-            swal(" Data tidak jadi dihapus");
-          }
-        });
-    });
-  </script>
+  $('.delete').click(function() {
+    var gedungid = $(this).attr('data-id');
+    var nama = $(this).attr('data-nama');
+    swal({
+        title: "Kamu Yakin ?",
+        text: "Kamu akan menghapus gedung dengan nama " + nama + " ",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location = "/delete_gedung/" + gedungid + ""
+          swal("Data telah berhasi dihapus!", {
+            icon: "success",
+          });
+        } else {
+          swal(" Data tidak jadi dihapus");
+        }
+      });
+  });
+</script>
 <script>
-    @if (Session::has('berhasil'))
-    toastr.success("{{ Session::get('berhasil') }}")
-    @endif
-
-    
-  </script>
-  @endsection
+  @if(Session::has('berhasil'))
+  toastr.success("{{ Session::get('berhasil') }}")
+  @endif
+</script>
+@endsection
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

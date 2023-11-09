@@ -2,7 +2,8 @@
 export default {
   content: ["./resources/**/*.blade.php",
   "./resources/**/*.js",
-  "./resources/**/*.vue",],
+  "./resources/**/*.vue",
+  './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',],
   theme: {colors: {
     'blue': '#0C8CE9',
     'purple': '#7e5bef',
