@@ -50,7 +50,7 @@ Route::post('/upload_berkas',[BerkasController::class, 'tambah'])->name('upload 
 // Admin
 
 // Dashboard
-Route::get('/beranda_admin',[BerandaController::class, 'admin'])->name('beranda_admin');
+Route::get('/beranda_admin',[BerandaController::class, 'admin'])->middleware('auth')->name('beranda_admin');
 
 
 // Manage Kamar
