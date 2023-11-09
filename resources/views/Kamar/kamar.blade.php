@@ -3,8 +3,9 @@
 @section('title')
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-    <h3>Kamar </h3>
+<div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
+    <a href="{{route ('gender') }}" class="bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+    <h3 class="py-2">Pilih Kamar</h3>
   </div>
 
   <div class="bg-white text-gray-dark text-sm font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">

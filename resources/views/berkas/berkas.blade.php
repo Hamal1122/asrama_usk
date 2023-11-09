@@ -16,60 +16,107 @@
     <i class="bi bi-info-circle-fill order-1 my-auto"></i>
   </div>
 
+  <form action="/upload_berkas" method="post">
+  <section>
+    <!-- form upload berkas -->
+    
+      <div class="container mx-auto py-4 bg-white mt-4 rounded-md">
+        <div class="grid grid-cols-12">
+          <div class="col-span-12 lg:col-span-6 px-6 gap-6 flex-col flex text-gray-dark lg:w-2/3">
+            <h1 class="font-Inter text-blue text-lg">Berkas Pengajuan Kamar</h1>
+            @csrf
+            
+            <div>
+              <label for="">Pilih Kategori</label>
+              <select class="field text-gray-dark" id="kategori"  name="kategori">
+                <option class="text-abu" value="">Plih Kategori</option>
+                <option value="KIP">KIPK</option>
+                <option value="reguler">Reguler</option>
+                <option value="internasional">Internasonal</option>
+              </select>
+            </div>
+            <div>
+              <label for="">Kartu Keluarga</label>
+              <input class=" field   rounded-md text-blue" type="file" name="kk" id="kk">
+            </div>
 
-  <form action="">
-    <div class="bg-white px-4 py-4 mt-4 rounded-md">
-      <div class="mt-4 font-poppins text-sm w-full lg:w-1/2 text-gray-dark flex-row gap-4">
-        <div class="px-4 my-6">
-          <label class="px-4" for="">Pilih Kategori</label>
-          <div class="my-4 px-4">
-            <select class="field px-4" name="" id="">
-              <option selected class="field  text-abu">Kategori Mahasiswa</option>
-              <option class="field  " value="">Reguler</option>
-              <option class="field " value="">KIPK</option>
-              <option class="field " value="">International</option>
-            </select>
+            <div>
+              <label for="">Kartu Tanda Mahasiswa / KTM</label>
+              <input class=" field   rounded-md text-blue" type="file" name="ktm" id="ktm">
+            </div>
+
+            <div>
+              <label for="">Kartu Kesehatan (BPJS/ASKES/DLL)</label>
+              <input class=" field   rounded-md text-blue" type="file" name="kartu_kesehatan" id="kartu_kesehatan">
+            </div>
+
+            <div>
+              <label for="">Surat Domisili (Pindah Sementara Ke Banda Aceh)</label>
+              <input class=" field   rounded-md text-blue" type="file" name="surat_domisili" id="surat_domisili">
+            </div>
+
+            <div>
+              <label for="">Surat Pernyataan</label>
+              <input class=" field   rounded-md text-blue" type="file" name="surat_pernyataan" id="surat_pernyataan">
+            </div>
+
+            <div>
+              <label for="">Kartu Tanda BIDIKMISI (Khusu Mahasiswa BIDIKMISI)</label>
+              <input class=" field   rounded-md text-blue" type="file" name="kartu_bidikmisi" id="kartu_bidikmisi">
+            </div>
+
           </div>
 
-          <div class="p-4">
-            <label for="notelpon"> Kartu keluarga / KK</label>
-            <input type="file" name="kk" alt="" class="field">
-            <button type="submit" class="button my-2 px-4 w-fit ">Upload</button>
-          </div>
 
-          <div class="p-4">
-            <label for="notelpon"> Kartu Tanda Mahasiswa / KTM</label>
-            <input type="file" name="ktm" src="" alt="" class="field">
-            <button type="submit" class="button my-2 px-4 w-fit ">Upload</button>
-          </div>
+          <!-- Form Pengajuan Kamar -->
+          <div class="col-span-12 lg:col-span-6 ">
+            <div class="col-span-12 lg:col-span-6 px-6 gap-6 flex-col flex lg:w-2/3">
+              <h1 class="font-Inter text-blue text-lg">Form Pengajuan Kamar</h1>
 
-          <div class="p-4">
-            <label for="notelpon"> Kartu Kesehatan <span class="text-abu">(BPJS/ASKES/DLL)</span></label>
-            <input type="file" name="kartu kesehatan" src="" alt="" class="field">
-            <button type="submit" class="button my-2 px-4 w-fit ">Upload</button>
-          </div>
+              <div>
+                <label class="text-gray-dark" for="">Pilih Kategori</label>
+                <select class="field text-gray-dark" id="kategorigedung" name="kategorigedung">
+                  <option value="laki-laki">Laki-Laki</option>
+                  <option value="perempuan">Perempuan</option>
+                </select>
+              </div>
 
-          <div class="p-4">
-            <label for="notelpon"> Surat Domisili <span class="text-abu">( Pindah Sementara Ke Banda Aceh)</span></label>
-            <input type="file" name="surat domisili" src="" alt="" class="field">
-            <button type="submit" class="button my-2 px-4 w-fit ">Upload</button>
-          </div>
+              <div>
+                <label class="text-gray-dark" for="">Masa Sewa</label>
+                <select class="field text-gray-dark" id="durasi" name="durasi">
+                  <option value="1tahun">1 Tahun</option>
+                </select>
+              </div>
 
-          <div class="p-4">
-            <label for="notelpon"> Surat Pernyataan </label>
-            <input type="file" name="surat pernyataan" src="" alt="" class="field">
-            <button type="submit" class="button my-2 px-4 w-fit ">Upload</button>
-          </div>
+              <div>
+                <label class="text-gray-dark" for="">Tanggal Masuk</label>
+                <input class="field text-gray-dark" type="date" name="tanggal_masuk" id="tanggal_masuk">
+              </div>
 
-          <div class="p-6">
-            <label for="notelpon"> Kartu Tanda Bidikmisi <span class="text-blue">( Khusus Mahasiswa BIDIKMISI )</span></label>
-            <input type="file" name="bidikmisi" src="" alt="" class="field">
-            <button type="submit" class="button my-2 px-4 w-fit ">Upload</button>
-          </div>
+              <div>
+                <label class="text-gray-dark" for="">Tanggal Keluar</label>
+                <input class="field text-gray-dark" type="date" name="tanggal_keluar" id="tanggal_keluar">
+              </div>
 
+              <div>
+                <label class="text-gray-dark" for="">Harga Perindividu</label>
+                <div class="field">Rp. 1.200.000</div>
+              </div>
+
+              <div>
+                <label class="text-gray-dark" for="">Bukti Pembayaran <span class="text-green">(Bisa dengan Kartu Tanda KIPK untuk mahasiswa KIPK)</span></label>
+                <input class=" field   rounded-md text-blue" type="file" name="bukti_pembayaran" id="bukti_pembayaran">
+              </div>
+
+
+            </div>
+          </div>
         </div>
-
-
+        <div class="p-4 mt-4">
+          <button type="submit" class="button">Submit</button>
+        </div>
       </div>
+  </section>
   </form>
+
   @endsection

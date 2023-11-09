@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class kamarController extends Controller
 {
@@ -38,10 +39,11 @@ class kamarController extends Controller
     ]);
   }
 
-  public function manage(){
+  public function manage(Request $request){
+
     $gedung = gedung::all();
     $kamar = kamar::all();
-    return view('/Kamar/manage_kamar', compact('kamar', 'gedung'));
+    return view('/Kamar/manage_kamar', compact('gedung'))->with('i',($request->input('page',1)-1));
   }
 
   public function tampilgedung($id)

@@ -2,9 +2,9 @@
 
 @section('layout')
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
-    <a href="{{route ('manage_informasi') }}" class="bi bi-arrow-left-short"></a>
-    <h3>Edit Informasi</h3>
+  <div class="bg-white py-2   rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
+    <a href="{{route ('manage_informasi') }}" class="bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md "></a>
+    <h3 class="py-2">Edit Informasi</h3>
   </div>
 
   <form action="/edit_informasi/{{ $data->id }}" method="POST" enctype="multipart/form-data">

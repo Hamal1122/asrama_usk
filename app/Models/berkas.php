@@ -3,12 +3,11 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Pagination\LengthAwarePaginator;
 
-class gedung extends Model
+class berkas extends Model
 {
  use HasFactory;
- protected $table ='gedung';
+ protected $table ='berkas';
  protected $guarded = [];
  public $timestamps = false;
 }

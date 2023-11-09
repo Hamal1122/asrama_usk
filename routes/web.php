@@ -16,9 +16,10 @@ use App\Models\Beranda;
 
 
 // login
-Route::get('/',[LoginController::class, 'index'])->name('Login');
-// Route::post('/login',[LoginController::class, 'login']);
-// login
+Route::get('/Login',[LoginController::class, 'index'])->name('Login');
+Route::get('/loginproses',[LoginController::class, 'index'])->name('loginproses');
+
+
 
 // Beranda
 Route::get('/beranda',[BerandaController::class, 'beranda'])->name('beranda');
@@ -38,7 +39,8 @@ Route::get('/edit_profile',[ProfileController::class, 'edit'])->name('edit_profi
 
 
 // Upload Berkas
-Route::get('/berkas',[BerkasController::class, 'berkas'])->name('berkas');
+Route::get('/upload_berkas',[BerkasController::class, 'berkas'])->name('berkas');
+Route::post('/upload_berkas',[BerkasController::class, 'tambah'])->name('upload berkas');// menambahkan gedung
 // Upload Berkas
 
 
@@ -55,9 +57,8 @@ Route::get('/beranda_admin',[BerandaController::class, 'admin'])->middleware('au
 Route::get('/manage_kamar',[KamarController::class, 'manage'])->name('manage_kamar');// halaman manage kamar
 Route::post('/tambah_gedung',[KamarController::class, 'tambah'])->name('tambah gedung');// menambahkan gedung
 Route::get('/tambah_gedung',[KamarController::class, 'tampil'])->name('tambah gedung');// halaman form tambah gedung
-
 Route::get('/tampil_gedung/{id}',[KamarController::class, 'tampilgedung'])->name('tampilgedung');// menampilkan data gendung
-Route::post('/edit_gedung/{id}',[KamarController::class, 'editgedung'])->name('tampilgedung');// delete data gedung
+Route::post('/edit_gedung/{id}',[KamarController::class, 'editgedung'])->name('tampilgedung');// update data gedung
 Route::get('/delete_gedung/{id}',[KamarController::class, 'deletegedung'])->name('deletegedung'); // delete data gedung
 
 

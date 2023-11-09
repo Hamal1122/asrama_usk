@@ -16,8 +16,8 @@ class BerandaController extends Controller
   public function beranda()
   {
     $data = beranda::orderBy('id', 'desc')->get();
-    $user = User::all();
-    return view('/beranda/dashboard', compact('data', 'user')); 
+    // $user = User::all();
+    return view('/beranda/dashboard', compact('data')); 
   }
 
    //mencari Postingan Berdasarkan id

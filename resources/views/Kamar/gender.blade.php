@@ -3,7 +3,7 @@
 @section('title')
 <div class="col-span-12 lg:col-span-10 w-full px-4 ">
   <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-    <h3>Kamar</h3>
+    <h3 class="py-2">Kamar</h3>
   </div>
 
 <div class="bg-blue text-white text-sm font-poppins px-4 py-2 rounded-md flex gap-6 mt-4">
@@ -18,7 +18,7 @@
   <h3>Silahkan memilih sesuai dengan gender Anda :</h3>
 </div>
 
-<a href="" class="bg-white py-4 my-2 rounded-md px-4 text-md hover:bg-green transition-all hover:text-white font-poppins text-green flex gap-4 cursor-pointer">
+<a href="{{route ('kamar') }}" class="bg-white py-4 my-2 rounded-md px-4 text-md hover:bg-green transition-all hover:text-white font-poppins text-green flex gap-4 cursor-pointer">
   <i class="bi bi-gender-male"></i>
   <h3>Laki-laki</h3>
 </a>

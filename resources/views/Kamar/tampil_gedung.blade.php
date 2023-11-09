@@ -3,8 +3,8 @@
 @section('layout')
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
-    <a href="{{route ('manage_kamar') }}" class="bi bi-arrow-left-short"></a>
-    <h3>Edit Gedung</h3>
+    <a href="{{route ('manage_kamar') }}" class="bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+    <h3 class="py-2">Edit Gedung</h3>
   </div>
 
   <form action="/edit_gedung/{{ $data->id }}" method="POST" enctype="multipart/form-data">
@@ -18,6 +18,15 @@
         <label for="text" class="text-gray-dark">Nama Gedung</label>
         <input type="text" name="nama" id="nama" class="field" placeholder="Judul" value="{{ $data->nama }}" required />
       </div>
+
+      <div>
+      <label class="text-gray-dark" for="">Pilih Kategori</label>
+      <select class="field text-gray-dark" id="kategori" name="kategori_gedung">
+        <option value="">Pilih Kategori</option>
+        <option value="laki-laki">Laki-laki</option>
+        <option value="perempuan">Perempuan</option>
+      </select>
+    </div>
 
       <button type="submit" class="button my-2 px-4 w-fit text-clip">Simpan</button>
     </div>

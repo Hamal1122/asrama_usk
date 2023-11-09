@@ -37,9 +37,8 @@
       <h2 class="py-4 mt-4 mb-4 font-Inter font-bold text-center">Menu</h2>
       <ul class="">
         <li class="menuhover" ><a href="{{route ('beranda') }}"> <i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
-        <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Upload Berkas</a></li>
+        <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan Kamar</a></li>
         <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
-        <li class="menuhover "><a href="{{route ('gender') }}"><i class="bi bi-door-closed-fill mx-4"></i>Pilih Kamar</a></li>
         <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
         <li class="logout"><i class="bi bi-box-arrow-left mx-4"></i>Logout</li>
       </ul>
@@ -60,9 +59,8 @@
             <h2 class="py-4 mt-4 font-Inter font-bold">Menu</h2>
             <ul class="">
               <li class="menuhover"><a href="{{route ('beranda') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
-              <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Upload Berkas</a></li>
+              <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan Kamar</a></li>
               <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
-              <li class="menuhover "><a href="{{route ('gender') }}"><i class="bi bi-door-closed-fill mx-4"></i>Pilih Kamar</a></li>
               <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
               <li class="logout"><i class="bi bi-box-arrow-left mx-4"></i>Logout</li>
             </ul>

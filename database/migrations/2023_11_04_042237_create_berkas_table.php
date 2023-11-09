@@ -22,6 +22,11 @@ return new class extends Migration
             $table->string('surat_domisili');
             $table->string('surat_pernyataan');
             $table->string('kartu_bidikmisi');
+            $table->enum('kategorigedung',['laki-laki','perempuan']);
+            $table->enum('durasi',['1tahun']);
+            $table->date('tanggal_masuk');
+            $table->date('tanggal_keluar');
+            $table->string('bukti_pembayaran');
             $table->timestamps();
         });
     }
