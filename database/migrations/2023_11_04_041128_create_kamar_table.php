@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->ForeignId('gedung_id');
             $table->string('nama');
-            $table->integer('kapasitas')->default(4);
+            $table->integer('kapasitas');
             $table->timestamps();
         });
     }

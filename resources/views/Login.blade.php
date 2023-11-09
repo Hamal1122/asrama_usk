@@ -30,7 +30,7 @@
         @csrf
         <div class="mt-4 font-poppins text-sm">
           <label for="nim">NPM</label>
-          <input type="email" name="email" id="email" class="field" placeholder="" autofocus required/>
+          <input type="nim" name="nim" id="nim" class="field" placeholder="" autofocus required/>
         </div>
 
         <div class="mt-4 font-poppins text-sm">
