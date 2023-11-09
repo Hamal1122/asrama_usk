@@ -9,11 +9,7 @@
 
   <form action="/edit_gedung/{{ $data->id }}" method="POST" enctype="multipart/form-data">
     @csrf 
-      <div class="mt-4 font-poppins text-sm text-gray-dark ">
-        <label for="text" class="text-gray-dark">ID</label>
-        <input type="text" name="id" id="id" class="field" placeholder="Judul" value="{{ $data->id }}" />
-      </div>
-
+      
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label for="text" class="text-gray-dark">Nama Gedung</label>
         <input type="text" name="nama" id="nama" class="field" placeholder="Judul" value="{{ $data->nama }}" required />

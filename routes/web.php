@@ -16,7 +16,7 @@ use App\Models\Beranda;
 
 
 // login
-Route::get('/Login',[LoginController::class, 'index'])->name('Login');
+Route::get('/',[LoginController::class, 'index'])->name('Login');
 Route::get('/loginproses',[LoginController::class, 'index'])->name('loginproses');
 
 
@@ -77,8 +77,3 @@ Route::get('/manage_berkas',[BerkasController::class, 'manage'])->name('manage_b
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
