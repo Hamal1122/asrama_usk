@@ -15,10 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->enum('kategori_gedung',['laki-laki','perempuan',]);
-<<<<<<< HEAD
-=======
-            $table->integer('kapasitas');
->>>>>>> 1243f048fe72ba87c6bbcf8c2f38eeb13333e4ce
             $table->timestamps();
         });
     }

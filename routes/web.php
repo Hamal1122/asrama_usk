@@ -8,23 +8,17 @@ use App\Http\Controllers\GenderController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KamarsayaController;
-use App\Models\Beranda;
+
 
 
 
 // User
 
 
-<<<<<<< HEAD
-// login
-Route::get('/',[LoginController::class, 'index'])->name('Login');
-Route::get('/loginproses',[LoginController::class, 'index'])->name('loginproses');
-=======
 // // login
 // Route::get('/',[LoginController::class, 'index'])->name('Login');
 // Route::get('/loginproses',[LoginController::class, 'index'])->name('loginproses');
->>>>>>> 1243f048fe72ba87c6bbcf8c2f38eeb13333e4ce
-
+  
 
 
 // Beranda
@@ -33,7 +27,6 @@ Route::get('post/{id}',[BerandaController::class, 'detail'])->name('postingan');
 // Beranda
 
 // kamar
-Route::get('/kamar',[KamarController::class, 'kamar'])->name('kamar');
 Route::get('/gender',[KamarController::class, 'gender'])->name('gender');
 // kamar
 
@@ -59,13 +52,16 @@ Route::post('/upload_berkas',[BerkasController::class, 'tambah'])->name('upload 
 Route::get('/beranda_admin',[BerandaController::class, 'admin'])->middleware('auth')->name('beranda_admin');
 
 
-// Manage Kamar
+// Manage Gedung
 Route::get('/manage_kamar',[KamarController::class, 'manage'])->name('manage_kamar');// halaman manage kamar
 Route::post('/tambah_gedung',[KamarController::class, 'tambah'])->name('tambah gedung');// menambahkan gedung
 Route::get('/tambah_gedung',[KamarController::class, 'tampil'])->name('tambah gedung');// halaman form tambah gedung
 Route::get('/tampil_gedung/{id}',[KamarController::class, 'tampilgedung'])->name('tampilgedung');// menampilkan data gendung
 Route::post('/edit_gedung/{id}',[KamarController::class, 'editgedung'])->name('tampilgedung');// update data gedung
 Route::get('/delete_gedung/{id}',[KamarController::class, 'deletegedung'])->name('deletegedung'); // delete data gedung
+
+// manage Kamar
+Route::get('kamar/{id}',[KamarController::class, 'kamar'])->name('kamar');
 
 
 // Manage Informasi

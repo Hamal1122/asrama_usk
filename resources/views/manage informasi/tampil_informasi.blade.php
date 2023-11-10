@@ -22,12 +22,12 @@
 
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label for="text" class="text-gray-dark">Tanggal Mulai</label>
-        <input type="date" name="tanggal_mulai" id="	tanggal_mulai" class="field" value="{{ $data->tanggal_mulai }}" required />
+        <input type="date" name="tgl_mulai" id="	tgl_mulai" class="field" value="{{ $data->tgl_mulai }}" required />
       </div>
 
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label for="text" class="text-gray-dark">Tanggal Selesai</label>
-        <input type="date" name="tanggal_selesai" id="tanggal_selesai" class="field" value="{{ $data->tanggal_selesai }}" required />
+        <input type="date" name="tgl_berakhir" id="tgl_berakhir" class="field" value="{{ $data->tgl_berakhir }}" required />
       </div>
 
       <div class="mt-4 font-poppins text-sm text-gray-dark ">

@@ -13,11 +13,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class kamarController extends Controller
 {
-  public function kamar(){
-    $kamar = kamar::all();
-    $gedung = gedung::all();
-    return view('/Kamar/kamar', compact('kamar', 'gedung')); 
-  } 
+ 
 
   public function tambah(Request $request)
   {
@@ -64,6 +60,14 @@ class kamarController extends Controller
     $data = gedung::find($id);
     $data->delete($id);
     return redirect()->route('manage_kamar')->with('berhasil','Data Telah Berhasil Di Hapus'); 
+  }
+
+  // menampilkan kamar yang ada didalam gedung berdasarkan id
+  public function kamar($id)
+  {
+    return view('/Kamar/kamar', [
+      "gedung" => gedung::find($id), 
+    ]);
   }
 }
 

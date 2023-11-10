@@ -39,7 +39,7 @@
           <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $gedung->kategori_gedung }}</td>
           <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green">25 Kamar</span></td>
           <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
-            <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href=""><i class="bi bi-door-closed-fill mx-2"></i></i></a>
+            <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/kamar/{{ $gedung[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i></a>
             <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/tampil_gedung/{{ $gedung->id }}"><i class="bi bi-pencil-square mx-2"></i></a>
             <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $gedung->id }}" type="" data-nama="{{ $gedung->nama }}"><i class=" bi bi-trash-fill mx-2"></i></a>
           </td>
