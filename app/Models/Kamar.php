@@ -10,4 +10,11 @@ class kamar extends Model
  protected $table ='kamar';
  protected $guarded = [];
  public $timestamps = false;
+
+
+public function gedung() 
+{
+  return $this->belongsTo(gedung::class);
+}
+
 }

@@ -11,4 +11,11 @@ class gedung extends Model
  protected $table ='gedung';
  protected $guarded = [];
  public $timestamps = false;
+
+
+ 
+public function Gedung() 
+{
+  return $this->hasMany(kamar::class);
+}
 }

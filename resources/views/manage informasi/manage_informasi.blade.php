@@ -31,8 +31,8 @@
         <a class="text-3xl mb-2 text-purple">{{ $post->judul }}</a>
         <div class="my-2 text-gray-dark">
           <h3>Waktu : <span class="font-bold"> {{ $post->time }} <span>WIB</span> </span> </h3>
-          <h3>Mulai : <span class="font-bold">{{ $post->tanggal_mulai }}</span></h3>
-          <h3>Selesai : <span class="font-bold">{{ $post->tanggal_selesai }}</span></h3>
+          <h3>Mulai : <span class="font-bold">{{ $post->tgl_mulai }}</span></h3>
+          <h3>Selesai : <span class="font-bold">{{ $post->tgl_berakhir }}</span></h3>
           <h3 class="mt-4">Deskripsi : </h3>
           <p class="bg-blue bg-opacity-10 mt-2 py-4 px-4 rounded-md">{{ $post->deskripsi }}</p>
           <div class="flex gap-4 mt-4">

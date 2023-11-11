@@ -70,7 +70,7 @@
 
           <!-- Form Pengajuan Kamar -->
           <div class="col-span-12 lg:col-span-6 ">
-            <div class="col-span-12 lg:col-span-6 px-6 gap-6 flex-col flex lg:w-2/3">
+            <div class="col-span-12 lg:col-span-6 px-6 gap-6 flex-col flex lg:w-2/3 mt-8 lg:mt-0">
               <h1 class="font-Inter text-blue text-lg">Form Pengajuan Kamar</h1>
 
               <div>

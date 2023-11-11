@@ -12,8 +12,8 @@
       <a href="" class="text-3xl mb-2">{{ $post->judul }}</a>
       <div class="my-2 mt-6">
         <h3>Waktu : <span class="font-bold">{{ $post->time }}</span><span class="font-bold"> WIB</span></h3>
-        <h3>Mulai :<span class="font-bold">{{ $post->tanggal_mulai }}</h3>
-        <h3>Selesai :<span class="font-bold">{{ $post->tanggal_selesai }}</h3>
+        <h3>Mulai :<span class="font-bold">{{ $post->tgl_mulai }}</h3>
+        <h3>Selesai :<span class="font-bold">{{ $post->tgl_berakhir }}</h3>
         <h2 class="font-bold flex-wrap mt-4">Deskripsi :</h2>
         <p class="bg-blue bg-opacity-10 mt-2 py-4 px-4 rounded-md">{{ $post["deskripsi"] }}</p>
       </div>
