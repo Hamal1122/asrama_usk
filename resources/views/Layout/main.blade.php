@@ -50,7 +50,7 @@
     <div class="container mx-auto ">
       <div class="grid grid-cols-12">
 
-        <div class="col-span-2 hidden sm:block">
+        <div class="col-span-2 hidden lg:block">
           <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md fixed w-fit">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
               <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
