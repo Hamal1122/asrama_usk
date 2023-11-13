@@ -25,7 +25,7 @@
 
         <div class="flex gap-4 p-2  ">
           <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi, Admin</h2>
+          <h2 class="font-Inter text-sm hidden sm:block ">hi,{{ Auth::user()->name}}</h2>
           <ion-icon class=" hidden sm:block " name="person"></ion-icon>
         </div>
       </div>
@@ -42,8 +42,8 @@
         <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
         <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
         <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
-        <li class="logout "><a href="{{ route('logout') }}" onclick=event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
+        <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form2').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
         
       </ul>
     </div>
@@ -69,7 +69,7 @@
               <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
               <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
               <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
+                                                     document.getElementById('logout-form2').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
           </nav>
         </div>
@@ -89,7 +89,9 @@
   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
          @csrf
         </form>
-
+  <form id="logout-form2" action="{{ route('logout') }}" method="POST" class="d-none">
+         @csrf
+        </form>
 
 </body>
 
