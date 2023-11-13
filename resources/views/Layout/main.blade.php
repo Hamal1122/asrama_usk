@@ -62,7 +62,7 @@
               <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan Kamar</a></li>
               <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
               <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
-              <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
+              <li class="logout "><a href="{{ route('logout') }}" onclick=event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
           </nav>

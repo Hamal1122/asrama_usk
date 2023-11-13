@@ -95,12 +95,20 @@
 
               <div>
                 <label class="text-gray-dark" for="">Tanggal Keluar</label>
-                <input class="field text-gray-dark" type="date" name="tanggal_keluar" id="tanggal_keluar">
+                <input class="field text-abu" type="date" name="tanggal_keluar" id="tanggal_keluar" readonly>
               </div>
 
               <div>
-                <label class="text-gray-dark" for="">Harga Perindividu</label>
-                <div class="field">Rp. 1.200.000</div>
+                <label class="text-gray-dark" for="jenisKamar">Pilih Jenis Kamar (Kapasitas)</label>
+                <select class="field text-gray-dark" id="jenisKamar" name="jenisKamar" onchange="updateHarga()">
+                  <option value="2orang">2 Orang</option>
+                  <option value="4orang">4 Orang</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="text-gray-dark" for="harga">Total Harga</label>
+                <input class="field text-abu" type="text" name="harga" id="harga" readonly>
               </div>
 
               <div>
@@ -112,11 +120,53 @@
             </div>
           </div>
         </div>
-        <div class="p-4 mt-4">
+        <div class="p-4 mt-8">
           <button type="submit" class="button">Submit</button>
         </div>
       </div>
   </section>
   </form>
+
+
+  <!-- Autofill Tanggal berakhir -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tanggal_masuk').change(function () {
+            var tanggalMulai = $(this).val();
+            var tanggalBerakhir = calculateEndDateOneYear(tanggalMulai);
+            $('#tanggal_keluar').val(tanggalBerakhir);
+        });
+
+        function calculateEndDateOneYear(startDate) {
+            var date = new Date(startDate);
+            date.setFullYear(date.getFullYear() + 1);
+            var formattedDate = date.toISOString().split('T')[0];
+            return formattedDate;
+        }
+    });
+</script>
+
+
+<!-- Autofill Harga Berdasarkan Jenis Kamar(kapasitas) -->
+<script>
+    function updateHarga() {
+      var jenisKamar = document.getElementById("jenisKamar").value;
+      var harga;
+
+      // Logika penentuan harga berdasarkan jenis kamar
+      if (jenisKamar === "2orang") {
+        harga = "Rp. 1.200.000";
+      } else if (jenisKamar === "4orang") {
+        harga = "Rp. 2.400.000";
+      }
+
+      // Menyimpan harga pada input dengan id "harga"
+      document.getElementById("harga").value = harga;
+    }
+
+    // Panggil fungsi updateHarga saat halaman dimuat
+    updateHarga();
+  </script>
 
   @endsection
