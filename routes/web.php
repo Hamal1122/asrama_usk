@@ -56,12 +56,18 @@ Route::get('/beranda_admin',[BerandaController::class, 'admin'])->middleware('au
 Route::get('/manage_kamar',[KamarController::class, 'manage'])->name('manage_kamar');// halaman manage kamar
 Route::post('/tambah_gedung',[KamarController::class, 'tambah'])->name('tambah gedung');// menambahkan gedung
 Route::get('/tambah_gedung',[KamarController::class, 'tampil'])->name('tambah gedung');// halaman form tambah gedung
-Route::get('/tampil_gedung/{id}',[KamarController::class, 'tampilgedung'])->name('tampilgedung');// menampilkan data gendung
+Route::get('/update_gedung/{id}',[KamarController::class, 'updategedung'])->name('tampilgedung');// menampilkan data gendung
 Route::post('/edit_gedung/{id}',[KamarController::class, 'editgedung'])->name('tampilgedung');// update data gedung
 Route::get('/delete_gedung/{id}',[KamarController::class, 'deletegedung'])->name('deletegedung'); // delete data gedung
 
 // manage Kamar
-Route::get('kamar/{id}',[KamarController::class, 'kamar'])->name('kamar');
+Route::get('/gedung/{id}',[KamarController::class, 'isigedung'])->name('isigedung');// menampilkan kamar kamar di dalam gedung berdasarkan id gedung
+
+Route::post('/tambah_kamar',[KamarController::class, 'tambahkamar'])->name('tambah kamar');// menambahkan data kamar
+Route::get('/tambah_kamar',[KamarController::class, 'formtambahkamar'])->name('tambah kamar');// menampilkan form tambah kamar
+Route::get('/update_kamar/{id}',[KamarController::class, 'updatekamar'])->name('updatekamar');
+Route::post('/edit_kamar/{id}',[KamarController::class, 'editkamar'])->name('editkamar');
+Route::get('/delete_kamar/{id}',[KamarController::class, 'deletekamar'])->name('deletekamar'); // delete data gedung
 
 
 // Manage Informasi

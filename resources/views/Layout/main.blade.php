@@ -23,10 +23,12 @@
           <h1>AsramaKita</h1>
         </div>
 
-        <div class="flex gap-4 p-2  ">
+        <div class="flex gap-4 p-2 ">
           <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi,_____ </h2>
+
+          <h2 class="font-Inter text-sm hidden sm:block ">hi,{{Auth::user()->name}} </h2>
           <ion-icon class=" hidden sm:block " name="person"></ion-icon>
+
         </div>
       </div>
     </div>
@@ -63,11 +65,14 @@
               <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
               <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
               <li class="logout "><a href="{{ route('logout') }}" onclick=event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
+                                                     document.getElementById('logout-forml').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
           </nav>
+         
+
         </div>
 
+        
 
         <div class="col-span-12 lg:col-span-10 w-full px-4">
           <div class=" py-1 mt-16 rounded-md px-4 text-sm font-poppins text-blue ">
@@ -81,7 +86,9 @@
   </section>
 
 
-
+  <form id="logout-forml" action="{{ route('logout') }}" method="POST" class="d-none">
+         @csrf
+        </form>
 
 </body>
 

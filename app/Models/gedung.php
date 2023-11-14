@@ -9,12 +9,13 @@ class gedung extends Model
 {
  use HasFactory;
  protected $table ='gedung';
+ protected $primaryKey ='id';
  protected $guarded = [];
  public $timestamps = false;
 
 
  
-public function Gedung() 
+public function kamar() 
 {
   return $this->hasMany(kamar::class);
 }

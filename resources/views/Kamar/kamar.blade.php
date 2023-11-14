@@ -15,18 +15,19 @@
   </div>
 
   <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-gray-dark mt-4">
-    <h3 class="py-2 font-semibold text-2xl"><span>Gedung</span><span>  </span>{{ $gedung->nama }}</h3>
+
   </div>
+
 
   <div class="mt-4 p-4 bg-gray-soft rounded-md">
 
-    <div class="my-4">
-      <a class="button bg-green hover:bg-tahiti py-2 px-4 " href=""><i class="bi bi-plus"></i>Tambah Kamar</a>
-    </div>
+    <!-- <div class="my-4">
+      <a class="button bg-green hover:bg-tahiti py-2 px-4 " href="{{ ('tambah_kamar') }}"><i class="bi bi-plus"></i>Tambah Kamar</a>
+    </div> -->
 
 
 
-    <table class="table-auto border-collapse justify-end font-semibold text-sm w-full rounded-md">
+    <table class="table-auto font-semibold text-sm w-full rounded-md">
       <thead class="rounded-md">
         <tr>
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">No</th>
@@ -37,23 +38,49 @@
         </tr>
       </thead>
 
+      @foreach ($kamar as $kamar)
       <tbody>
-        <tr>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light"></td>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light"></td>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light"></td>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green"><span class="text-abu"></span></span></td>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
+        <tr class="">
+          <td class="bg-white border-b-silver border-b-4 text-gray-dark w-fit text-left px-6 py-6 tracking-wide font-light">{{ ++$i }}</td>
+          <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->nama }}</td>
+          <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->gedung->nama }}</td>
+          <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green">2<span class="text-abu"><span> / </span>{{ $kamar->kapasitas }} Orang</span></span></td>
+          <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
             <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href=""><i class="bi bi-door-closed-fill mx-2"></i></i></a>
-            <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href=""><i class="bi bi-pencil-square mx-2"></i></a>
-            <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="" type="" data-nama=""><i class=" bi bi-trash-fill mx-2"></i></a>
+            <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/update_kamar/{{ $kamar->id }}"><i class="bi bi-pencil-square mx-2"></i></a>
+            <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $kamar->id }}" type="" data-nama="{{ $kamar->nama }}"><i class=" bi bi-trash-fill mx-2"></i></a>
           </td>
         </tr>
 
       </tbody>
+      @endforeach
     </table>
   </div>
 
-
 </div>
+<script>
+  $('.delete').click(function() {
+    var kamarid = $(this).attr('data-id');
+    var nama = $(this).attr('data-nama');
+    swal({
+        title: "Kamu Yakin ?",
+        text: "Kamu akan menghapus data dengan nama " + nama + " ",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location = "/delete_kamar/" + kamarid + ""
+          swal("Data telah berhasi dihapus!", {
+            icon: "success",
+          });
+        } else {
+          swal(" Data tidak jadi dihapus");
+        }
+      });
+  });
+</script>
 @endsection
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
