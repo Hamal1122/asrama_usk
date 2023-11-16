@@ -9,7 +9,7 @@
 
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-<div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
+  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
     <a href="{{route ('manage_kamar') }}" class="bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
     <h3 class="py-2">Lihat Kamar</h3>
   </div>
@@ -20,12 +20,6 @@
 
 
   <div class="mt-4 p-4 bg-gray-soft rounded-md">
-
-    <!-- <div class="my-4">
-      <a class="button bg-green hover:bg-tahiti py-2 px-4 " href="{{ ('tambah_kamar') }}"><i class="bi bi-plus"></i>Tambah Kamar</a>
-    </div> -->
-
-
 
     <table class="table-auto font-semibold text-sm w-full rounded-md">
       <thead class="rounded-md">
@@ -39,6 +33,7 @@
       </thead>
 
       @foreach ($kamar as $kamar)
+
       <tbody>
         <tr class="">
           <td class="bg-white border-b-silver border-b-4 text-gray-dark w-fit text-left px-6 py-6 tracking-wide font-light">{{ ++$i }}</td>
@@ -46,7 +41,7 @@
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->gedung->nama }}</td>
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green">2<span class="text-abu"><span> / </span>{{ $kamar->kapasitas }} Orang</span></span></td>
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
-            <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href=""><i class="bi bi-door-closed-fill mx-2"></i></i></a>
+            <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/detail_kamar/{{ $kamar[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i></a>
             <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/update_kamar/{{ $kamar->id }}"><i class="bi bi-pencil-square mx-2"></i></a>
             <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $kamar->id }}" type="" data-nama="{{ $kamar->nama }}"><i class=" bi bi-trash-fill mx-2"></i></a>
           </td>

@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Auth
+use Illuminate\Support\Facades\Auth;
 
 class Login
 {
@@ -14,9 +14,9 @@ class Login
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next,$rules)
+    public function handle(Request $request, Closure $next, $rules)
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             return redirect('dashboard');
         }
     }
