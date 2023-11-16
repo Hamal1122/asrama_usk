@@ -7,12 +7,13 @@
     <h3 class="py-2">Edit Informasi</h3>
   </div>
 
-  <form action="/edit_informasi/{{ $data->id }}" method="POST" enctype="multipart/form-data">
-    @csrf 
+  <div class="bg-white p-4 mt-4 rounded-md">
+    <form action="/edit_informasi/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+      @csrf
 
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label for="text" class="text-gray-dark">Judul</label>
-        <input type="text" name="judul" id="judul" class="field" placeholder="Judul" value="{{ $data->judul }}"  required />
+        <input type="text" name="judul" id="judul" class="field" placeholder="Judul" value="{{ $data->judul }}" required />
       </div>
 
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
@@ -36,6 +37,7 @@
       </div>
 
       <button type="submit" class="button my-2 px-4 w-fit text-clip">Simpan</button>
-    </div>
+  </div>
   </form>
-  @endsection
+</div>
+@endsection

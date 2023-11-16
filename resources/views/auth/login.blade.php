@@ -28,7 +28,7 @@
         <img class="w-fit h-[500px] rounded-lg" src="https://img.freepik.com/free-vector/neighbours-windows-illustration_1284-65010.jpg?w=740&t=st=1700107573~exp=1700108173~hmac=7d2f56ef41ed4b3bd36d6f8194217870145068251f4881c595cd781e3bd9cdcc" alt="">
       </div>
 
-      <div class="items-center px-8 ">
+      <div class="items-center px-8 gap-20 ">
         <div class="items-center flex gap-4">
           <img src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="" class="w-10 h-fit">
           <div>
@@ -37,23 +37,25 @@
           </div>
         </div>
 
-        <div>
-          <h1 class="text-center text-xl font-poppins font-semibold mt-8">Sign In</h1>
-        </div>
-        @csrf
-        <div class="mt-4 font-poppins text-sm">
-          <label for="nim">NPM</label>
-          <input type="nim" name="nim" id="nim" class="field" placeholder="NPM" autofocus required />
-        </div>
+        <div class="mt-10">
+          <div>
+            <h1 class="text-center text-xl font-poppins font-semibold ">Sign In</h1>
+          </div>
+          @csrf
+          <div class="mt-4 font-poppins text-sm">
+            <label for="nim">NPM</label>
+            <input type="nim" name="nim" id="nim" class="field" placeholder="NPM" autofocus required />
+          </div>
 
-        <div class="mt-4 font-poppins text-sm">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" class="field place" placeholder="Password" required />
-        </div>
+          <div class="mt-4 font-poppins text-sm">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="field place" placeholder="Password" required />
+          </div>
 
-        <!-- Button login -->
-        <div class="mt-4">
-          <button type="submit" class="button">Login</button>
+          <!-- Button login -->
+          <div class="mt-4">
+            <button type="submit" class="button">Login</button>
+          </div>
         </div>
 
       </div>
