@@ -18,7 +18,7 @@
 
   <div class="p-4 bg-gray-soft my-4 rounded-md">
     <div class="my-4">
-      <a class="button bg-purple hover:bg-midnight py-2 px-4 " href="{{route ('tambahInformasi') }}"><i class="bi bi-plus"></i>Tambah</a>
+      <a class="button bg-purple hover:bg-midnight py-2 px-4 " href="{{route ('tambahInformasi') }}"><i class="bi bi-plus"></i>Tambah Postingan</a>
     </div>
 
     <div>
@@ -73,11 +73,9 @@
   </script>
 
   <script>
-    @if (Session::has('berhasil'))
+    @if(Session::has('berhasil'))
     toastr.success("{{ Session::get('berhasil') }}")
     @endif
-
-    
   </script>
   @endsection
 
