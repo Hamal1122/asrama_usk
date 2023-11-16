@@ -7,24 +7,28 @@
     <h3 class="py-2">Edit Gedung</h3>
   </div>
 
-  <form action="/edit_gedung/{{ $data->id }}" method="POST" enctype="multipart/form-data">
-    @csrf 
-      
+
+  <div class="bg-white p-4 mt-4 rounded-md">
+    <form action="/edit_gedung/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+      @csrf
+
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label for="text" class="text-gray-dark">Nama Gedung</label>
-        <input type="text" name="nama" id="nama" class="field" placeholder="Judul" value="{{ $data->nama }}" required />
+        <input type="text" name="nama" id="nama" class="field" placeholder="Gedung" value="{{ $data->nama }}" required />
       </div>
 
-      <div>
-      <label class="text-gray-dark" for="">Pilih Kategori</label>
-      <select class="field text-gray-dark" id="kategori" name="kategori_gedung">
-        <option value="">Pilih Kategori</option>
-        <option value="laki-laki">Laki-laki</option>
-        <option value="perempuan">Perempuan</option>
-      </select>
-    </div>
+      <div class="mt-4">
+        <label class="text-gray-dark " for="">Pilih Kategori</label>
+        <select class="field text-gray-dark" id="kategori" name="kategori_gedung">
+          <option value="">Pilih Kategori</option>
+          <option value="laki-laki">Laki-laki</option>
+          <option value="perempuan">Perempuan</option>
+        </select>
+      </div>
 
       <button type="submit" class="button my-2 px-4 w-fit text-clip">Simpan</button>
-    </div>
+      <p class="text-xs font-extralight text-blue">*pastikan semua data sudah benar sebelum menyimpan</p>
+  </div>
   </form>
-  @endsection
+</div>
+@endsection

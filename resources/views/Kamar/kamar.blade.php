@@ -76,6 +76,11 @@
       });
   });
 </script>
+<script>
+  @if(Session::has('berhasil'))
+  toastr.success("{{ Session::get('berhasil') }}")
+  @endif
+</script>
 @endsection
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

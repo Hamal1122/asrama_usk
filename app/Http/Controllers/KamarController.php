@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\Session;
 use App\Models\kamar;
 use App\Models\gedung;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class kamarController extends Controller
 {
@@ -67,6 +69,7 @@ class kamarController extends Controller
   public function isigedung($gedung_id, Request $request)
   {
     $kamar = kamar::where('gedung_id', $gedung_id)->get();
+    session::put('halaman_url', request()->fullUrl()); // redirect halaman setelah update
     return view('/Kamar/kamar', compact('kamar'))->with('i', ($request->input('page', 1) - 1));
   }
 
@@ -93,6 +96,9 @@ class kamarController extends Controller
   {
     $data = kamar::find($id);
     $data->update($request->all());
+    if (session('halaman_url')) {
+      return redirect(session('halaman_url'))->with('berhasil', 'Data Kamar Telah Berhasil Update');
+    }
     return redirect()->route('manage_kamar')->with('berhasil', 'Data Kamar Telah Berhasil Update');
   }
 
@@ -100,7 +106,10 @@ class kamarController extends Controller
   {
     $data = kamar::find($id);
     $data->delete($id);
-    return redirect()->route('manage_kamar')->with('berhasil', 'Data Kamar Telah Berhasil Di Hapus');
+    if (session('halaman_url')) {
+      return redirect(session('halaman_url'))->with('berhasil', 'Data Kamar Telah Berhasil Update');
+    }
+    return redirect()->route('manage_kamar')->with('berhasil', 'Data Kamar Telah Berhasil Update');
   }
 
   public function detailkamar($id)

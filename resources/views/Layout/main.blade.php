@@ -35,10 +35,10 @@
 
 
 
-    <div x-show="navOpen"  x-transition x-data="{open : false}" class="fixed left-0 p-4 order-5  bg-white h-screen lg:hidden">
+    <div x-show="navOpen" x-transition x-data="{open : false}" class="fixed left-0 p-4 order-5  bg-white h-screen lg:hidden">
       <h2 class="py-4 mt-4 mb-4 font-Inter font-bold text-center">Menu</h2>
       <ul class="">
-        <li class="menuhover" ><a href="{{route ('beranda') }}"> <i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
+        <li class="menuhover"><a href="{{route ('beranda') }}"> <i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
         <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan Kamar</a></li>
         <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
         <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
@@ -56,7 +56,7 @@
           <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md fixed w-fit">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
               <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
-              <h3 class=" py-2 font-Inter text-sm">AsramaKita</h3>
+              <h3 class=" py-2 font-Inter text-sm">AsramaUSK</h3>
             </div>
             <h2 class="py-4 mt-4 font-Inter font-bold">Menu</h2>
             <ul class="">
@@ -64,15 +64,14 @@
               <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan Kamar</a></li>
               <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
               <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
-              <li class="logout "><a href="{{ route('logout') }}" onclick=event.preventDefault();
-                                                     document.getElementById('logout-forml').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
+              <li class="logout "><a href="{{ route('logout') }}" onclick=event.preventDefault(); document.getElementById('logout-forml').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
           </nav>
-         
+
 
         </div>
 
-        
+
 
         <div class="col-span-12 lg:col-span-10 w-full px-4">
           <div class=" py-1 mt-16 rounded-md px-4 text-sm font-poppins text-blue ">
@@ -87,8 +86,8 @@
 
 
   <form id="logout-forml" action="{{ route('logout') }}" method="POST" class="d-none">
-         @csrf
-        </form>
+    @csrf
+  </form>
 
 </body>
 
