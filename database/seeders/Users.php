@@ -20,7 +20,7 @@ class Users extends Seeder
             'email' => 'admin123@gmail.com',
             'nim' => '11111',
             'no_hp' => '081234567890',
-            'role' => 'admin',
+            'role' => 0,
             'jenis_kelamin' => 'laki-laki',
             'password' => Hash::make('asramausk'),
           ],
@@ -29,7 +29,7 @@ class Users extends Seeder
             'email' => 'user123@gmail.com',
             'nim' => '22222',
             'no_hp' => '081234567898',
-            'role' => 'mahasiswa',
+            'role' => 1,
             'jenis_kelamin' => 'laki-laki',
             'password' => Hash::make('mahasiswausk'),
         ]
