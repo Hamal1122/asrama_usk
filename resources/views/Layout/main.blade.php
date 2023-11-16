@@ -28,10 +28,10 @@
             name="menu-outline"></ion-icon>
           <h2 class="font-Inter text-sm hidden sm:block ">hi, {{ Auth::user()->name }} </h2>
           <ion-icon class=" hidden sm:block " name="person"></ion-icon>
+
         </div>
       </div>
     </div>
-
 
 
     <div x-show="navOpen" x-transition x-data="{open : false}"
@@ -80,7 +80,10 @@
                                                      document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
           </nav>
+
+
         </div>
+
 
 
         <div class="col-span-12 lg:col-span-10 w-full px-4">

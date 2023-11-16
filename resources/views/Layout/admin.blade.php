@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin</title>
   <style>
-    <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet" 
+    <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
     />@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
   </style>
@@ -38,7 +38,6 @@
       <ul class="">
         <li class="menuhover"><a href="{{route ('beranda_admin') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Dashboard</a></li>
         <li class="menuhover"><a href="{{route ('manage_kamar') }}"><i class="bi bi-sliders mx-4"></i>Manage Kamar</a></li>
-        <li class="menuhover"><a href=""><i class="bi bi-wallet-fill mx-4"></i></i>Manage Pembayaran</a></li>
         <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
         <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
         <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
@@ -58,13 +57,12 @@
           <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md fixed w-fit">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
               <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
-              <h3 class=" py-2 font-Inter text-sm">AsramaKita</h3>
+              <h3 class=" py-2 font-Inter text-sm">AsramaUSK</h3>
             </div>
             <h2 class="py-4 mt-4 font-Inter font-bold">Menu</h2>
             <ul class="">
               <li class="menuhover"><a href="{{route ('beranda_admin') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Dashboard</a></li>
               <li class="menuhover"><a href="{{route ('manage_kamar') }}"><i class="bi bi-sliders mx-4"></i>Manage Kamar</a></li>
-              <li class="menuhover"><a href=""><i class="bi bi-wallet-fill mx-4"></i></i>Manage Pembayaran</a></li>
               <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
               <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
               <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>

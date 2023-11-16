@@ -8,9 +8,7 @@ use App\Http\Controllers\GenderController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KamarsayaController;
-
-
-
+use App\Models\kamar;
 
 // User
 
@@ -18,7 +16,7 @@ use App\Http\Controllers\KamarsayaController;
 // // login
 // Route::get('/',[LoginController::class, 'index'])->name('Login');
 // Route::get('/loginproses',[LoginController::class, 'index'])->name('loginproses');
-  
+
 
 
 // Beranda
@@ -59,9 +57,16 @@ use App\Http\Controllers\KamarsayaController;
 // Route::get('/tampil_gedung/{id}',[KamarController::class, 'tampilgedung'])->name('tampilgedung');// menampilkan data gendung
 // Route::post('/edit_gedung/{id}',[KamarController::class, 'editgedung'])->name('tampilgedung');// update data gedung
 // Route::get('/delete_gedung/{id}',[KamarController::class, 'deletegedung'])->name('deletegedung'); // delete data gedung
-
 // manage Kamar
-Route::get('kamar/{id}',[KamarController::class, 'kamar'])->name('kamar');
+Route::get('/gedung/{id}', [KamarController::class, 'isigedung'])->name('isigedung'); // menampilkan kamar kamar di dalam gedung berdasarkan id gedung
+Route::get('detail_kamar/{id}', [KamarController::class, 'detailkamar'])->name('detailkamar');
+
+Route::post('/tambah_kamar', [KamarController::class, 'tambahkamar'])->name('tambah kamar'); // menambahkan data kamar
+Route::get('/tambah_kamar', [KamarController::class, 'formtambahkamar'])->name('tambah kamar'); // menampilkan form tambah kamar
+Route::get('/update_kamar/{id}', [KamarController::class, 'updatekamar'])->name('updatekamar');
+Route::post('/edit_kamar/{id}', [KamarController::class, 'editkamar'])->name('editkamar');
+Route::get('/delete_kamar/{id}', [KamarController::class, 'deletekamar'])->name('deletekamar'); // delete data gedung
+
 
 
 // Manage Informasi

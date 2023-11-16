@@ -15,39 +15,45 @@
 
   <div class="mt-4 p-4 bg-gray-soft rounded-md">
 
-    <div class="my-4">
-      <a class="button bg-green hover:bg-tahiti py-2 px-4 " href="{{route ('tambah gedung') }}"><i class="bi bi-plus"></i>Tambah Gedung</a>
+    <div class="flex">
+      <div class="my-4">
+        <a class="button bg-green hover:bg-tahiti py-2 px-4 " href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
+      </div>
+      <div class="my-4">
+        <a class="button bg-blue hover:bg-tahiti py-2 px-6 " href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
+      </div>
     </div>
 
 
+    <div class="overflow-y-auto">
+      <table class="table-auto justify-end font-semibold text-sm w-full rounded-md min-w-full ">
+        <thead class="rounded-md">
+          <tr>
+            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
+            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama Gedung</th>
+            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Kategori</th>
+            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Jumlah Kamar </th>
+            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "></th>
+          </tr>
+        </thead>
+        @foreach ($gedung as $gedung)
+        <tbody>
+          <tr class="">
+            <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-6  text-center font-light">{{ ++$i }}</td>
+            <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $gedung->nama }}</td>
+            <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="bg-blue bg-opacity-10 text-purple py-1 px-2 rounded-lg">{{ $gedung->kategori_gedung }}</span></td>
+            <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green"></span></td>
+            <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
+              <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/gedung/{{ $gedung[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i></a>
+              <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/update_gedung/{{ $gedung->id }}"><i class="bi bi-pencil-square mx-2"></i></a>
+              <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $gedung->id }}" type="" data-nama="{{ $gedung->nama }}"><i class=" bi bi-trash-fill mx-2"></i></a>
+            </td>
+          </tr>
+          @endforeach
 
-    <table class="table-auto border-collapse justify-end font-semibold text-sm w-full rounded-md">
-      <thead class="rounded-md">
-        <tr>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">No</th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Nama Gedung</th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left "> Kategori</th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left "> Jumlah Kamar </th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left "></th>
-        </tr>
-      </thead>
-      @foreach ($gedung as $gedung)
-      <tbody>
-        <tr>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ ++$i }}</td>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $gedung->nama }}</td>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $gedung->kategori_gedung }}</td>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green">25 Kamar</span></td>
-          <td class="bg-white text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
-            <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/kamar/{{ $gedung[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i></a>
-            <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/tampil_gedung/{{ $gedung->id }}"><i class="bi bi-pencil-square mx-2"></i></a>
-            <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $gedung->id }}" type="" data-nama="{{ $gedung->nama }}"><i class=" bi bi-trash-fill mx-2"></i></a>
-          </td>
-        </tr>
-        @endforeach
-
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 

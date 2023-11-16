@@ -8,6 +8,7 @@ class kamar extends Model
 {
  use HasFactory;
  protected $table ='kamar';
+ protected $primaryKey ='id';
  protected $guarded = [];
  public $timestamps = false;
 
