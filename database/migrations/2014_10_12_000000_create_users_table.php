@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('nim')->unique();
             $table->string('no_hp');
-            $table->enum('role', ['admin', 'mahasiswa']);
+            //admin = 0, mahasiswa = 1
+            $table->tinyInteger("role")->default(1);
             $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
