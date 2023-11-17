@@ -17,8 +17,9 @@ class BerandaController extends Controller
   // memanggil semua data yang ada di table beranda
   public function beranda()
   {
+    $title = ['beranda'];
     $data = beranda::orderBy('id', 'desc')->get();
-    return view('/beranda/dashboard', compact('data'));
+    return view('/beranda/dashboard', compact('data', 'title'));
   }
 
   //mencari Postingan Berdasarkan id
@@ -35,6 +36,7 @@ class BerandaController extends Controller
     $jumlah_gedung = gedung::all()->count();
     $jumlah_kamar = kamar::all()->count();
     $jumlah_postingan = beranda::all()->count();
+    $title = ['admin'];
     return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan'));
   }
 

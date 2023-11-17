@@ -2,8 +2,9 @@
 
 @section('title')
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2   rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
-    <h3 class="py-2">Beranda</h3>
+  <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
+    <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+    <h3 class="py-2">Beranda </h3>
   </div>
 
 
@@ -17,7 +18,7 @@
   </div>
 
 
-  <div class="bg-purple text-white p-4 mt-6 rounded-md">
+  <div class="bg-white text-purple p-4 mt-6 rounded-md">
     <h1 class="font-Inter text-sm">Informasi Kegiatan :</h1>
   </div>
 

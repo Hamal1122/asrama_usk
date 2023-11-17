@@ -122,20 +122,19 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
 
 //mahasiswa
 Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
+    // Beranda
     Route::get('/', [BerandaController::class, 'beranda'])->name('beranda');
     Route::get('post/{id}', [BerandaController::class, 'detail'])->name('postingan');
-    // Beranda
 
     // kamar
-    Route::get('/gender', [KamarController::class, 'gender'])->name('gender');
-    // kamar
-
     Route::get('/kamarsaya', [KamarsayaController::class, 'kamarsaya'])->name('kamarsaya');
+    Route::get('/semua_gedung', [KamarController::class, 'semuagedung'])->name('semuagedung');
+    Route::get('/semuakamar/{id}', [KamarController::class, 'semuakamar'])->name('semuakamar'); // menampilkan kamar kamar di dalam gedung berdasarkan id gedung
+    Route::get('/info_kamar/{id}', [KamarController::class, 'detailsemuakamar'])->name('detailsemuakamar');
 
     // profile
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
     Route::get('/edit_profile', [ProfileController::class, 'edit'])->name('edit_profile');
-
 
     // Upload Berkas
     Route::get('/upload_berkas', [BerkasController::class, 'berkas'])->name('berkas');

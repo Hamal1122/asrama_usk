@@ -117,4 +117,23 @@ class kamarController extends Controller
     $data = kamar::find($id);
     return view('/Kamar/detail_kamar', compact('data'));
   }
+
+  public function semuagedung(Request $request)
+  {
+
+    $gedung = gedung::all();
+    return view('/Kamar/semua_gedung', compact('gedung'))->with('i', ($request->input('page', 1) - 1));
+  }
+
+  public function semuakamar($gedung_id, Request $request)
+  {
+    $kamar = kamar::where('gedung_id', $gedung_id)->get();
+    return view('/Kamar/semua_kamar', compact('kamar'))->with('i', ($request->input('page', 1) - 1));
+  }
+
+  public function detailsemuakamar($id)
+  {
+    $data = kamar::find($id);
+    return view('/Kamar/info_kamar', compact('data'));
+  }
 }
