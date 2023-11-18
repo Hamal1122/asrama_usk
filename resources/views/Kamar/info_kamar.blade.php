@@ -2,14 +2,14 @@
 
 @section('title')
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2   rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
-    <a href="{{ Session::get('halaman_url') }}" class=" bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+  <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
+    <a href="{{ Session::get('halaman_url_user') }}" class=" bi bi-arrow-left-short px-2 my-auto hover:bg-white hover:text-purple hover:bg-opacity-25  text-xl rounded-md"></a>
     <h3 class="py-2">Manage Kamar</h3>
   </div>
 
   <div class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4">
     <div class="">
-      <div class="bg-purple p-10 mx-auto text-center text-2xl rounded-xl font-bold text-white">
+      <div class="bg-abu bg-opacity-20 p-10 mx-auto text-center text-3xl rounded-md font-bold text-abu">
         <h1>{{ $data->nama }}</h1>
       </div>
       <div class="mt-6">
@@ -17,16 +17,16 @@
       </div>
 
       <div class="mt-3">
-        <h1 class="text-base mt-2 font-Inter">Kapasitas : <span> </span> <span class="text-blue"> {{ $data->kapasitas }}</span><span class="text-blue"> Orang</span></h1>
-        <h1 class="text-base mt-2 font-Inter"> Gedung : <span> </span> <span class="text-blue">{{ $data->gedung->nama  }}</span></h1>
-        <h1 class="text-base mt-2 font-Inter"> Kategori : <span> </span> <span class="bg-blue bg-opacity-10 text-blue py-1 px-2 rounded-lg">{{ $data->gedung->kategori_gedung  }}</span></h1>
+        <h1 class="text-base mt-2 font-Inter text-abu">Kapasitas : <span> </span> <span class="text-blue"> {{ $data->kapasitas }}</span><span class="text-blue"> Orang</span></h1>
+        <h1 class="text-base mt-2 font-Inter text-abu"> Gedung : <span> </span> <span class="text-blue">{{ $data->gedung->nama  }}</span></h1>
+        <h1 class="text-base mt-2 font-Inter text-abu"> Kategori : <span> </span> <span class="bg-blue bg-opacity-10 text-blue py-1 px-2 rounded-lg">{{ $data->gedung->kategori_gedung  }}</span></h1>
       </div>
 
-      <div class="bg-purple bg-opacity-10 mt-3 py-4 px-2 rounded-md">
-        <h1>Penghuni :</h1>
+      <div class=" mt-3 py-4  rounded-md">
+        <h1 class="text-abu">Penghuni :</h1>
         <div class="mt-2 font-Inter text-blue">
-          <h1>Hamal Rizqy Mukhda</h1>
-          <h1>Afkar Siddiq</h1>
+          <h1 class="bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit">Hamal Rizqy Mukhda</h1>
+          <h1 class="bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit mt-2">Afkar Siddiq</h1>
         </div>
       </div>
 

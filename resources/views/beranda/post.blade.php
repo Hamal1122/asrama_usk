@@ -9,11 +9,11 @@
 
   <div class="bg-white text-gray-dark text-sm font-Inter px-4 py-4 rounded-md mt-4">
     <div class="order-2 gap-6">
-      <a href="" class="text-3xl mb-2">{{ $post->judul }}</a>
+      <h1 href="" class="text-3xl mb-2 font-semibold">{{ $post->judul }}</h1>
       <div class="my-2 mt-6">
-        <h3>Waktu : <span class="font-bold">{{ $post->time }}</span><span class="font-bold"> WIB</span></h3>
-        <h3>Mulai :<span class="font-bold">{{ $post->tgl_mulai}}</h3>
-        <h3>Selesai :<span class="font-bold">{{ $post->tgl_berakhir }}</h3>
+        <h3>Waktu : <span class="font-bold bg-blue bg-opacity-10 text-purple py-1 px-2 rounded-lg w-fit">{{ $post->time }}</span><span class="font-bold"> WIB</span></h3>
+        <h3 class="mt-2">Mulai :<span class="font-bold bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit">{{ $post->tgl_mulai}}</h3>
+        <h3 class="mt-2">Selesai :<span class=" font-bold bg-red bg-opacity-10 text-red py-1 px-2 rounded-lg w-fit">{{ $post->tgl_berakhir }}</h3>
         <h2 class="font-bold flex-wrap mt-4">Deskripsi :</h2>
         <p class="bg-blue bg-opacity-10 mt-2 py-4 px-4 rounded-md">{{ $post["deskripsi"] }}</p>
       </div>

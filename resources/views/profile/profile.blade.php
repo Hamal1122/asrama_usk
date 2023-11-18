@@ -3,7 +3,7 @@
 @section('title')
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
-    <a href="" class=" bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+    <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
     <h3 class="py-2">Profile</h3>
   </div>
 
@@ -22,7 +22,7 @@
           <h3 class="my-2">Nama : <span class="font-bold">{{Auth::user()->name}}</span></h3>
           <h3 class="my-2">NIM : <span class="font-bold">{{Auth::user()->nim}}</span></h3>
           <h3 class="my-2">No.Telpon : <span class="font-bold">{{Auth::user()->no_hp}}</span></h3>
-          <h3 class="my-2">Program Studi : Informatika</h3>
+          <h3 class="my-2">Program Studi : <span class="font-bold">Informatika</span> </h3>
           <h3 class="my-2">Email : <span class="font-bold">{{Auth::user()->email}}</span></h3>
           <h3 class="my-2">Gender : <span class="font-bold">{{Auth::user()->jenis_kelamin}}</span></h3>
         </div>

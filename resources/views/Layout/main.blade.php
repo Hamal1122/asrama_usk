@@ -23,12 +23,17 @@
           <h1>AsramaKita</h1>
         </div>
 
-        <div class="flex gap-4 p-2  ">
+        <div class="flex gap-4 items-center ">
           <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi, {{ Auth::user()->name }} </h2>
-          <ion-icon class=" hidden sm:block " name="person"></ion-icon>
-
+          <div>
+            <h2 class="font-Inter text-xs hidden sm:block ">{{ Auth::user()->name }} </h2>
+            <h2 class="font-Inter text-xs hidden sm:block text-abu  ">{{ Auth::user()->nim }} </h2>
+          </div>
+          <div class="bg-blue bg-opacity-20 p-3 rounded-md hidden sm:block  ">
+            <ion-icon class=" hidden sm:block  " name="person"></ion-icon>
+          </div>
         </div>
+
       </div>
     </div>
 

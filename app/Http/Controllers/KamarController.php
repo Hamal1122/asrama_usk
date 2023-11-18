@@ -128,7 +128,8 @@ class kamarController extends Controller
   public function semuakamar($gedung_id, Request $request)
   {
     $kamar = kamar::where('gedung_id', $gedung_id)->get();
-    return view('/Kamar/semua_kamar', compact('kamar'))->with('i', ($request->input('page', 1) - 1));
+    session::put('halaman_url_user', request()->fullUrl()); // redirect halaman semua kamar 
+    return view('/Kamar/semua_kamar', compact('kamar'));
   }
 
   public function detailsemuakamar($id)
