@@ -2,8 +2,9 @@
 
 @section('title')
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-    <h3>Upload Berkas</h3>
+  <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
+    <a href="" class=" bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+    <h3 class="py-2">Upload Berkas</h3>
   </div>
 
   <div class="bg-blue text-white text-sm font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">
@@ -17,18 +18,18 @@
   </div>
 
   <form action="/upload_berkas" method="post">
-  <section>
-    <!-- form upload berkas -->
-    
+    <section>
+      <!-- form upload berkas -->
+
       <div class="container mx-auto py-4 bg-white mt-4 rounded-md">
         <div class="grid grid-cols-12">
           <div class="col-span-12 lg:col-span-6 px-6 gap-6 flex-col flex text-gray-dark lg:w-2/3">
             <h1 class="font-Inter text-blue text-lg">Berkas Pengajuan Kamar</h1>
             @csrf
-            
+
             <div>
               <label for="">Pilih Kategori</label>
-              <select class="field text-gray-dark" id="kategori"  name="kategori">
+              <select class="field text-gray-dark" id="kategori" name="kategori">
                 <option class="text-abu" value="">Plih Kategori</option>
                 <option value="KIP">KIPK</option>
                 <option value="reguler">Reguler</option>
@@ -124,32 +125,32 @@
           <button type="submit" class="button">Submit</button>
         </div>
       </div>
-  </section>
+    </section>
   </form>
 
 
   <!-- Autofill Tanggal berakhir -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#tanggal_masuk').change(function () {
-            var tanggalMulai = $(this).val();
-            var tanggalBerakhir = calculateEndDateOneYear(tanggalMulai);
-            $('#tanggal_keluar').val(tanggalBerakhir);
-        });
+  <script>
+    $(document).ready(function() {
+      $('#tanggal_masuk').change(function() {
+        var tanggalMulai = $(this).val();
+        var tanggalBerakhir = calculateEndDateOneYear(tanggalMulai);
+        $('#tanggal_keluar').val(tanggalBerakhir);
+      });
 
-        function calculateEndDateOneYear(startDate) {
-            var date = new Date(startDate);
-            date.setFullYear(date.getFullYear() + 1);
-            var formattedDate = date.toISOString().split('T')[0];
-            return formattedDate;
-        }
+      function calculateEndDateOneYear(startDate) {
+        var date = new Date(startDate);
+        date.setFullYear(date.getFullYear() + 1);
+        var formattedDate = date.toISOString().split('T')[0];
+        return formattedDate;
+      }
     });
-</script>
+  </script>
 
 
-<!-- Autofill Harga Berdasarkan Jenis Kamar(kapasitas) -->
-<script>
+  <!-- Autofill Harga Berdasarkan Jenis Kamar(kapasitas) -->
+  <script>
     function updateHarga() {
       var jenisKamar = document.getElementById("jenisKamar").value;
       var harga;

@@ -23,30 +23,29 @@
           <h1>AsramaKita</h1>
         </div>
 
-        <div class="flex gap-4 p-2  ">
-          <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden "
-            name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi, {{ Auth::user()->name }} </h2>
-          <ion-icon class=" hidden sm:block " name="person"></ion-icon>
-
+        <div class="flex gap-4 items-center ">
+          <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
+          <div>
+            <h2 class="font-Inter text-xs hidden sm:block ">{{ Auth::user()->name }} </h2>
+            <h2 class="font-Inter text-xs hidden sm:block text-abu  ">{{ Auth::user()->nim }} </h2>
+          </div>
+          <div class="bg-blue bg-opacity-20 p-3 rounded-md hidden sm:block  ">
+            <ion-icon class=" hidden sm:block  " name="person"></ion-icon>
+          </div>
         </div>
+
       </div>
     </div>
 
 
-    <div x-show="navOpen" x-transition x-data="{open : false}"
-      class="fixed left-0 p-4 order-5  bg-white h-screen lg:hidden">
+    <div x-show="navOpen" x-transition x-data="{open : false}" class="fixed left-0 p-4 order-5  bg-white h-screen lg:hidden">
       <h2 class="py-4 mt-4 mb-4 font-Inter font-bold text-center">Menu</h2>
       <ul class="">
-        <li class="menuhover"><a href="{{route ('beranda') }}"> <i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a>
-        </li>
-        <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan
-            Kamar</a></li>
-        <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a>
-        </li>
-        <li class="menuhover "><a href="{{route ('kamarsaya') }}">
-          <i class="bi bi-tag-fill mx-4"></i>Kamar Saya
-        </a></li>
+        <li class="menuhover "><a href="{{route ('beranda') }}"> <i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
+        <li class="menuhover"><a href="{{route ('semuagedung') }}"><i class="bi bi-arrow-right-square-fill mx-4"></i>Semua Kamar</a></li>
+        <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>PengajuanKamar</a></li>
+        <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a> </li>
+        <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
         <li class="logout"><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</li></a>
       </ul>
@@ -61,19 +60,20 @@
         <div class="col-span-2 hidden lg:block">
           <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md fixed w-fit">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
-              <img class="w-8 h-8 "
-                src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png"
-                alt="">
+              <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
               <h3 class=" py-2 font-Inter text-sm">AsramaKita</h3>
             </div>
             <h2 class="py-4 mt-4 font-Inter font-bold">Menu</h2>
             <ul class="">
-              <li class="menuhover"><a href="{{route ('beranda') }}"><i
-                    class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
-              <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan
+              <li class="menuhover"><a href="{{route ('beranda') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
+
+              <li class="menuhover"><a href="{{route ('semuagedung') }}"><i class="bi bi-arrow-right-square-fill mx-4"></i>Semua Kamar</a></li>
+
+              <li class="menuhover "><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan
                   Kamar</a></li>
-              <li class="menuhover"><a href="{{route ('profile') }}"><i
-                    class="bi bi-person-square mx-4"></i></i>Profil</a></li>
+
+              <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
+
               <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar
                   Saya</a></li>
               <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
