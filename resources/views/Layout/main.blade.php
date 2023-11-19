@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AsramaKita</title>
+  <title>AsramaUSK</title>
   <style>
     <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
@@ -20,7 +20,7 @@
     <div class="container mx-auto">
       <div class="flex justify-between items-center">
         <div>
-          <h1>AsramaKita</h1>
+          <h1>AsramaUSK</h1>
         </div>
 
         <a href="{{route ('profile') }}" class="flex gap-4 items-center hover:bg-abu hover:bg-opacity-5 p-2 rounded-md">
@@ -61,7 +61,7 @@
           <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md fixed w-fit">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
               <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
-              <h3 class=" py-2 font-Inter text-sm">AsramaKita</h3>
+              <h3 class=" py-2 font-Inter text-sm">Asrama USK</h3>
             </div>
             <h2 class="py-4 mt-4 font-Inter font-bold">Menu</h2>
             <ul class="">
