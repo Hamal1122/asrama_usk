@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
 </head>
 
-<body class=" bg-bone ">
+<body class=" bg-abubg ">
 
   <nav class=" fixed w-screen py-2 px-8 bg-white" x-data="{navOpen : false}">
     <div class="container mx-auto">
@@ -43,7 +43,7 @@
         <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
         <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form2').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
-        
+
       </ul>
     </div>
   </nav>
@@ -85,11 +85,11 @@
   </section>
 
   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-         @csrf
-        </form>
+    @csrf
+  </form>
   <form id="logout-form2" action="{{ route('logout') }}" method="POST" class="d-none">
-         @csrf
-        </form>
+    @csrf
+  </form>
 
 </body>
 

@@ -28,6 +28,8 @@ export default {
       'red' : '#EF5656',
       'abu' : '#7F8487',
       'bone' : '#F1F6F9',
+      'abubg' : '#ebedf5',
+
 
 
       

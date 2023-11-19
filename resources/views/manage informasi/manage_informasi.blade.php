@@ -28,7 +28,14 @@
     @foreach ($data as $post)
     <div class="bg-white text-gray-dark text-sm font-poppins px-4 py-4 rounded-md mt-4">
       <div class="order-2 gap-6">
-        <a class="text-3xl mb-2 text-purple">{{ $post->judul }}</a>
+        <div class="flex justify-between">
+          <div>
+            <h1 class="text-3xl mb-2 text-gray-dark">{{ $post->judul }}</h1>
+          </div>
+          <div>
+            <h1 class="text-xs font-light bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit">{{ $post->created_at->diffForHumans() }}</h1>
+          </div>
+        </div>
         <div class="my-2 text-gray-dark">
           <h3>Waktu : <span class="font-bold"> {{ $post->time }} <span>WIB</span> </span> </h3>
           <h3>Mulai : <span class="font-bold">{{ $post->tgl_mulai }}</span></h3>
