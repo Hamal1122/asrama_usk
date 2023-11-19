@@ -31,7 +31,7 @@
             <h1 class="text-3xl mb-2 text-gray-dark">{{ $post->judul }}</h1>
           </div>
           <div>
-            <h1 class="text-xs font-light bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit">24 Jam yang lalu</h1>
+            <h1 class="text-xs font-light bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit">Posted {{ $post->created_at->diffForHumans() }}</h1>
           </div>
         </div>
         <div class="my-2">

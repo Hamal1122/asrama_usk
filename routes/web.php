@@ -121,7 +121,7 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::get('/beranda_admin', [BerandaController::class, 'admin'])->name('beranda_admin');
 });
 
-//mahasiswa
+//mahasiswa (User)
 Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
     // Beranda
     Route::get('/', [BerandaController::class, 'beranda'])->name('beranda');
