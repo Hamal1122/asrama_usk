@@ -122,6 +122,7 @@ class kamarController extends Controller
   {
 
     $gedung = gedung::all();
+    
     return view('/Kamar/semua_gedung', compact('gedung'))->with('i', ($request->input('page', 1) - 1));
   }
 
