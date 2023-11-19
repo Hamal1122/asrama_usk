@@ -3,18 +3,17 @@
 @section('title')
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
-    <a href="" class=" bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+    <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
     <h3 class="py-2">Upload Berkas</h3>
   </div>
 
-  <div class="bg-blue text-white text-sm font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">
-    <div class="order-2">
-      <h3>Informasi:</h3>
-      <p> Lengkapi data kamu sesuai dengan ketentuan yang berlaku </p>
-      <p>Untuk Kartu Tanda BIDIKMISI hanya diisi oleh mahasiswa BIDIKMISI</p>
-      <p>Dimohon Untuk mengupload dengan teliti</p>
+  <div class="bg-white text-abu text-sm font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">
+    <div class="px-4 py-2">
+      <h3 class="text-blue">Informasi:</h3>
+      <p class="mt-2">- Lengkapi data kamu sesuai dengan ketentuan yang berlaku </p>
+      <p class="mt-2">- Untuk Kartu Tanda <span class="text-purple">BIDIKMISI</span> hanya diisi oleh mahasiswa <span class="text-purple">BIDIKMISI</span></p>
+      <p class="mt-2">- Dimohon Untuk mengupload dengan teliti</p>
     </div>
-    <i class="bi bi-info-circle-fill order-1 my-auto"></i>
   </div>
 
   <form action="/upload_berkas" method="post">

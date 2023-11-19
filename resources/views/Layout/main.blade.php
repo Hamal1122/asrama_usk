@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AsramaKita</title>
+  <title>AsramaUSK</title>
   <style>
     <link href="/dist/tailwind.css" rel="stylesheet" /><link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
@@ -14,25 +14,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
 </head>
 
-<body class=" bg-bone ">
+<body class=" bg-abubg">
 
   <nav class=" fixed w-screen py-2 px-8 bg-white" x-data="{navOpen : false}">
     <div class="container mx-auto">
       <div class="flex justify-between items-center">
         <div>
-          <h1>AsramaKita</h1>
+          <h1>AsramaUSK</h1>
         </div>
 
-        <div class="flex gap-4 items-center ">
+        <a href="{{route ('profile') }}" class="flex gap-4 items-center hover:bg-abu hover:bg-opacity-5 p-2 rounded-md">
           <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
           <div>
             <h2 class="font-Inter text-xs hidden sm:block ">{{ Auth::user()->name }} </h2>
             <h2 class="font-Inter text-xs hidden sm:block text-abu  ">{{ Auth::user()->nim }} </h2>
           </div>
-          <div class="bg-blue bg-opacity-20 p-3 rounded-md hidden sm:block  ">
-            <ion-icon class=" hidden sm:block  " name="person"></ion-icon>
+          <div class="bg-blue bg-opacity-20 p-2 rounded-md hidden sm:block  ">
+            <ion-icon class=" hidden sm:block text-blue " name="person"></ion-icon>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -61,7 +61,7 @@
           <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md fixed w-fit">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
               <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
-              <h3 class=" py-2 font-Inter text-sm">AsramaKita</h3>
+              <h3 class=" py-2 font-Inter text-sm">Asrama USK</h3>
             </div>
             <h2 class="py-4 mt-4 font-Inter font-bold">Menu</h2>
             <ul class="">
@@ -87,7 +87,7 @@
 
 
         <div class="col-span-12 lg:col-span-10 w-full px-4">
-          <div class=" py-1 mt-16 rounded-md px-4 text-sm font-poppins text-blue ">
+          <div class=" py-1 mt-20 rounded-md px-4 text-sm font-poppins text-blue ">
             <h3>@yield('title')</h3>
           </div>
 

@@ -7,11 +7,6 @@
     <h3 class="py-2">Semua Kamar</h3>
   </div>
 
-  <div class="bg-white py-2   rounded-md px-4 text-sm font-poppins text-purple flex gap-4 mt-4">
-    <h3 class=""></h3>
-  </div>
-
-
   <div class="bg-gray-soft flex flex-wrap p-4 mt-4 font-light text-sm text-gray-dark gap-4 container mx-auto">
 
     @foreach ( $kamar as $kamar )
