@@ -7,8 +7,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-    <h3 class="py-2">Manage Informasi</h3>
+  <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
+    <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+    <h3 class="py-2">Manage Informasi </h3>
   </div>
 
 

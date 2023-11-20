@@ -36,8 +36,8 @@
         </div>
         <div class="my-2">
           <h3 class="mt-4 text-abu ">Waktu : <span class="font-thin  bg-blue bg-opacity-10 text-blue py-1 px-2 rounded-lg w-fit">{{ $post->time }} <span>WIB</span> </span></h3>
-          <h3 class="mt-2 text-abu">Mulai : <span class="font-thin  bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit">{{ $post->tgl_mulai }}</span></h3>
-          <h3 class="mt-2 text-abu">Selesai : <span class=" font-thin  bg-red bg-opacity-10 text-red py-1 px-2 rounded-lg w-fit">{{ $post->tgl_berakhir }}</h3>
+          <h3 class="mt-2 text-abu">Tanggal Mulai : <span class="font-thin  bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit">{{ $post->tgl_mulai }}</span></h3>
+          <h3 class="mt-2 text-abu">Tanggal Selesai : <span class=" font-thin  bg-red bg-opacity-10 text-red py-1 px-2 rounded-lg w-fit">{{ $post->tgl_berakhir }}</h3>
         </div>
         <div class="mt-6">
           <a class="bg-purple bg-opacity-25 text-purple px-4  py-2 rounded-md hover:bg-purple hover:text-white transition-all" href="/post/{{ $post[ 'id' ] }}">Lihat</a>

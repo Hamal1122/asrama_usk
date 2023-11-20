@@ -97,7 +97,8 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::get('/delete_informasi/{id}', [BerandaController::class, 'delete'])->name('delete'); // delete data
 
     // manage berkas
-    Route::get('/manage_berkas', [PembayaranController::class, 'index'])->name('manage_berkas');
+    Route::get('/manage_berkas', [PembayaranController::class, 'index'])->name('manage_berkas'); // tampilan manage berkas
+    Route::get('/detail_berkas', [PembayaranController::class, 'detail_berkas'])->name('detail_berkas'); // detail berkas user berdasarkan id
 
     // manage gedung 
     Route::get('/manage_kamar', [KamarController::class, 'manage'])->name('manage_kamar'); // halaman manage kamar

@@ -9,7 +9,8 @@
 
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
+  <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
+    <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
     <h3 class="py-2">Manage Kamar</h3>
   </div>
 
@@ -39,7 +40,7 @@
         @foreach ($gedung as $gedung)
         <tbody>
           <tr class="">
-            <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-6  text-center font-light">{{ ++$i }}</td>
+            <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-6  text-left font-light">{{ ++$i }}</td>
             <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $gedung->nama }}</td>
             <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="bg-blue bg-opacity-10 text-purple py-1 px-2 rounded-lg">{{ $gedung->kategori_gedung }}</span></td>
             <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green"></span></td>

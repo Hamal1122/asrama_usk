@@ -4,7 +4,7 @@
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
     <a href="{{ Session::get('halaman_url_user') }}" class=" bi bi-arrow-left-short px-2 my-auto hover:bg-white hover:text-purple hover:bg-opacity-25  text-xl rounded-md"></a>
-    <h3 class="py-2">Manage Kamar</h3>
+    <h3 class="py-2">Detail Kamar</h3>
   </div>
 
   <div class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4">
