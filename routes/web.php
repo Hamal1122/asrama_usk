@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KamarController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BerkasController;
 use App\Http\Controllers\GenderController;
@@ -96,7 +97,7 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::get('/delete_informasi/{id}', [BerandaController::class, 'delete'])->name('delete'); // delete data
 
     // manage berkas
-    Route::get('/manage_berkas', [BerkasController::class, 'manage'])->name('manage_berkas');
+    Route::get('/manage_berkas', [PembayaranController::class, 'index'])->name('manage_berkas');
 
     // manage gedung 
     Route::get('/manage_kamar', [KamarController::class, 'manage'])->name('manage_kamar'); // halaman manage kamar
