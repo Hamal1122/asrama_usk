@@ -16,15 +16,16 @@
 
 <body class=" bg-abubg">
 
-  <nav class=" fixed w-screen py-2 px-8 bg-white" x-data="{navOpen : false}">
+  <nav class=" fixed z-40 w-screen py-2 px-8 bg-white shadow-sm" x-data="{navOpen : false}">
     <div class="container mx-auto">
       <div class="flex justify-between items-center">
         <div>
           <h1>AsramaUSK</h1>
         </div>
 
+
+        <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
         <a href="{{route ('profile') }}" class="flex gap-4 items-center hover:bg-abu hover:bg-opacity-5 p-2 rounded-md">
-          <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
           <div>
             <h2 class="font-Inter text-xs hidden sm:block ">{{ Auth::user()->name }} </h2>
             <h2 class="font-Inter text-xs hidden sm:block text-abu  ">{{ Auth::user()->nim }} </h2>
@@ -42,9 +43,9 @@
       <h2 class="py-4 mt-4 mb-4 font-Inter font-bold text-center">Menu</h2>
       <ul class="">
         <li class="menuhover "><a href="{{route ('beranda') }}"> <i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
+        <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a> </li>
         <li class="menuhover"><a href="{{route ('semuagedung') }}"><i class="bi bi-arrow-right-square-fill mx-4"></i>Semua Kamar</a></li>
         <li class="menuhover"><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>PengajuanKamar</a></li>
-        <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a> </li>
         <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar Saya</a></li>
         <li class="logout"><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</li></a>
@@ -58,7 +59,7 @@
       <div class="grid grid-cols-12">
 
         <div class="col-span-2 hidden lg:block">
-          <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md fixed w-fit">
+          <nav class="bg-white h-screen text-center px-4 fixed w-fit z-50">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
               <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
               <h3 class=" py-2 font-Inter text-sm">Asrama USK</h3>
@@ -67,15 +68,15 @@
             <ul class="">
               <li class="menuhover"><a href="{{route ('beranda') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
 
+              <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
+
               <li class="menuhover"><a href="{{route ('semuagedung') }}"><i class="bi bi-arrow-right-square-fill mx-4"></i>Semua Kamar</a></li>
 
               <li class="menuhover "><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan
                   Kamar</a></li>
 
-              <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
 
-              <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-tag-fill mx-4"></i>Kamar
-                  Saya</a></li>
+              <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-door-closed-fill mx-4"></i>Kamar Saya</a></li>
               <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>

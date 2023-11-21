@@ -158,9 +158,9 @@
 
       // Logika penentuan harga berdasarkan jenis kamar
       if (jenisKamar === "2orang") {
-        harga = "Rp. 1.200.000";
-      } else if (jenisKamar === "4orang") {
         harga = "Rp. 2.400.000";
+      } else if (jenisKamar === "4orang") {
+        harga = "Rp. 1.200.000";
       } else {
         harga = "Rp. 0";
       }

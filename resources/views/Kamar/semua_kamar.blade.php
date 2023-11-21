@@ -28,8 +28,8 @@
         </div>
         <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit"><span class="text-green">Kapasitas : </span><span class="text-abu">2 / </span>{{ $kamar->kapasitas }} Orang</h3>
       </div>
-      <div class="mt-4 w-full">
-        <button class="bg-purple bg-opacity-25 text-purple px-4  py-2 rounded-md hover:bg-purple hover:text-white transition-all w-full"><a href="/info_kamar/{{ $kamar[ 'id' ] }}">Detail</a></button>
+      <div class="mt-8 w-full">
+        <a href="/info_kamar/{{ $kamar[ 'id' ] }}" class=" text-center bg-purple hover:bg-opacity-40 hover:text-purple text-white px-8 py-2 rounded-md transition-all focus:scale-95">Detail</a>
       </div>
     </div>
     @endforeach

@@ -23,10 +23,14 @@
           <h1>AsramaUSK</h1>
         </div>
 
-        <div class="flex gap-4 p-2  ">
-          <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
-          <h2 class="font-Inter text-sm hidden sm:block ">hi,{{ Auth::user()->name}}</h2>
-          <ion-icon class=" hidden sm:block " name="person"></ion-icon>
+        <div class="flex gap-2 p-2  ">
+          <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white shadow-sm rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
+          <div class="items-center hover:bg-abu hover:bg-opacity-5 p-2 rounded-md">
+            <h2 class="font-Inter text-sm hidden sm:block ">{{ Auth::user()->name }} </h2>
+          </div>
+          <div class="bg-blue bg-opacity-20 px-2 py-2 rounded-md hidden sm:block  ">
+            <ion-icon class=" hidden sm:block text-blue " name="person"></ion-icon>
+          </div>
         </div>
       </div>
     </div>
@@ -54,7 +58,7 @@
       <div class="grid grid-cols-12">
 
         <div class="col-span-2 hidden lg:block">
-          <nav class="bg-white h-screen text-center shadow-md px-4 rounded-md fixed w-fit">
+          <nav class="bg-white h-screen text-center px-4 fixed w-fit">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
               <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
               <h3 class=" py-2 font-Inter text-sm">Asrama USK</h3>
@@ -74,7 +78,7 @@
 
 
         <div class="col-span-12 lg:col-span-10 w-full px-4">
-          <div class=" py-1 mt-16 rounded-md px-4 text-sm font-poppins text-blue ">
+          <div class=" py-1 mt-20 rounded-md px-4 text-sm font-poppins text-blue ">
             <h3>@yield('layout')</h3>
           </div>
 

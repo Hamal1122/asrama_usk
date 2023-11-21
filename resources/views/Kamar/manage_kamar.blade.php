@@ -18,16 +18,16 @@
 
     <div class="flex">
       <div class="my-4">
-        <a class="button bg-green hover:bg-tahiti py-2 px-4 " href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
+        <a class="button bg-green hover:bg-tahiti py-4 px-4 " href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
       </div>
       <div class="my-4">
-        <a class="button bg-blue hover:bg-tahiti py-2 px-6 " href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
+        <a class="button bg-blue hover:bg-tahiti py-4 px-6 " href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
       </div>
     </div>
 
 
     <div class="overflow-y-auto">
-      <table class="table-auto justify-end font-semibold text-sm w-full rounded-md min-w-full ">
+      <table class="table-auto justify-end font-semibold text-sm w-full rounded-md min-w-full mt-4 ">
         <thead class="rounded-md">
           <tr>
             <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
