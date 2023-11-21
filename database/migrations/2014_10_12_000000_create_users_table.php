@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->bigInteger('nim')->unique();
+            $table->bigInteger('nim')->unique('17');
             $table->string('no_hp');
             //admin = 0, mahasiswa = 1
             $table->tinyInteger("role")->default(1);

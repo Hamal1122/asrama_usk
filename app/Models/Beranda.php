@@ -10,4 +10,5 @@ class beranda extends Model
     use HasFactory;
     protected $table = 'beranda';
     protected $guarded = [];
+    public $timestamps = true;
 }

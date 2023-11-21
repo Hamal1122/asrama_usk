@@ -32,6 +32,11 @@
       </div>
 
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
+        <label for="text" class="text-gray-dark">Tanggal Selesai</label>
+        <input type="text" name="tempat" id="tempat" class="field" value="{{ $data->tempat }}" required />
+      </div>
+
+      <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label for="text" class="text-gray-dark">Deskripsi</label>
         <input type="text" name="deskripsi" id="deskripsi" class="field " value="{{ $data->deskripsi }}" required />
       </div>

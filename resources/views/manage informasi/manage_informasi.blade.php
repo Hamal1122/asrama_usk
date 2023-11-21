@@ -38,9 +38,10 @@
           </div>
         </div>
         <div class="my-2 text-gray-dark">
-          <h3>Waktu : <span class="font-bold"> {{ $post->time }} <span>WIB</span> </span> </h3>
-          <h3>Mulai : <span class="font-bold">{{ $post->tgl_mulai }}</span></h3>
-          <h3>Selesai : <span class="font-bold">{{ $post->tgl_berakhir }}</span></h3>
+          <h3 class="mt-4">Waktu : <span class="font-bold"> {{ $post->time }} <span>WIB</span> </span> </h3>
+          <h3 class="mt-4">Mulai : <span class="font-bold">{{ $post->tgl_mulai }}</span></h3>
+          <h3 class="mt-4">Selesai : <span class="font-bold">{{ $post->tgl_berakhir }}</span></h3>
+          <h3 class="mt-4">Tempat : <span class="font-bold">{{ $post->tempat }}</span></h3>
           <h3 class="mt-4">Deskripsi : </h3>
           <p class="bg-blue bg-opacity-10 mt-2 py-4 px-4 rounded-md">{{ $post->deskripsi }}</p>
           <div class="flex gap-4 mt-4">
