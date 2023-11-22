@@ -68,7 +68,7 @@
             <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm5.519 5.057c.22-.352.439-.703.657-1.055h1.933v5.332h1.008v1.107H10.11V12H8.85v-1.559H4.978V9.322c.77-1.427 1.656-2.847 2.542-4.265Z" />
           </svg>
           <div>
-            <p class="font-light text-sm bg-gray-dark bg-opacity-5 px-2 py-2 rounded-lg">Setelah data anda telah diverifikasi oleh pihak Asrama USk , anda dapat langsung menyelesaikan proses pembayaran dalm waktu 1x24 Jam</p>
+            <p class="font-light text-sm bg-gray-dark bg-opacity-5 px-2 py-2 rounded-lg">Setelah data anda telah diverifikasi oleh pihak Asrama USK , anda dapat langsung menyelesaikan proses pembayaran dalam waktu 1 x 24 Jam</p>
           </div>
         </div>
 
@@ -108,8 +108,8 @@
           <h3 class="mt-4 text-abu"><i class="bi bi-calendar-x mr-2"></i>Tanggal Selesai : <span class=" font-thin  bg-red bg-opacity-10 text-red py-1 px-2 rounded-lg w-fit">{{ $post->tgl_berakhir }}</h3>
           <h3 class="mt-4 text-abu"><i class="bi bi-geo-alt mr-2"></i>Tempat : <span class=" font-thin  bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit">{{ $post->tempat }}</h3>
         </div>
-        <div class="mt-6">
-          <a class="bg-purple bg-opacity-25 text-purple px-8  py-2 rounded-md hover:bg-purple hover:text-white transition-all" href="/post/{{ $post[ 'id' ] }}">Lihat</a>
+        <div class="mt-8">
+          <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-8 py-2 rounded-md transition-all focus:scale-95" href="/post/{{ $post[ 'id' ] }}">Lihat</a>
         </div>
 
       </div>

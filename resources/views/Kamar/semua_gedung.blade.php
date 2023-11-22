@@ -9,7 +9,7 @@
 
   <div class="bg-gray-soft flex flex-wrap p-4 mt-4 font-light text-sm text-gray-dark gap-4 container mx-auto">
     @foreach ($gedung as $gedung)
-    <div class=" bg-white p-4 rounded-md">
+    <div class=" bg-white p-2 rounded-md">
       <div>
         <img class="w-[240px] h-fit rounded-md" src="https://img.freepik.com/free-vector/home-interior-background-theme_23-2148647102.jpg?w=1060&t=st=1700195447~exp=1700196047~hmac=1ddae94ec8b8af95ed88a89a734c52ff005ecf81862a1c80f94fffaedf14d926" alt="">
       </div>
@@ -21,7 +21,7 @@
         <h3 class=" bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">25 Kamar</h3>
       </div>
       <div class="mt-8 w-full flex justify-between">
-        <a href="/semuakamar/{{ $gedung[ 'id' ] }}" class="text-center bg-purple hover:bg-opacity-40 hover:text-purple text-white px-8 py-2 rounded-md transition-all focus:scale-95">Lihat</a>
+        <a href="/semuakamar/{{ $gedung[ 'id' ] }}" class="text-center bg-purple  hover:text-white hover:px-10 text-white px-8 py-2 rounded-md transition-all focus:scale-95">Lihat</a>
       </div>
     </div>
     @endforeach
