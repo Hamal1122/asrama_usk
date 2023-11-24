@@ -35,9 +35,45 @@
         <h1 class="text-yellow text-xs font-extralight ">Total Pengguna</h1>
       </div>
     </div>
+  </div>
+
+  <div class="container mx-auto py-4 rounded-md">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-6 px-6 py-4 rounded-md gap-2 flex-col flex text-gray-dark w-full h-96 bg-white">
+        <div class="flex justify-between">
+          <div>
+            <h1 class="">Data Gedung</h1>
+            <h3 class="text-xs text-green font-light">terakhir ditambahkan</h3>
+          </div>
+          <a href="{{route ('manage_kamar') }}" class="py-2 text-blue mb-4">More</a>
+        </div>
+        @foreach ($lastpost as $lastpost)
+        <div class="flex bg-bermuda justify-between px-6 py-4 rounded-lg font-light text-sm">
+          <h1>{{ $lastpost -> nama }}</h1>
+          <h1 class="text-green  rounded-full">{{ $lastpost -> kategori_gedung }}</h1>
+          <h1>{{ $lastpost -> updated_at->format('d, M Y H:i') }}</h1>
+        </div>
+        @endforeach
+      </div>
 
 
-
-
+      <!-- Form Pengajuan Kamar -->
+      <div class="col-span-6 ">
+        <div class="col-span-6 px-6 py-4 rounded-md gap-2 flex-col flex text-gray-dark w-full h-96 bg-white">
+          <div class="flex justify-between">
+            <div>
+              <h1 class="">Belum Diverifikasi</h1>
+              <h3 class="text-xs text-green font-light">Data Pengajuan Kamar</h3>
+            </div>
+            <a href="" class="py-2 text-blue mb-4 font-light text-sm">More</a>
+          </div>
+          <div class="flex bg-bermuda justify-between px-6 py-4 rounded-lg">
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   @endsection

@@ -36,8 +36,8 @@ class BerandaController extends Controller
     $jumlah_gedung = gedung::all()->count();
     $jumlah_kamar = kamar::all()->count();
     $jumlah_postingan = beranda::all()->count();
-    $title = ['admin'];
-    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan'));
+    $lastpost = gedung::orderBy('id', 'desc')->take(5)->get();
+    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'lastpost'));
   }
 
   // menampilkan view informasi

@@ -18,7 +18,7 @@
       </div>
       <div class="mt-2 flex gap-4">
         <h3 class="bg-blue bg-opacity-10 text-purple py-1 px-2 rounded-lg w-fit font-extralight">{{ $gedung->kategori_gedung }}</h3>
-        <h3 class=" bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">25 Kamar</h3>
+        <h3 class=" bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">{{ $gedung->jumlahkamar }}<span> Kamar</span></h3>
       </div>
       <div class="mt-6 w-full flex justify-between">
         <a href="/semuakamar/{{ $gedung[ 'id' ] }}" class="text-center bg-purple  hover:text-white hover:px-10 text-white px-8 py-2 rounded-md transition-all focus:scale-95">Lihat</a>
