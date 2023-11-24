@@ -19,7 +19,8 @@
   <nav class=" fixed z-40 w-screen py-2 px-8 bg-white shadow-sm" x-data="{navOpen : false}">
     <div class="container mx-auto">
       <div class="flex justify-between items-center">
-        <div>
+        <div class="flex gap-2">
+          <img class="w-6 h-6 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
           <h1>AsramaUSK</h1>
         </div>
 
@@ -27,10 +28,10 @@
         <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>
         <a href="{{route ('profile') }}" class="flex gap-4 items-center hover:bg-abu hover:bg-opacity-5 p-2 rounded-md">
           <div>
-            <h2 class="font-Inter text-xs hidden sm:block ">{{ Auth::user()->name }} </h2>
-            <h2 class="font-Inter text-xs hidden sm:block text-abu  ">{{ Auth::user()->nim }} </h2>
+            <h2 class="font-Inter text-xs hidden lg:block ">{{ Auth::user()->name }} </h2>
+            <h2 class="font-Inter text-xs hidden lg:block text-abu  ">{{ Auth::user()->nim }} </h2>
           </div>
-          <div class="bg-blue bg-opacity-20 p-2 rounded-md hidden sm:block  ">
+          <div class="bg-blue bg-opacity-20 p-2 rounded-md hidden lg:block  ">
             <ion-icon class=" hidden sm:block text-blue " name="person"></ion-icon>
           </div>
         </a>
@@ -55,7 +56,7 @@
 
   <section>
 
-    <div class="container mx-auto ">
+    <div class="container mx-auto">
       <div class="grid grid-cols-12">
 
         <div class="col-span-2 hidden lg:block">
