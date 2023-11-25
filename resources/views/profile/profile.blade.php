@@ -34,11 +34,11 @@
   </div>
   <div class="bg-white p-4 mt-4 rounded-md text-gray-dark font-Inter">
     <h1 class="text-xl font-bold text-purple">KAMAR 201</h1>
-    <h1>Gedung Rusunawa A</h1>
+    <h1 class="mt-4">Gedung Rusunawa A</h1>
     <p class="text-abu text-xs">Mulai : 1 Januari 2024</p>
     <p class="text-abu text-xs">Berakhir : 1 Januari 2025</p>
-    <div class="mt-4">
-      <a class="bg-purple bg-opacity-25 text-purple px-4  py-2 rounded-md hover:bg-purple hover:text-white transition-all" href="{{route ('kamarsaya') }}">lihat</a>
+    <div class="mt-6">
+      <a class="text-center bg-purple  hover:px-10 hover:text-white text-white px-8 py-2 rounded-md transition-all focus:scale-95" href="{{route ('kamarsaya') }}">lihat</a>
     </div>
   </div>
 

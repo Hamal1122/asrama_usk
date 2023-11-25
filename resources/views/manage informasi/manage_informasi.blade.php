@@ -7,8 +7,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue">
-    <h3 class="py-2">Manage Informasi</h3>
+  <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
+    <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
+    <h3 class="py-2">Manage Informasi </h3>
   </div>
 
 
@@ -37,9 +38,9 @@
           </div>
         </div>
         <div class="my-2 text-gray-dark">
-          <h3>Waktu : <span class="font-bold"> {{ $post->time }} <span>WIB</span> </span> </h3>
-          <h3>Mulai : <span class="font-bold">{{ $post->tgl_mulai }}</span></h3>
-          <h3>Selesai : <span class="font-bold">{{ $post->tgl_berakhir }}</span></h3>
+          <h3 class="mt-4">Mulai : <span class="font-bold">{{ date('d F Y', strtotime($post->tgl_mulai)) }}</span><span class="mx-4 bg-green bg-opacity-20 px-2 py-1 text-sm text-green rounded-full ">{{ date('H:i', strtotime($post->tgl_mulai)) }} WIB</span></h3>
+          <h3 class="mt-4">Selesai : <span class="font-bold">{{ date('d F Y', strtotime($post->tgl_berakhir)) }}</span><span class="mx-4 bg-red bg-opacity-20 px-2 py-1 text-sm text-red rounded-full ">{{ date('H:i', strtotime($post->tgl_berakhir)) }} WIB</span></h3>
+          <h3 class="mt-4">Tempat : <span class="font-bold">{{ $post->tempat }}</span></h3>
           <h3 class="mt-4">Deskripsi : </h3>
           <p class="bg-blue bg-opacity-10 mt-2 py-4 px-4 rounded-md">{{ $post->deskripsi }}</p>
           <div class="flex gap-4 mt-4">

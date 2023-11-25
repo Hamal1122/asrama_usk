@@ -14,13 +14,12 @@
     }
 
     .menuaktif {
-        @apply transition-all my-6 text-left p-4 cursor-pointer
-         rounded-lg text-base font-Inter text-sm  bg-bermuda  text-purple;
+        @apply text-purple;
     }
 
     .menuhover {
         @apply transition-all my-6 text-left p-4 cursor-pointer rounded-lg 
-        text-base  font-Inter text-sm text-abu hover:bg-bermuda
+      font-Inter text-sm text-abu hover:bg-bermuda
          hover:text-purple;
     }
 
