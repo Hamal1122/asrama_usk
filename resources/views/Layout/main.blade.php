@@ -67,17 +67,17 @@
             </div>
             <h2 class="py-4 mt-4 font-Inter font-bold">Menu</h2>
             <ul class="">
-              <li class="menuhover"><a href="{{route ('beranda') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('/')) menuaktif @endif" href="{{route ('beranda') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Beranda</a></li>
 
-              <li class="menuhover"><a href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('profile')) menuaktif @endif" href="{{route ('profile') }}"><i class="bi bi-person-square mx-4"></i></i>Profil</a></li>
 
-              <li class="menuhover"><a href="{{route ('semuagedung') }}"><i class="bi bi-arrow-right-square-fill mx-4"></i>Semua Kamar</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('semua_gedung')) menuaktif @endif" href="{{route ('semuagedung') }}"><i class="bi bi-arrow-right-square-fill mx-4"></i>Semua Kamar</a></li>
 
-              <li class="menuhover "><a href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan
+              <li class="menuhover "><a class="@if(Request::is('upload_berkas')) menuaktif @endif" href="{{route ('berkas') }}"><i class="bi bi-collection-fill mx-4"></i>Pengajuan
                   Kamar</a></li>
 
 
-              <li class="menuhover "><a href="{{route ('kamarsaya') }}"><i class="bi bi-door-closed-fill mx-4"></i>Kamar Saya</a></li>
+              <li class="menuhover "><a class="@if(Request::is('kamarsaya')) menuaktif @endif" href="{{route ('kamarsaya') }}"><i class="bi bi-door-closed-fill mx-4"></i>Kamar Saya</a></li>
               <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>

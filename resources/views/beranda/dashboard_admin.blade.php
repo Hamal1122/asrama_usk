@@ -31,7 +31,7 @@
 
     <div class=" bg-white   font-poppins text-gray-dark py-4 px-8 rounded-2xl text-center flex gap-8 items-center drop-shadow-md w-60 ">
       <div class=" text-left">
-        <h3 class=" font-bold text-2xl text-gray-dark">0<span class="font-light text-base">Pengguna</span></h3>
+        <h3 class=" font-bold text-2xl text-gray-dark">{{ $jumlah_pengguna }}<span class="font-light text-base"> Pengguna</span></h3>
         <h1 class="text-yellow text-xs font-extralight ">Total Pengguna</h1>
       </div>
     </div>

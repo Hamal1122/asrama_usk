@@ -16,18 +16,13 @@
     </div>
 
     <div class="mt-4 font-poppins text-sm text-gray-dark ">
-      <label for="text" class="text-gray-dark">pukul</label>
-      <input type="time" name="time" id="judul" class="field" placeholder="Judul" required />
-    </div>
-
-    <div class="mt-4 font-poppins text-sm text-gray-dark ">
       <label for="text" class="text-gray-dark">Tanggal Mulai</label>
-      <input type="date" name="tgl_mulai" id="tgl_mulai" class="field" required />
+      <input type="datetime-local" name="tgl_mulai" id="tgl_mulai" class="field" required />
     </div>
 
     <div class="mt-4 font-poppins text-sm text-gray-dark ">
       <label for="text" class="text-gray-dark">Tanggal Selesai</label>
-      <input type="date" name="tgl_berakhir" id="tgl_berakhir" class="field" required />
+      <input type="datetime-local" name="tgl_berakhir" id="tgl_berakhir" class="field" required />
     </div>
 
     <div class="mt-4 font-poppins text-sm text-gray-dark ">

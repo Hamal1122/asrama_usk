@@ -10,6 +10,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KamarsayaController;
 use App\Models\kamar;
+use Illuminate\Support\Facades\Request;
 
 // User
 
@@ -142,3 +143,11 @@ Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
     Route::get('/upload_berkas', [BerkasController::class, 'berkas'])->name('berkas');
     Route::post('/upload_berkas', [BerkasController::class, 'tambah'])->name('upload berkas');
 });
+
+function set_active($route)
+{
+    if (is_array($route)) {
+        return in_array(Request::path(), $route) ? 'menuaktif' : '';
+    }
+    return Request::path() == $route ? 'menuaktif' : '';
+}
