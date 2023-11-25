@@ -16,17 +16,11 @@ return new class extends Migration
             $table->ForeignId('user_id');
             $table->integer('status');
             $table->enum('kategori',['KIP', 'reguler', 'internasional']);
-            $table->string('kk');
-            $table->string('ktm');
-            $table->string('kartu_kesehatan');
-            $table->string('surat_domisili');
-            $table->string('surat_pernyataan');
-            $table->string('kartu_bidikmisi');
+            $table->string('nama_berkas');
             $table->enum('kategorigedung',['laki-laki','perempuan']);
+            $table->string('jeniskamar');
+            $table->string('harga');
             $table->enum('durasi',['1tahun']);
-            $table->date('tanggal_masuk');
-            $table->date('tanggal_keluar');
-            $table->string('bukti_pembayaran');
             $table->timestamps();
         });
     }

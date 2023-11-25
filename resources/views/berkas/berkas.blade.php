@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <form action="/upload_berkas" method="post">
+  <form action="{{ route('berkas.upload') }}" method="POST" enctype="multipart/form-data">
     <section>
       <!-- form upload berkas -->
 
@@ -36,7 +36,7 @@
             </div>
             <div>
               <label for="">Upload Berkas Anda <span class="text-xs text-green">( Pastikan data yang mau diupload sudah lengkap)</span></label>
-              <input class=" field   rounded-md text-blue" type="file" name="kk" id="kk" required>
+              <input class=" field rounded-md text-blue" type="file" name="nama_berkas" id="nama_berkas" accept=".pdf" required>
             </div>
 
             <div class="">
@@ -57,7 +57,7 @@
 
               <div>
                 <label class="text-gray-dark" for="">Kategori Gedung</label>
-                <input class="field text-gray-dark" type="text" name="kategori_gedung" id="kategori_gedung" value="{{ Auth::user()->jenis_kelamin }}" readonly>
+                <input class="field text-gray-dark" type="text" name="kategorigedung" id="kategorigedung" value="{{ Auth::user()->jenis_kelamin }}" readonly>
               </div>
 
               <div>
@@ -81,8 +81,8 @@
                 <label class="text-gray-dark" for="jenisKamar">Pilih Jenis Kamar (Kapasitas)</label>
                 <select class="field text-gray-dark" id="jenisKamar" name="jenisKamar" onchange="updateHarga()" required>
                   <option value="">Masukkan Pilihan</option>
-                  <option value="2orang">2 Orang</option>
-                  <option value="4orang">4 Orang</option>
+                  <option value="2 orang">2 Orang</option>
+                  <option value="4 orang">4 Orang</option>
                 </select>
               </div>
 
