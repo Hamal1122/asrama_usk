@@ -11,7 +11,6 @@
     <div class="px-4 py-2">
       <h3 class="text-blue">Informasi:</h3>
       <p class="mt-2">- Lengkapi data kamu sesuai dengan ketentuan yang berlaku </p>
-      <p class="mt-2">- Untuk Kartu Tanda <span class="text-purple">BIDIKMISI</span> hanya diisi oleh mahasiswa <span class="text-purple">BIDIKMISI</span></p>
       <p class="mt-2">- Dimohon Untuk mengupload dengan teliti</p>
     </div>
   </div>
@@ -36,34 +35,17 @@
               </select>
             </div>
             <div>
-              <label for="">Kartu Keluarga</label>
+              <label for="">Upload Berkas Anda <span class="text-xs text-green">( Pastikan data yang mau diupload sudah lengkap)</span></label>
               <input class=" field   rounded-md text-blue" type="file" name="kk" id="kk" required>
             </div>
 
-            <div>
-              <label for="">Kartu Tanda Mahasiswa / KTM</label>
-              <input class=" field   rounded-md text-blue" type="file" name="ktm" id="ktm" required>
+            <div class="">
+              <p class="text-abu text-xs font-semibold">*Berkas yang Diperlukan <span class="text-green text-xs">(digabung dalam satu file .pdf)</span></p>
+              <p class="text-abu mt-2 text-xs"><span class="text-red">*</span>Kartu Tanda Mahasiswa (KTM)</p>
+              <p class="text-abu mt-2 text-xs"><span class="text-red">*</span>Kartu Kesehatan (BPJS/ASKES/DLL)</p>
+              <p class="text-abu mt-2 text-xs"><span class="text-red">*</span>Surat Domisili (Surat Pindah Sementara Ke Banda Aceh)</p>
+              <p class="text-abu mt-2 text-xs"><span class="text-red">*</span>Surat Peryataan</p>
             </div>
-
-            <div>
-              <label for="">Kartu Kesehatan (BPJS/ASKES/DLL)</label>
-              <input class=" field   rounded-md text-blue" type="file" name="kartu_kesehatan" id="kartu_kesehatan" required>
-            </div>
-
-            <div>
-              <label for="">Surat Domisili (Pindah Sementara Ke Banda Aceh)</label>
-              <input class=" field   rounded-md text-blue" type="file" name="surat_domisili" id="surat_domisili" required>
-            </div>
-
-            <div>
-              <label for="">Surat Pernyataan</label>
-              <input class=" field   rounded-md text-blue" type="file" name="surat_pernyataan" id="surat_pernyataan" required>
-            </div>
-
-            <!-- <div>
-              <label for="">Kartu Tanda BIDIKMISI (Khusu Mahasiswa BIDIKMISI)</label>
-              <input class=" field   rounded-md text-blue" type="file" name="kartu_bidikmisi" id="kartu_bidikmisi">
-            </div> -->
 
           </div>
 
@@ -74,12 +56,8 @@
               <h1 class="font-Inter text-blue text-lg">Form Pengajuan Kamar</h1>
 
               <div>
-                <label class="text-gray-dark" for="">Pilih Kategori</label>
-                <select class="field text-gray-dark" id="kategorigedung" name="kategorigedung">
-                  <option value="">Masukkan Pilihan</option>
-                  <option value="laki-laki">Laki-Laki</option>
-                  <option value="perempuan">Perempuan</option>
-                </select>
+                <label class="text-gray-dark" for="">Kategori Gedung</label>
+                <input class="field text-gray-dark" type="text" name="kategori_gedung" id="kategori_gedung" value="{{ Auth::user()->jenis_kelamin }}" readonly>
               </div>
 
               <div>
@@ -89,15 +67,15 @@
                 </select>
               </div>
 
-              <div>
+              <!-- <div>
                 <label class="text-gray-dark" for="">Tanggal Masuk</label>
-                <input class="field text-gray-dark" type="date" name="tanggal_masuk" id="tanggal_masuk" requ>
+                <input class="field text-gray-dark" type="date" name="tanggal_masuk" id="tanggal_masuk" required>
               </div>
 
               <div>
                 <label class="text-gray-dark" for="">Tanggal Keluar</label>
                 <input class="field text-abu" type="date" name="tanggal_keluar" id="tanggal_keluar" readonly>
-              </div>
+              </div> -->
 
               <div>
                 <label class="text-gray-dark" for="jenisKamar">Pilih Jenis Kamar (Kapasitas)</label>
