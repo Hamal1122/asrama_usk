@@ -10,6 +10,7 @@ use App\Models\gedung;
 use App\Models\kamar;
 use App\Models\User;
 use App\Models\Users;
+use App\Models\berkas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,12 +35,13 @@ class BerandaController extends Controller
   // menampilkan view dasboard admin
   public function admin()
   {
+    $berkas = berkas::all();
     $jumlah_gedung = gedung::all()->count();
     $jumlah_kamar = kamar::all()->count();
     $jumlah_postingan = beranda::all()->count();
     $jumlah_pengguna = Users::where('role', 1)->count();
     $lastpost = gedung::orderBy('id', 'desc')->take(5)->get();
-    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'lastpost', 'jumlah_pengguna'));
+    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'lastpost', 'jumlah_pengguna', 'berkas'));
   }
 
   // menampilkan view informasi
