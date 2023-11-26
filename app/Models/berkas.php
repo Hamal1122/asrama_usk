@@ -10,4 +10,11 @@ class berkas extends Model
  protected $table ='berkas';
  protected $guarded = [];
  public $timestamps = false;
+
+
+ public function user() 
+{
+  return $this->belongsTo(users::class);
+}
+
 }

@@ -1,6 +1,11 @@
 @extends('Layout.main')
 
 @section('title')
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
     <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
@@ -67,22 +72,12 @@
                 </select>
               </div>
 
-              <!-- <div>
-                <label class="text-gray-dark" for="">Tanggal Masuk</label>
-                <input class="field text-gray-dark" type="date" name="tanggal_masuk" id="tanggal_masuk" required>
-              </div>
-
-              <div>
-                <label class="text-gray-dark" for="">Tanggal Keluar</label>
-                <input class="field text-abu" type="date" name="tanggal_keluar" id="tanggal_keluar" readonly>
-              </div> -->
-
               <div>
                 <label class="text-gray-dark" for="jenisKamar">Pilih Jenis Kamar (Kapasitas)</label>
                 <select class="field text-gray-dark" id="jenisKamar" name="jenisKamar" onchange="updateHarga()" required>
                   <option value="">Masukkan Pilihan</option>
-                  <option value="2 orang">2 Orang</option>
-                  <option value="4 orang">4 Orang</option>
+                  <option value="2orang">2 Orang</option>
+                  <option value="4orang">4 Orang</option>
                 </select>
               </div>
 
@@ -90,12 +85,6 @@
                 <label class="text-gray-dark" for="harga">Total Harga</label>
                 <input class="field text-abu" type="text" name="harga" id="harga" readonly>
               </div>
-
-              <!-- <div>
-                <label class="text-gray-dark" for="">Bukti Pembayaran <span class="text-green">(Bisa dengan Kartu Tanda KIPK untuk mahasiswa KIPK)</span></label>
-                <input class=" field   rounded-md text-blue" type="file" name="bukti_pembayaran" id="bukti_pembayaran">
-              </div> -->
-
 
             </div>
           </div>
@@ -110,6 +99,7 @@
 
   <!-- Autofill Tanggal berakhir -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   <script>
     $(document).ready(function() {
       $('#tanggal_masuk').change(function() {
@@ -150,5 +140,12 @@
     // Panggil fungsi updateHarga saat halaman dimuat
     updateHarga();
   </script>
+
+<!-- toastr -->
+<script>
+  @if(Session::has('berhasil'))
+  toastr.success("{{ Session::get('berhasil') }}")
+  @endif
+</script>
 
   @endsection

@@ -14,11 +14,6 @@
     <h3 class="py-2">Lihat Kamar</h3>
   </div>
 
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-gray-dark mt-4">
-
-  </div>
-
-
   <div class="mt-4 p-4 bg-gray-soft rounded-md">
 
     <table class="table-auto font-semibold text-sm w-full rounded-md">

@@ -18,9 +18,9 @@
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label class="text-gray-dark" for="">Pilih Gedung</label>
         <select class="field text-gray-dark" id="gedung_id" name="gedung_id" required>
-          <option disabled value>Pilih Kapasitas</option>
+          <option class="text-abu" value="">Tambahkan Ke Gedung -</option>
           @foreach ($ged as $data)
-          <option value="{{ $data->id }}">{{ $data->nama }}</option>
+          <option value="{{ $data->id }}">{{ $data->nama }} <span class="text-abu"> - {{ $data->kategori_gedung }}</span></option>
           @endforeach
         </select>
       </div>
@@ -28,7 +28,7 @@
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label class="text-gray-dark" for="">Kapasitas</label>
         <select class="field text-gray-dark" id="kapasitas" name="kapasitas" required>
-          <option value="">Pilih Kapasitas</option>
+          <option value="">-- Pilih Kapasitas --</option>
           <option value="2">2 Orang</option>
           <option value="4">4 Orang</option>
         </select>

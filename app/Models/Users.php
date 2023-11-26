@@ -50,10 +50,10 @@ class Users extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected function role() : Attribute
+    protected function role(): Attribute
     {
         return new Attribute(
-            get: fn($value) => ["admin", "mahasiswa"][$value],
+            get: fn ($value) => ["admin", "mahasiswa"][$value],
         );
     }
 

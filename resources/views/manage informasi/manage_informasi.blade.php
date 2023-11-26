@@ -19,7 +19,7 @@
 
   <div class="p-4 bg-gray-soft my-4 rounded-md">
     <div class="my-4">
-      <a class="button bg-purple hover:bg-midnight py-2 px-4 " href="{{route ('tambahInformasi') }}"><i class="bi bi-plus"></i>Tambah Postingan</a>
+      <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-8 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambahInformasi') }}"><i class="bi bi-plus"></i>Tambah Postingan</a>
     </div>
 
     <div>

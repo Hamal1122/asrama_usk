@@ -109,7 +109,7 @@
           <h3 class="mt-6 text-abu"><i class="bi bi-geo-alt mr-2"></i>Tempat : <span class=" font-thin  bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit">{{ $post->tempat }}</h3>
         </div>
         <div class="mt-8">
-          <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-8 py-2 rounded-md transition-all focus:scale-95" href="/post/{{ $post[ 'id' ] }}">Lihat</a>
+          <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-8 py-2 rounded-md transition-all focus:scale-95" href="/post/{{ $post[ 'id' ] }}">Show Me</a>
         </div>
 
       </div>
