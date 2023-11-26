@@ -52,7 +52,7 @@ class BerkasController extends Controller
       $berkas->durasi = $request->durasi;
       $berkas->save();
 
-      return back()->with('success', 'File berhasil di upload');
+      return back()->with('berhasil', 'Berkas Anda berhasil di upload');
   }
 }
 

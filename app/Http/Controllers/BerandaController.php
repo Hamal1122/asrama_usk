@@ -35,13 +35,13 @@ class BerandaController extends Controller
   // menampilkan view dasboard admin
   public function admin()
   {
-    $berkas = berkas::all();
     $jumlah_gedung = gedung::all()->count();
     $jumlah_kamar = kamar::all()->count();
     $jumlah_postingan = beranda::all()->count();
     $jumlah_pengguna = Users::where('role', 1)->count();
     $lastpost = gedung::orderBy('id', 'desc')->take(5)->get();
-    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'lastpost', 'jumlah_pengguna', 'berkas'));
+    $data = berkas::orderBy('id', 'desc')->take(5)->get();
+    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'lastpost', 'jumlah_pengguna', 'data'));
   }
 
   // menampilkan view informasi
