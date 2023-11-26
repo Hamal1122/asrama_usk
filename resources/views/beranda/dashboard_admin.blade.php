@@ -68,9 +68,13 @@
             <a href="" class="py-2 text-blue mb-4 font-light text-sm">More</a>
           </div>
           <div class="flex bg-bermuda justify-between px-6 py-4 rounded-lg">
+          @foreach ($berkas as $berkas)
+            @if($berkas->status == 0)
+            <h1>{{$berkas->user_id}} - {{ $berkas -> nama_berkas }}</h1>
             <h1></h1>
             <h1></h1>
-            <h1></h1>
+            @endif
+            @endforeach
           </div>
         </div>
       </div>
