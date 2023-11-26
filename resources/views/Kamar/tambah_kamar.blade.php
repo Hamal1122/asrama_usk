@@ -18,9 +18,9 @@
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label class="text-gray-dark" for="">Pilih Gedung</label>
         <select class="field text-gray-dark" id="gedung_id" name="gedung_id" required>
-          <option disabled value>Pilih Kapasitas</option>
+          <option class="text-abu" value="">Pilih Gedung</option>
           @foreach ($ged as $data)
-          <option value="{{ $data->id }}">{{ $data->nama }}</option>
+          <option value="{{ $data->id }}">{{ $data->nama }} <span class="text-abu"> - {{ $data->kategori_gedung }}</span></option>
           @endforeach
         </select>
       </div>
