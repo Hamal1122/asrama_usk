@@ -42,7 +42,7 @@ class BerkasController extends Controller
 
       
       $file = $request->file('nama_berkas');
-      $nama_file = time(). $request->user()->nim . "." . $file->extension();
+      $nama_file = date("d-m-y"). "_". $request->user()->nim . "." . $file->extension();
       
       //simpan file ke storage
       $file->storeAs('uploads', $nama_file, 'public');
