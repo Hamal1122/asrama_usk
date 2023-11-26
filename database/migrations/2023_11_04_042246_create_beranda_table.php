@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('beranda', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->datetimes('tgl_mulai');
-            $table->datetimes('tgl_berakhir');
+            $table->datetime('tgl_mulai');
+            $table->datetime('tgl_berakhir');
             $table->string('tempat');
             $table->text('deskripsi')->nullable();
             $table->timestamps();

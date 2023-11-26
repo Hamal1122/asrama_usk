@@ -141,7 +141,8 @@ Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
 
     // Upload Berkas
     Route::get('/upload_berkas', [BerkasController::class, 'berkas'])->name('berkas');
-    Route::post('/upload_berkas', [BerkasController::class, 'tambah'])->name('upload berkas');
+    // Route::post('/upload_berkas', [BerkasController::class, 'tambah'])->name('upload berkas');
+    Route::post('/upload_berkas/upload', [BerkasController::class, 'upload'])->name('berkas.upload');
 });
 
 function set_active($route)
