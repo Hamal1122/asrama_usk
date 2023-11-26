@@ -12,12 +12,18 @@ use Auth;
 class BerkasController extends Controller
 {
   public function berkas(){
+    $userId = auth()->user()->id;
+    $uploaded = berkas::where('user_id', $userId)->first();
     $data = berkas::all();
+    if($uploaded){
+      return view('berkas/berhasil');
+    }
     return view('/berkas/berkas', compact('data')); 
   } 
 
   public function tambah(Request $request)
   {
+
       berkas::create($request->all());
       return redirect()->route('kamarsaya')->with('berhasil','Data Telah Berhasil Ditambahkan');
   }
@@ -34,6 +40,7 @@ class BerkasController extends Controller
     ]
     );
 
+      
       $file = $request->file('nama_berkas');
       $nama_file = time(). $request->user()->nim . "." . $file->extension();
       
