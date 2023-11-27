@@ -8,6 +8,7 @@ class berkas extends Model
 {
  use HasFactory;
  protected $table ='berkas';
+ 
  protected $guarded = [];
  public $timestamps = false;
 

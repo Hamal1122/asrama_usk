@@ -11,55 +11,60 @@ use Auth;
 
 class BerkasController extends Controller
 {
-  public function berkas(){
+  public function berkas()
+  {
     $userId = auth()->user()->id;
     $uploaded = berkas::where('user_id', $userId)->first();
     $data = berkas::all();
-    if($uploaded){
+    if ($uploaded && $uploaded->status == 0) {
       return view('berkas/berhasil');
     }
-    return view('/berkas/berkas', compact('data')); 
-  } 
-
+    if ($uploaded && $uploaded->status == 1) {
+      return view('berkas/bukti_pembayaran');
+    } else {
+      return view('/berkas/berkas', compact('data'));
+    }
+  }
   public function tambah(Request $request)
   {
 
-      berkas::create($request->all());
-      return redirect()->route('kamarsaya')->with('berhasil','Data Telah Berhasil Ditambahkan');
+    berkas::create($request->all());
+    return redirect()->route('kamarsaya')->with('berhasil', 'Data Telah Berhasil Ditambahkan');
   }
 
   public function upload(Request $request)
   {
-      $request->validate([
-          'nama_berkas' => 'required|mimes:pdf|max:10000'
-      ], 
-    [
-      'file.required' => 'File tidak boleh kosong',
-      'file.mimes' => 'File harus berupa pdf',
-      'file.max' => 'File maksimal 10MB'
-    ]
+    $request->validate(
+      [
+        'nama_berkas' => 'required|mimes:pdf|max:10000'
+      ],
+      [
+        'file.required' => 'File tidak boleh kosong',
+        'file.mimes' => 'File harus berupa pdf',
+        'file.max' => 'File maksimal 10MB'
+      ]
     );
 
-      
-      $file = $request->file('nama_berkas');
-      $nama_file = date("d-m-y"). "_". $request->user()->nim . "." . $file->extension();
-      
-      //simpan file ke storage
-      $file->storeAs('uploads', $nama_file, 'public');
 
-      //simpan ke database
-      $berkas = new berkas();
-      $berkas->user_id = auth()->user()->id;
-      $berkas->status = 0;
-      $berkas->kategori = $request->kategori;
-      $berkas->nama_berkas = $nama_file;
-      $berkas->kategorigedung = $request->kategorigedung;
-      $berkas->jeniskamar = $request->jenisKamar;
-      $berkas->harga = $request->harga;
-      $berkas->durasi = $request->durasi;
-      $berkas->save();
+    $file = $request->file('nama_berkas');
+    $nama_file = date("d-m-y") . "_" . $request->user()->nim . "." . $file->extension();
 
-      return back()->with('berhasil', 'Berkas Anda berhasil di upload');
+    //simpan file ke storage
+    $file->storeAs('uploads', $nama_file, 'public');
+
+    //simpan ke database
+    $berkas = new berkas();
+    $berkas->user_id = auth()->user()->id;
+    $berkas->status = 0;
+    $berkas->kategori = $request->kategori;
+    $berkas->nama_berkas = $nama_file;
+    $berkas->kategorigedung = $request->kategorigedung;
+    $berkas->jeniskamar = $request->jenisKamar;
+    $berkas->harga = $request->harga;
+    $berkas->durasi = $request->durasi;
+    $berkas->save();
+
+    return back()->with('berhasil', 'Berkas Anda berhasil di upload');
   }
 }
 
