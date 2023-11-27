@@ -42,7 +42,11 @@
          <a class="bg-blue px-4 text-blue py-1 bg-opacity-20 rounded-full" href="\storage\uploads\{{$berkas->nama_berkas}}">Lihat</a> 
         </td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light mr-6">
-          <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">{{$berkas->status}}</h3>
+          @if($berkas->status == 0)
+          <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">Menunggu</h3>
+          @elseif($berkas->status == 1)
+          <h3 class="mt-2 bg-yellow bg-opacity-10 text-yellow py-1 px-2 rounded-lg w-fit font-extralight">Diterima</h3>
+          @endif
         </td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-blue">{{$berkas->kategori}}</span></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->kategorigedung}}</span></td>
@@ -53,7 +57,12 @@
           <a class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Reject</a>
         </td>
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
-          <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="">Accept</a>
+          <form action="{{route('confirm.data', $berkas->id)}}" method="POST">
+            @csrf
+            @method('POST')
+            <!-- <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all">Accept</a> -->
+            <button class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" type="submit">Accept</button>
+          </form>
         </td>
       </tr>
       @endforeach
