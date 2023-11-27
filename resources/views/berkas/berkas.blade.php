@@ -10,7 +10,7 @@
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
     <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
-    <h3 class="py-2">Upload Berkas</h3>
+    <h3 class="py-2">Upload Berkas Pengajuan Kamar</h3>
   </div>
 
   <div class="bg-white text-abu text-sm font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">

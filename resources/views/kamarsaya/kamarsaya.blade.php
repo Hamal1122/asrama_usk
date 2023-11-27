@@ -9,9 +9,7 @@
 
   <div class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4">
     <div class="">
-      <div class="bg-abu bg-opacity-20 p-10 mx-auto text-center text-3xl rounded-md font-bold text-abu">
-        <h1>Nama Kamar</h1>
-      </div>
+      
       <div class="mt-6">
         <h1 class="text-2xl font-bold">Nama Kamar</h1>
       </div>

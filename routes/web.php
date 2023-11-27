@@ -100,6 +100,8 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     // manage berkas
     Route::get('/manage_berkas', [PembayaranController::class, 'index'])->name('manage_berkas'); // tampilan manage berkas
     Route::get('/detail_berkas', [PembayaranController::class, 'detail_berkas'])->name('detail_berkas'); // detail berkas user berdasarkan id
+    Route::get('/reject/{id}', [PembayaranController::class, 'reject'])->name('reject'); // delete data gedung
+    Route::get('/manage_pembayaran', [PembayaranController::class, 'manage_pembayaran'])->name('manage_pembayaran'); 
 
     // manage gedung 
     Route::get('/manage_kamar', [KamarController::class, 'manage'])->name('manage_kamar'); // halaman manage kamar
@@ -143,6 +145,8 @@ Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
     Route::get('/upload_berkas', [BerkasController::class, 'berkas'])->name('berkas');
     // Route::post('/upload_berkas', [BerkasController::class, 'tambah'])->name('upload berkas');
     Route::post('/upload_berkas/upload', [BerkasController::class, 'upload'])->name('berkas.upload');
+    Route::get('/bukti_pembayaran', [PembayaranController::class, 'bukti'])->name('bukti_pembayaran'); // detail berkas user berdasarkan id
+    
     
 });
 
