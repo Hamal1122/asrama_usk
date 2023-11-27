@@ -42,7 +42,7 @@
          <a class="bg-blue px-4 text-blue py-1 bg-opacity-20 rounded-full" href="\storage\uploads\{{$berkas->nama_berkas}}">Lihat</a> 
         </td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light mr-6">
-          <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">{{$berkas->status}}</h3>
+          <span class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">{{$berkas->status}}</span>
         </td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-blue">{{$berkas->kategori}}</span></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->kategorigedung}}</span></td>
@@ -68,7 +68,7 @@
     var nama = $(this).attr('data-nama');
     swal({
         title: "Reminder",
-        text: "Kamu akan MENOLAK berkas dari mahasiswa bernama " + nama + " ",
+        text: "Yakin akan MENOLAK berkas dari mahasiswa bernama " + nama + "?",
         icon: "warning",
         buttons: true,
         dangerMode: true,
