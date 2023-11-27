@@ -80,7 +80,7 @@
                     </div>
                     <a
                         href="{{ route('manage_kamar') }}"
-                        class="py-2 text-blue mb-4"
+                        class="py-1 text-blue mb-4 hover:bg-blue hover:bg-opacity-10 hover:rounded-full px-2 transition-all"
                         >More</a
                     >
                 </div>
@@ -111,7 +111,7 @@
                         </div>
                         <a
                             href="{{ route('manage_berkas') }}"
-                            class="py-2 text-blue mb-4 font-light text-sm"
+                            class="py-1 text-blue mb-4 hover:bg-blue hover:bg-opacity-10 hover:rounded-full px-2 transition-all"
                             >More</a>
                     </div>
                     @foreach ($data as $berkas) @if($berkas->status == 0)

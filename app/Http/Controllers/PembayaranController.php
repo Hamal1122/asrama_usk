@@ -17,10 +17,30 @@ class PembayaranController extends Controller
         // return redirect('berkas/berkas')->route('manage_pembayaran')->with('berhasil', 'Data Pembayaran Telah Berhasil Ditambahkan');
     }
 
+
+    public function reject($id)
+    {
+        $data = berkas::find($id);
+        $data->delete($id);
+        return redirect()->route('manage_berkas');
+    }
+
     function detail_berkas()
     {
         $pembayaran = Pembayaran::all();
         $berkas = berkas::all();
         return view('/berkas/detail_manage_berkas', compact('pembayaran', 'berkas'));
+    }
+
+    public function bukti()
+    {
+        $pembayaran = Pembayaran::all();
+        $berkas = berkas::all();
+        return view('/berkas/bukti_pembayaran', compact('pembayaran', 'berkas'));
+    }
+
+    public function manage_pembayaran()
+    {
+        return view('/berkas/manage_pembayaran');
     }
 }

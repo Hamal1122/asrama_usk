@@ -10,67 +10,29 @@
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
     <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
-    <h3 class="py-2">Upload Berkas</h3>
+    <h3 class="py-2">Upload Berkas Pengajuan kamar</h3>
   </div>
 
-  <div class="bg-white text-abu text-sm font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">
-    <div class="px-4 py-2">
-      <h3 class="text-blue">Informasi:</h3>
-      <p class="mt-2">- Lengkapi data kamu sesuai dengan ketentuan yang berlaku </p>
-      <p class="mt-2">- Dimohon Untuk mengupload dengan teliti</p>
+  <div class="py-4 px-6 bg-white text-base text-abu mt-4 rounded-md flex items-center gap-4">
+    <div>
+      <i class="bi bi-clock-history text-abu"></i>
+    </div>
+    <div> 
+      <h1 class="text-sm"> Menunggu berkas anda diverifikasi oleh admin .</h1>
     </div>
   </div>
 
-  <h1>Anda Sudah Mengupload berkas</h1>
-  <!-- Autofill Tanggal berakhir -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <div class="mt-2 p-4 bg-white w-full h-96 items-center container rounded-md">
+    <img class="w-80 my-8 mx-auto" src="https://img.freepik.com/free-vector/work-time-concept-illustration_114360-1271.jpg?w=740&t=st=1701027947~exp=1701028547~hmac=4da5929336d0cdcce64db384d3e974ff3c3fe7c24615b81222888f31b837465a" alt="">
+  </div>
+
+
+
 
   <script>
-    $(document).ready(function() {
-      $('#tanggal_masuk').change(function() {
-        var tanggalMulai = $(this).val();
-        var tanggalBerakhir = calculateEndDateOneYear(tanggalMulai);
-        $('#tanggal_keluar').val(tanggalBerakhir);
-      });
-
-      function calculateEndDateOneYear(startDate) {
-        var date = new Date(startDate);
-        date.setFullYear(date.getFullYear() + 1);
-        var formattedDate = date.toISOString().split('T')[0];
-        return formattedDate;
-      }
-    });
+    @if(Session::has('berhasil'))
+    toastr.success("{{ Session::get('berhasil') }}")
+    @endif
   </script>
-
-
-  <!-- Autofill Harga Berdasarkan Jenis Kamar(kapasitas) -->
-  <script>
-    function updateHarga() {
-      var jenisKamar = document.getElementById("jenisKamar").value;
-      var harga;
-
-      // Logika penentuan harga berdasarkan jenis kamar
-      if (jenisKamar === "2orang") {
-        harga = "Rp. 2.400.000";
-      } else if (jenisKamar === "4orang") {
-        harga = "Rp. 1.200.000";
-      } else {
-        harga = "Rp. 0";
-      }
-
-      // Menyimpan harga pada input dengan id "harga"
-      document.getElementById("harga").value = harga;
-    }
-
-    // Panggil fungsi updateHarga saat halaman dimuat
-    updateHarga();
-  </script>
-
-<!-- toastr -->
-<script>
-  @if(Session::has('berhasil'))
-  toastr.success("{{ Session::get('berhasil') }}")
-  @endif
-</script>
 
   @endsection
