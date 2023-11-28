@@ -43,25 +43,31 @@
         </td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light mr-6">
           @if($berkas->status == 0)
-          <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">Menunggu</h3>
+          <h3 class="mt-2  bg-opacity-10 text-yellow  font-extralight">Menunggu</h3>
           @elseif($berkas->status == 1)
-          <h3 class="mt-2 bg-yellow bg-opacity-10 text-yellow py-1 px-2 rounded-lg w-fit font-extralight">Diterima</h3>
+          <h3 class="mt-2  bg-opacity-10 text-green  font-extralight">Diterima</h3>
           @endif
         </td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-blue">{{$berkas->kategori}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->kategorigedung}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->jeniskamar}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-blue">{{$berkas->durasi}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-green">{{$berkas->harga}}</span></td>
-        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
-          <a class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Reject</a>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-blue">{{$berkas->kategori}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->kategorigedung}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->jeniskamar}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-blue">{{$berkas->durasi}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-green">{{$berkas->harga}}</span></td>
+        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-2  text-left font-light">
+          @if($berkas->status == 0)
+          <a class="bg-red bg-opacity-25 text-red px-4  py-[10px] rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Reject</a>
+          @elseif($berkas->status == 1)
+          <a class="bg-red bg-opacity-25 text-red px-4  py-[10px] rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Delete</a>
+          @endif
         </td>
-        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
+        
+        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-2 tracking-wide text-left font-light items-center">
           <form action="{{route('confirm.data', $berkas->id)}}" method="POST">
             @csrf
             @method('POST')
-            <!-- <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all">Accept</a> -->
-            <button class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" type="submit">Accept</button>
+            @if($berkas->status == 0)
+            <button class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all mt-2" type="submit">Accept</button>
+            @endif
           </form>
         </td>
       </tr>

@@ -46,8 +46,8 @@
         <input class=" field rounded-md text-blue" type="file" name="nama_berkas" id="nama_berkas" accept=".pdf" required>
       </div>
       <div class="mt-2 px-4">
-        <p class="text-abu text-xs font-semibold"> <span class="text-red">*</span>KARTU TANDA BIDIKMISI hanya bisa digunakan di tahun pertama atau masa wajib asrama</p>    
-        <p class="text-red text-xs font-semibold"> <span class="text-red">*</span>Jika Kedapatan Melakukan Kecurangan akan diberikan sanksi yang setimpal !!</p>    
+        <p class="text-abu text-xs font-light"> <span class="text-red">*</span>KARTU TANDA BIDIKMISI hanya bisa digunakan di tahun pertama atau masa wajib asrama</p>    
+        <p class="text-red text-xs font-light"> <span class="text-red">*</span>Jika Kedapatan Melakukan Kecurangan akan diberikan sanksi yang setimpal !!</p>    
       </div>
       <div class="p-4 mt-12">
         <button type="submit" class="button">Submit</button>
