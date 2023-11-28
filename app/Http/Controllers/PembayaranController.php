@@ -25,6 +25,21 @@ class PembayaranController extends Controller
         return redirect()->route('manage_berkas');
     }
 
+    public function confirm($id)
+    {
+        try{
+            $data = berkas::findorFail($id);
+            $data->status = 1;
+            $data->save();
+
+            \Log::info('status berkas berhasil diubah');
+            return redirect()->route('manage_berkas');
+        }catch(\Exception $e){
+            \Log::error('status berkas gagal diubah');
+            return redirect()->route('manage_berkas');
+        }
+    }
+    
     function detail_berkas()
     {
         $pembayaran = Pembayaran::all();

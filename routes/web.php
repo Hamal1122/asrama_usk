@@ -99,6 +99,7 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
 
     // manage berkas
     Route::get('/manage_berkas', [PembayaranController::class, 'index'])->name('manage_berkas'); // tampilan manage berkas
+    Route::post('/manage_berkas/accept/{id}', [PembayaranController::class, 'confirm'])->name('confirm.data'); // konfirmasi pembayaran
     Route::get('/detail_berkas', [PembayaranController::class, 'detail_berkas'])->name('detail_berkas'); // detail berkas user berdasarkan id
     Route::get('/reject/{id}', [PembayaranController::class, 'reject'])->name('reject'); // delete data gedung
     Route::get('/manage_pembayaran', [PembayaranController::class, 'manage_pembayaran'])->name('manage_pembayaran'); 
