@@ -18,10 +18,10 @@
 
     <div class="flex gap-4">
       <div class="my-4">
-        <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-8 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
+        <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-4 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
       </div>
       <div class="my-4">
-        <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-8 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
+        <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-4 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
       </div>
     </div>
 

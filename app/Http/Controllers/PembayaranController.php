@@ -11,10 +11,20 @@ class PembayaranController extends Controller
 {
     function index(Request $request)
     {
-        $pembayaran = Pembayaran::all();
+        if($request->has('search')){
+            $berkas = Berkas::whereHas('user', function ($query) use ($request) {
+                $query->where('nim', 'LIKE', '%' . $request->search . '%');
+            })->get();
+
+            if ($berkas->isEmpty()) {
+                return view ('/berkas/eror');
+            }
+
+        }else{
         $berkas = berkas::orderBy('id', 'desc')->get();
-        return view('/berkas/manage_berkas', compact('pembayaran', 'berkas'))->with('i', ($request->input('page', 1) - 1));
-        // return redirect('berkas/berkas')->route('manage_pembayaran')->with('berhasil', 'Data Pembayaran Telah Berhasil Ditambahkan');
+        }
+        return view('/berkas/manage_berkas', compact('berkas'))->with('i', ($request->input('page', 1) - 1));
+    
     }
 
 
