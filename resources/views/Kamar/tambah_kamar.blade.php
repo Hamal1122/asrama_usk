@@ -34,7 +34,12 @@
         </select>
       </div>
 
-      <button type="submit" class="button my-2 px-4 w-fit text-clip">Simpan</button>
+      <div class="mt-4 font-poppins text-sm text-gray-dark ">
+        <label for="text" class="text-gray-dark">Harga Kamar</label>
+        <input type="number" name="harga" id="harga" class="field" placeholder="Rp." required />
+      </div>
+
+      <button type="submit" class="button my-2 px-4 w-fit text-clip">Tambah</button>
       <p class="text-xs font-extralight text-blue">*pastikan semua data sudah benar sebelum menyimpan</p>
   </div>
   </form>

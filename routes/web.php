@@ -9,6 +9,7 @@ use App\Http\Controllers\GenderController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KamarsayaController;
+use App\Http\Controllers\PengawasController;
 use App\Models\kamar;
 use Illuminate\Support\Facades\Request;
 
@@ -54,6 +55,15 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::get('/update_kamar/{id}', [KamarController::class, 'updatekamar'])->name('updatekamar'); // tampilkan form edit kamar
     Route::post('/edit_kamar/{id}', [KamarController::class, 'editkamar'])->name('editkamar'); // proses edit kamar
     Route::get('/delete_kamar/{id}', [KamarController::class, 'deletekamar'])->name('deletekamar'); // delete data kamar
+
+    //manage pengawas
+    Route::get('/manage_pengawas', [PengawasController::class, 'index'])->name('manage_pengawas'); // halaman manage kamar
+    Route::post('/tambah_pengawas', [PengawasController::class, 'tambah'])->name('tambah_pengawas');
+    Route::get('/tambah_pengawas', [PengawasController::class, 'formtambah'])->name('tambah_pengawas');
+    Route::post('/edit_pengawas/{id}', [PengawasController::class, 'edit'])->name('edit_pengawas');
+    Route::get('/update_pengawas/{id}', [PengawasController::class, 'formedit'])->name('edit_pengawas');
+    Route::get('/delete_pengawas/{id}', [PengawasController::class, 'delete'])->name('deletekamar'); // delete data kamar
+    
 
     // Dashboard Admin
     Route::get('/beranda_admin', [BerandaController::class, 'admin'])->name('beranda_admin'); // menampilkan beranda admin

@@ -20,6 +20,7 @@
         <h1 class="text-base mt-2 font-Inter">Kapasitas : <span> </span> <span class="text-blue"> {{ $data->kapasitas }}</span><span class="text-blue"> Orang</span></h1>
         <h1 class="text-base mt-2 font-Inter"> Gedung : <span> </span> <span class="text-blue">{{ $data->gedung->nama  }}</span></h1>
         <h1 class="text-base mt-2 font-Inter"> Kategori : <span> </span> <span class="bg-blue bg-opacity-10 text-blue py-1 px-2 rounded-lg">{{ $data->gedung->kategori_gedung  }}</span></h1>
+        <h1 class="text-base mt-2 font-Inter"> Harga Kamar : <span> </span> <span class="bg-blue bg-opacity-10 text-blue py-1 px-2 rounded-lg">{{ $data->harga }}</span></h1>
       </div>
 
       <div class=" mt-3 py-4  rounded-md">

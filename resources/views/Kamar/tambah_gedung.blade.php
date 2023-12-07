@@ -26,7 +26,7 @@
       </div>
 
 
-      <button type="submit" class="button my-2 px-4 w-fit text-clip">Upload</button>
+      <button type="submit" class="button my-2 px-4 w-fit text-clip">Tambah</button>
       <p class="text-xs font-extralight text-blue">*pastikan semua data sudah benar sebelum menyimpan</p>
     </form>
   </div>

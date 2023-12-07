@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use App\Models\kamar;
 use App\Models\gedung;
+use App\Models\pengawas;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -74,9 +75,10 @@ class kamarController extends Controller
   // menampilkan kamar yang ada didalam gedung berdasarkan id 
   public function isigedung($gedung_id, Request $request)
   {
+    $pengawas = pengawas::where('gedung_id', $gedung_id)->get();
     $kamar = kamar::where('gedung_id', $gedung_id)->get();
     session::put('halaman_url', request()->fullUrl()); // redirect halaman setelah update
-    return view('/Kamar/kamar', compact('kamar'))->with('i', ($request->input('page', 1) - 1));
+    return view('/Kamar/kamar', compact('kamar','pengawas'))->with('i', ($request->input('page', 1) - 1));
   }
 
   public function tambahkamar(Request $request)
@@ -135,9 +137,10 @@ class kamarController extends Controller
 
   public function semuakamar($gedung_id, Request $request)
   {
+    $pengawas = pengawas::where('gedung_id', $gedung_id)->get();
     $kamar = kamar::where('gedung_id', $gedung_id)->get();
     session::put('halaman_url_user', request()->fullUrl()); // redirect halaman semua kamar 
-    return view('/Kamar/semua_kamar', compact('kamar'));
+    return view('/Kamar/semua_kamar', compact('kamar','pengawas'));
   }
 
   public function detailsemuakamar($id)
