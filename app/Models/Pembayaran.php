@@ -13,7 +13,6 @@ class Pembayaran extends Model
     protected $fillable = [
         'user_id',
         'kamar_id',
-        'masa_tinggal',
         'tanggal_masuk',
         'bukti_pembayaran',
         'status',
