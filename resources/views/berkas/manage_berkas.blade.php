@@ -13,8 +13,17 @@
   <h3 class="py-2">Manage Berkas</h3>
 </div>
 
-<div class="mt-4 overflow-x-auto">
-  <table class="table-auto  justify-end font-semibold text-sm ">
+<form action="/manage_berkas" method="get">
+<div class="mt-4 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
+  <div>
+  <i class="bi bi-search"></i>
+  </div>
+      <input type="search" name="search" id="search" placeholder="Search NIM" class="py-1 px-2 rounded-sm text-sm">
+</div>
+</form>
+
+<div class=" overflow-x-auto">
+  <table class="table-auto font-semibold text-sm overflow-x-auto ">
     <thead class="rounded-md">
       <tr>
         <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
@@ -39,29 +48,35 @@
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$berkas->user->name}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$berkas->user->nim}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">
-         <a class="bg-blue px-4 text-blue py-1 bg-opacity-20 rounded-full" href="\storage\uploads\{{$berkas->nama_berkas}}">Lihat</a> 
+         <a class=" text-blue py-1 rounded-full" href="\storage\uploads\{{$berkas->nama_berkas}}">Lihat</a> 
         </td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light mr-6">
           @if($berkas->status == 0)
-          <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">Menunggu</h3>
+          <h3 class="mt-2 bg-abu  bg-opacity-10 text-abu px-2 py-1 text-center rounded-full text-sm font-extralight">Menunggu</h3>
           @elseif($berkas->status == 1)
-          <h3 class="mt-2 bg-yellow bg-opacity-10 text-yellow py-1 px-2 rounded-lg w-fit font-extralight">Diterima</h3>
+          <h3 class="mt-2 bg-green  bg-opacity-10 text-green text-center px-2 py-1 rounded-full text-sm font-extralight">Diterima</h3>
           @endif
         </td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-blue">{{$berkas->kategori}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->kategorigedung}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->jeniskamar}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-blue">{{$berkas->durasi}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span class="text-green">{{$berkas->harga}}</span></td>
-        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
-          <a class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Reject</a>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->kategori}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->kategorigedung}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->jeniskamar}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->durasi}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->harga}}</span></td>
+        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-2  text-left font-light">
+          @if($berkas->status == 0)
+          <a class="bg-red bg-opacity-25 text-red px-4  py-[10px] rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Reject</a>
+          @elseif($berkas->status == 1)
+          <a class="bg-red bg-opacity-25 text-red px-4  py-[10px] rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Delete</a>
+          @endif
         </td>
-        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
+        
+        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-2 tracking-wide text-left font-light items-center">
           <form action="{{route('confirm.data', $berkas->id)}}" method="POST">
             @csrf
             @method('POST')
-            <!-- <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all">Accept</a> -->
-            <button class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" type="submit">Accept</button>
+            @if($berkas->status == 0)
+            <button class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all mt-2" type="submit">Accept</button>
+            @endif
           </form>
         </td>
       </tr>
@@ -77,7 +92,7 @@
     var nama = $(this).attr('data-nama');
     swal({
         title: "Reminder",
-        text: "Kamu akan MENOLAK berkas dari mahasiswa bernama " + nama + " ",
+        text: "Yakin akan MENOLAK berkas dari mahasiswa bernama " + nama + "?",
         icon: "warning",
         buttons: true,
         dangerMode: true,

@@ -34,10 +34,10 @@
             <div>
               <label for="">Pilih Kategori</label>
               <select class="field text-gray-dark" id="kategori" name="kategori" required>
-                <option class="text-abu" value="">Plih Kategori</option>
-                <option value="KIP">KIPK</option>
-                <option value="reguler">Reguler</option>
-                <option value="internasional">Internasonal</option>
+                <option class="text-abu" value="">Plih Kategori Pengguna</option>
+                <option value="KIP">Mahasiswa KIPK</option>
+                <option value="reguler">Mahasiswa Reguler</option>
+                <option value="internasional">Mahasiswa Internasonal</option>
               </select>
             </div>
             <div>
@@ -77,8 +77,8 @@
                 <label class="text-gray-dark" for="jenisKamar">Pilih Jenis Kamar (Kapasitas)</label>
                 <select class="field text-gray-dark" id="jenisKamar" name="jenisKamar" onchange="updateHarga()" required>
                   <option value="">Masukkan Pilihan</option>
-                  <option value="2orang">2 Orang</option>
-                  <option value="4orang">4 Orang</option>
+                  <option value="2orang">Kapasitas 2 Orang</option>
+                  <option value="4orang">Kapasitas  4 Orang</option>
                 </select>
               </div>
               <div>

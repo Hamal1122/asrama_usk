@@ -18,10 +18,10 @@
 
     <div class="flex gap-4">
       <div class="my-4">
-        <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-8 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
+        <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-4 py-4 rounded-md transition-all focus:scale-95" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
       </div>
       <div class="my-4">
-        <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-8 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
+        <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-4 py-4 rounded-md transition-all focus:scale-95" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
       </div>
     </div>
 
@@ -46,15 +46,13 @@
             <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $gedung->nama }}</td>
             <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="bg-blue bg-opacity-10 text-purple py-1 px-2 rounded-lg">{{ $gedung->kategori_gedung }}</span></td>
             <td class="bg-white border-b-silver border-b-4 text-green px-6 py-6 tracking-wide text-left font-light">{{ $gedung->jumlahkamar }}<span class="text-green"> Kamar</span></td>
-
+            <td class="bg-white border-b-silver border-b-4 text-green px-6 py-6 tracking-wide text-left font-light"><span class="text-green"></span></td>
+            <td class="bg-white border-b-silver border-b-4 text-green px-6 py-6 tracking-wide text-left font-light"><span class="text-green"></span></td>
+    
             <td class="bg-white border-b-silver border-b-4 text-gray-dark  py-6 tracking-wide text-left font-light">
-              <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/gedung/{{ $gedung[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i>Detail</a>
-            </td>
-            <td class=" bg-white border-b-silver border-b-4 text-green py-6 tracking-wide text-left font-light">
-              <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/update_gedung/{{ $gedung->id }}"><i class="bi bi-pencil-square mx-2"></i>Edit</a></td>
-              </td>
-            <td class=" bg-white border-b-silver border-b-4 text-green py-6 tracking-wide text-left font-light">
-            <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $gedung->id }}" type="" data-nama="{{ $gedung->nama }}"><i class=" bi bi-trash-fill mx-2"></i>Delete</a>
+              <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/gedung/{{ $gedung[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i>Kamar</a>
+              <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/update_gedung/{{ $gedung->id }}"><i class="bi bi-pencil-square mx-2"></i>Edit</a>
+             <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $gedung->id }}" type="" data-nama="{{ $gedung->nama }}"><i class=" bi bi-trash-fill mx-2"></i>Delete</a>
             </td>
           @endforeach
 

@@ -64,8 +64,8 @@
           title: "Kamu Yakin ?",
           text: "Kamu akan menghapus postingan dengan judul " + judul + " ",
           icon: "warning",
+          denyButtonText: `Don't save`,
           buttons: true,
-          dangerMode: true,
         })
         .then((willDelete) => {
           if (willDelete) {

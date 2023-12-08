@@ -6,23 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class gedung extends Model
+class pengawas extends Model
 {
   use HasFactory;
-  protected $table = 'gedung';
+  protected $table = 'pengawas';
   protected $primaryKey = 'id';
   protected $guarded = [];
   public $timestamps = true;
 
 
 
-  public function kamar()
-  {
-    return $this->hasMany(kamar::class);
-  }
+  public function gedung() 
+    {
+    return $this->belongsTo(gedung::class);
+    }
 
-  public function pengawas()
-  {
-    return $this->hasMany(pengawas::class);
-  }
 }

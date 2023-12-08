@@ -14,6 +14,19 @@
     <h3 class="py-2">Lihat Kamar</h3>
   </div>
 
+  <div class=" mt-3 py-4  rounded-md bg-white px-6 flex justify-between">
+    <div>
+      <div>
+        <h1 class="text-abu">Pengawas :</h1>
+      </div>
+        <div class="mt-2 font-Inter text-blue">
+          @foreach ($pengawas as $data)
+          <h1 class="bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit"><i class="bi bi-person-fill mr-2"></i>{{ $data->nama}} <span>- 0{{ $data->no_hp}} </span></h1>
+          @endforeach
+        </div>
+    </div>
+  </div>
+
   <div class="mt-4 p-4 bg-gray-soft rounded-md">
 
     <table class="table-auto font-semibold text-sm w-full rounded-md">
