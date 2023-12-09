@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\berkas;
+use App\Models\Pembayaran;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -66,6 +67,34 @@ class BerkasController extends Controller
 
     return back()->with('berhasil', 'Berkas Anda berhasil di upload');
   }
+  public function upload_bukti_bayar(Request $request)
+    {
+        $request->validate(
+            [
+                'bukti_bayar' => 'required|mimes:pdf,png,jpg,jpeg|max:10000'
+            ],
+            [
+                'file.required' => 'File tidak boleh kosong',
+                'file.mimes' => 'File tidak sesuai format',
+                'file.max' => 'File maksimal 10MB'
+            ]
+        );
+        $bukti = $request->file('bukti_bayar');
+        $buktiName = date("d-m-y") . "_buktiPembayaran_" . $request->user()->nim . "." . $bukti->extension();
+        $bukti->storeAs('bukti', $buktiName, 'public'); 
+
+        $pembayaran = new Pembayaran();
+        $pembayaran->user_id = auth()->user()->id;
+        $pembayaran->kamar_id = 0;
+        // $pembayaran->masa_tinggal = "1tahun";
+        // $pembayaran->user_id = auth()->berkas()->durasi;
+        $pembayaran->tanggal_masuk = date("Y-m-d");
+        $pembayaran->bukti_pembayaran = $buktiName;
+        $pembayaran->status = '0';   
+        $pembayaran->save();
+
+        return back()->with('berhasil', 'Bukti Pembayaran Anda berhasil di upload');
+    }
 }
 
 
