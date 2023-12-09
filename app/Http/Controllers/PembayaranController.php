@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pembayaran;
 use App\Models\berkas;
+use App\Models\users;
 
 use Illuminate\Http\Request;
 
@@ -65,8 +66,18 @@ class PembayaranController extends Controller
         return view('/berkas/bukti_pembayaran', compact('pembayaran', 'berkas'));
     }
 
-    public function manage_pembayaran()
+    public function manage_pembayaran(Request $request)
     {
-        return view('/berkas/manage_pembayaran');
+        $data = Pembayaran::all();
+        $berkas = berkas::all();
+        return view('/berkas/manage_pembayaran', compact('data', 'berkas'))->with('i', ($request->input('page', 1) - 1));
     }
+
+    public function reject_pembayaran($id)
+    {
+        $data = pembayaran::find($id);
+        $data->delete($id);
+        return redirect()->route('manage_pembayaran');
+    }
+
 }

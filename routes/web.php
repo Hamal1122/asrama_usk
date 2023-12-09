@@ -37,6 +37,7 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::get('/detail_berkas', [PembayaranController::class, 'detail_berkas'])->name('detail_berkas'); // detail berkas user berdasarkan id
     Route::get('/reject/{id}', [PembayaranController::class, 'reject'])->name('reject'); // delete data gedung
     Route::get('/manage_pembayaran', [PembayaranController::class, 'manage_pembayaran'])->name('manage_pembayaran'); // menampilkan halaman manage pembayaran
+    Route::get('/reject_pembayaran/{id}', [PembayaranController::class, 'reject_pembayaran'])->name('reject_pembayaran');
 
     // manage gedung 
     Route::get('/manage_kamar', [KamarController::class, 'manage'])->name('manage_kamar'); // halaman manage kamar

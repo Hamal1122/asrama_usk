@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->ForeignId('user_id');
             $table->ForeignId('kamar_id');
+            $table->ForeignId('berkas_id');
             $table->date('tanggal_masuk');
             $table->string('bukti_pembayaran');
             $table->enum('status', ['0','1']); //0 = belum bayar, 1 = sudah bayar
