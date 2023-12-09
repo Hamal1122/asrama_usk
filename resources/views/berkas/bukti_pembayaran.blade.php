@@ -2,10 +2,25 @@
 
 @section('title')
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+  integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+  integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
@@ -17,8 +32,8 @@
     <div>
       <i class="bi bi-wallet-fill"></i>
     </div>
-    <div> 
-      <h1 class="text-sm"> Upload Bukti Pembayaran  .</h1>
+    <div>
+      <h1 class="text-sm"> Upload Bukti Pembayaran .</h1>
     </div>
   </div>
 
@@ -41,9 +56,14 @@
         </select>
       </div>
 
-      <div class="px-4 mt-8 w-1/2">
+      <form action="{{ route('upload.bukti_pembayaran') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="bukti_bayar">
+        <button type="submit">Unggah Bukti Pembayaran</button>
+      </form>
+      <!-- <div class="px-4 mt-8 w-1/2">
         <label for="">Upload Bukti Pembayaran <span class="text-xs text-green">( Khusus untuk Mahasiswa KIPK digantikan dengan KARTU TANDA BIDIKMISI )</span></label>
-        <input class=" field rounded-md text-blue" type="file" name="nama_berkas" id="nama_berkas" accept=".pdf" required>
+        <input class=" field rounded-md text-blue" type="file" name="nama_berkas" id="nama_berkas" required>
       </div>
       <div class="mt-2 px-4">
         <p class="text-abu text-xs font-light"> <span class="text-red">*</span>KARTU TANDA BIDIKMISI hanya bisa digunakan di tahun pertama atau masa wajib asrama</p>    
@@ -51,7 +71,7 @@
       </div>
       <div class="p-4 mt-12">
         <button type="submit" class="button">Submit</button>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -59,7 +79,7 @@
 
 
   <script>
-    @if(Session::has('berhasil'))
+    @if (Session:: has('berhasil'))
     toastr.success("{{ Session::get('berhasil') }}")
     @endif
   </script>

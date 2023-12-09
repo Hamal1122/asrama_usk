@@ -88,7 +88,7 @@ Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
     Route::get('/upload_berkas', [BerkasController::class, 'berkas'])->name('berkas'); // menampilkan halaman untuk mengupload berkas
     Route::post('/upload_berkas/upload', [BerkasController::class, 'upload'])->name('berkas.upload'); // proses upload berkas
     Route::get('/bukti_pembayaran', [PembayaranController::class, 'bukti'])->name('bukti_pembayaran'); // menampilkan halaman upload bukti pembayaran
-    
+    Route::post('/bukti_pembayaran/upload', [BerkasController::class, 'upload_bukti_bayar'])->name('upload.bukti_pembayaran'); // proses upload bukti pembayaran
     
 });
 
