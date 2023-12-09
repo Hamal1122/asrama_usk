@@ -71,7 +71,7 @@
               <li class="menuhover "><a href="{{route ('manage_pembayaran') }}"><i class="bi bi-wallet mx-4"></i>Manage Pembayaran</a></li>
               <li class="menuhover"><a href="{{route ('manage_kamar') }}"><i class="bi bi-sliders mx-4"></i>Manage Kamar</a></li>
               <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
-              <li class="menuhover"><a href="{{route ('manage_pengawas') }}"><i class="bi bi-person-fill mx-4"></i></i>Manage Pengawas</a></li>
+              <li class="menuhover"><a href="{{route ('manage_pengawas') }}"><i class="bi bi-person-workspace mx-4"></i></i>Manage Pengawas</a></li>
               <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
               <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form2').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>

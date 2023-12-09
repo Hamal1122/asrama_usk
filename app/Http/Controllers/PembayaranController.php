@@ -16,7 +16,8 @@ class PembayaranController extends Controller
                 $query->where('nim', 'LIKE', '%' . $request->search . '%');
             })->get();
 
-            if ($berkas->isEmpty()) {
+            if ($berkas->isEmpty()) 
+            {
                 return view ('/berkas/eror');
             }
 

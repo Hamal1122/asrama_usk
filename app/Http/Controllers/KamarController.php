@@ -41,14 +41,23 @@ class kamarController extends Controller
 
 
   public function manage(Request $request)
-  {
-    $gedung = gedung::all();
-    // Menghitung jumlah kamar untuk setiap gedung
+{
+    // Mendapatkan input pencarian dari form
+    $search = $request->input('search');
+
+    // Query untuk mencari gedung berdasarkan nama
+    $gedung = Gedung::when($search, function ($query) use ($search) {
+        return $query->where('nama', 'LIKE', '%' . $search . '%');
+    })->withCount('kamar')->get();
+    
+    // menghitung jumlah kamar
     foreach ($gedung as $g) {
       $g->jumlahkamar = Kamar::where('gedung_id', $g->id)->count();
     }
+
     return view('/Kamar/manage_kamar', compact('gedung'))->with('i', ($request->input('page', 1) - 1));
-  }
+}
+
 
 
 
@@ -149,3 +158,4 @@ class kamarController extends Controller
     return view('/Kamar/info_kamar', compact('data'));
   }
 }
+

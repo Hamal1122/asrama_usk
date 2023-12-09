@@ -27,15 +27,16 @@
     </div>
   </div>
 
-  <div class="mt-4 p-4 bg-gray-soft rounded-md">
+  <div class="mt-4 p-4 bg-white rounded-md">
 
-    <table class="table-auto font-semibold text-sm w-full rounded-md">
+    <table class="table-auto font-semibold text-sm w-full rounded-md border border-gray-soft">
       <thead class="rounded-md">
         <tr>
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">No</th>
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Nama Kamar</th>
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Nama Gedung</th>
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Kapasitas</th>
+          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Harga Kamar</th>
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left "></th>
         </tr>
       </thead>
@@ -48,6 +49,7 @@
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->nama }}</td>
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->gedung->nama }}</td>
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green">2<span class="text-abu"><span> / </span>{{ $kamar->kapasitas }} Orang</span></span></td>
+           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->formatRupiah('harga') }}</td>
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
             <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/detail_kamar/{{ $kamar[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i></a>
             <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/update_kamar/{{ $kamar->id }}"><i class="bi bi-pencil-square mx-2"></i></a>
