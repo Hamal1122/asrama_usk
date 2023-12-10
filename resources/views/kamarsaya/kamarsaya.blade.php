@@ -11,7 +11,9 @@
     <div class="">
       
       <div class="mt-6">
-        <h1 class="text-2xl font-bold">Nama Kamar</h1>
+      
+        <h1 class="text-2xl font-bold">nama gdung</h1>
+      
       </div>
 
       <div class="mt-3">

@@ -14,6 +14,7 @@ class Pembayaran extends Model
         'user_id',
         'kamar_id',
         'tanggal_masuk',
+        'tanggal_keluar',
         'bukti_pembayaran',
         'status',
     ];
@@ -38,5 +39,10 @@ class Pembayaran extends Model
     public function user() 
     {
       return $this->belongsTo(users::class);
+    }
+
+    public function kamar() 
+    {
+      return $this->belongsTo(kamar::class);
     }
 }

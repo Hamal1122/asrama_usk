@@ -21,4 +21,9 @@ public function gedung()
   return $this->belongsTo(gedung::class);
 }
 
+public function penghuni()
+  {
+    return $this->hasMany(pembayaran::class, 'kamar_id');
+  }
+
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Pembayaran;
 use App\Models\berkas;
 use App\Models\users;
+use App\Models\gedung;
+use App\Models\kamar;
 
 use Illuminate\Http\Request;
 
@@ -79,5 +81,24 @@ class PembayaranController extends Controller
         $data->delete($id);
         return redirect()->route('manage_pembayaran');
     }
+
+    public function accept(Request $request, $id)
+  {
+    $data = pembayaran::find($id);
+    $data->update($request->all());
+    return redirect()->route('manage_pembayaran')->with('berhasil', 'Data berhasil ditambahkan');
+  }
+
+  public function form($id)
+  {
+    $pembayaran = pembayaran::find($id);
+    $gedung = gedung::all();
+    $kamar = kamar::all();
+    foreach ($kamar as $k) {
+        $k->jumlahpenghuni = pembayaran::where('kamar_id', $k->id)->count();
+      }
+    
+    return view('/berkas/terima_pembayaran', compact('pembayaran','gedung','kamar'));
+  }
 
 }

@@ -39,6 +39,10 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::get('/manage_pembayaran', [PembayaranController::class, 'manage_pembayaran'])->name('manage_pembayaran'); // menampilkan halaman manage pembayaran
     Route::get('/reject_pembayaran/{id}', [PembayaranController::class, 'reject_pembayaran'])->name('reject_pembayaran');
 
+    // Masukkan Kamar
+    Route::post('/accept/{id}', [PembayaranController::class, 'accept'])->name('accept');
+    Route::get('/accept/{id}', [PembayaranController::class, 'form'])->name('form');
+
     // manage gedung 
     Route::get('/manage_kamar', [KamarController::class, 'manage'])->name('manage_kamar'); // halaman manage kamar
     Route::post('/tambah_gedung', [KamarController::class, 'tambah'])->name('tambah gedung'); // menambahkan gedung
@@ -77,10 +81,13 @@ Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
     Route::get('post/{id}', [BerandaController::class, 'detail'])->name('postingan');// menampilkan halaman detail postingan
 
     // kamar
-    Route::get('/kamarsaya', [KamarsayaController::class, 'kamarsaya'])->name('kamarsaya'); // menampilkan halaman Kamar saya
     Route::get('/semua_gedung', [KamarController::class, 'semuagedung'])->name('semuagedung'); // menampilkan halaman semua gedung di menu semua kamar
     Route::get('/semuakamar/{id}', [KamarController::class, 'semuakamar'])->name('semuakamar'); // menampilkan kamar kamar di dalam gedung berdasarkan id gedung
     Route::get('/info_kamar/{id}', [KamarController::class, 'detailsemuakamar'])->name('detailsemuakamar'); // menampilkan halaman semua kamar di menu semua kamar
+
+    // KamarSaya
+    Route::get('/kamarsaya', [KamarController::class, 'kamarsaya'])->name('kamarsaya'); // menampilkan halaman Kamar saya
+
 
     // profile
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile'); // menampilkan halaman profile pengguna

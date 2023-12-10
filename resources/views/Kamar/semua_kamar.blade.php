@@ -39,7 +39,7 @@
             <h3 class="bg-blue bg-opacity-10 text-purple py-1 px-2 rounded-lg w-fit">{{ $kamar->gedung->kategori_gedung }}</h3>
           </div>
         </div>
-        <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit"><span class="text-green">Kapasitas : </span><span class="text-abu">2 / </span>{{ $kamar->kapasitas }} Orang</h3>
+        <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit"><span class="text-green">Kapasitas : </span><span class="text-gray-dark">{{ $kamar->jumlahpenghuni }} / </span>{{ $kamar->kapasitas }} Orang</h3>
       </div>
       <div class="mt-8 w-full flex justify-between">
         <a href="/info_kamar/{{ $kamar[ 'id' ] }}" class="text-center bg-purple  hover:px-10 hover:text-white text-white px-8 py-2 rounded-md transition-all focus:scale-95">Detail</a>

@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Models\kamar;
 use App\Models\gedung;
 use App\Models\pengawas;
+use App\Models\pembayaran;
+use App\Models\berkas;
+use App\Models\users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -29,13 +33,6 @@ class kamarController extends Controller
   {
     return view('/Kamar/tambah_gedung', [
       "title" => "Tambah Gedung",
-    ]);
-  }
-
-  public function gender()
-  {
-    return view('/Kamar/gender',  [
-      "title" => "Kamar",
     ]);
   }
 
@@ -86,6 +83,9 @@ class kamarController extends Controller
   {
     $pengawas = pengawas::where('gedung_id', $gedung_id)->get();
     $kamar = kamar::where('gedung_id', $gedung_id)->get();
+    foreach ($kamar as $k) {
+      $k->jumlahpenghuni = pembayaran::where('kamar_id', $k->id)->count();
+    }
     session::put('halaman_url', request()->fullUrl()); // redirect halaman setelah update
     return view('/Kamar/kamar', compact('kamar','pengawas'))->with('i', ($request->input('page', 1) - 1));
   }
@@ -132,7 +132,8 @@ class kamarController extends Controller
   public function detailkamar($id)
   {
     $data = kamar::find($id);
-    return view('/Kamar/detail_kamar', compact('data'));
+    $penghuni = $data->penghuni;
+    return view('/Kamar/detail_kamar', compact('data', 'penghuni'));
   }
 
   public function semuagedung(Request $request)
@@ -148,6 +149,9 @@ class kamarController extends Controller
   {
     $pengawas = pengawas::where('gedung_id', $gedung_id)->get();
     $kamar = kamar::where('gedung_id', $gedung_id)->get();
+    foreach ($kamar as $k) {
+      $k->jumlahpenghuni = pembayaran::where('kamar_id', $k->id)->count();
+    }
     session::put('halaman_url_user', request()->fullUrl()); // redirect halaman semua kamar 
     return view('/Kamar/semua_kamar', compact('kamar','pengawas'));
   }
@@ -155,7 +159,14 @@ class kamarController extends Controller
   public function detailsemuakamar($id)
   {
     $data = kamar::find($id);
-    return view('/Kamar/info_kamar', compact('data'));
+    $penghuni = $data->penghuni;
+    return view('/Kamar/info_kamar', compact('data', 'penghuni'));
+  }
+
+  public function kamarsaya()
+  {
+   
+   return view('/Kamarsaya/kamarsaya');
   }
 }
 
