@@ -43,7 +43,7 @@
 
   <div class="mt-2 p-4 bg-white w-full h-fit items-center container rounded-md">
     <div>
-      <div class="w-1/2 px-4">
+      <div class=" w-full lg:w-1/2 px-4">
         <label for="">Pilih Bank</label>
         <select class="field text-gray-dark" id="kategori" name="kategori" required>
           <option class="text-abu" value="">Pilih</option>
@@ -60,7 +60,7 @@
      
        <form action="{{ route('upload.bukti_pembayaran') }}" method="POST" enctype="multipart/form-data">
        @csrf
-      <div class="px-4 mt-8 w-1/2">
+      <div class="px-4 mt-8 w-full lg:w-1/2 ">
         <label for="">Upload Bukti Pembayaran <span class="text-xs text-green">( Khusus untuk Mahasiswa KIPK digantikan dengan KARTU TANDA BIDIKMISI )</span></label>
         <input class=" field rounded-md text-blue" type="file" name="bukti_bayar" id="nama_berkas" required>
       </div>

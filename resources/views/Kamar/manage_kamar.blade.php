@@ -18,13 +18,13 @@
 
     <div class="flex gap-4 items-center">
       <div class="my-4">
-        <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-4 py-4 rounded-md transition-all focus:scale-95" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
+        <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-4 py-3 rounded-md transition-all focus:scale-95" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
       </div>
       <div class="my-4">
-        <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-4 py-4 rounded-md transition-all focus:scale-95" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
+        <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-4 py-3 rounded-md transition-all focus:scale-95" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
       </div>
       <form action="/manage_kamar" method="get">
-        <div class="mt-4 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md border border-gray-soft">
+        <div class="mt-3 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md border border-gray-soft">
           <div>
           <i class="bi bi-search"></i>
           </div>
