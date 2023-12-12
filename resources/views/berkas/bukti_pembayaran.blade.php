@@ -43,7 +43,7 @@
 
   <div class="mt-2 p-4 bg-white w-full h-fit items-center container rounded-md">
     <div>
-      <div class="w-1/2 px-4">
+      <div class=" w-full lg:w-1/2 px-4">
         <label for="">Pilih Bank</label>
         <select class="field text-gray-dark" id="kategori" name="kategori" required>
           <option class="text-abu" value="">Pilih</option>
@@ -56,14 +56,13 @@
         </select>
       </div>
 
-      <form action="{{ route('upload.bukti_pembayaran') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <input type="file" name="bukti_bayar">
-        <button type="submit">Unggah Bukti Pembayaran</button>
-      </form>
-      <!-- <div class="px-4 mt-8 w-1/2">
+     
+     
+       <form action="{{ route('upload.bukti_pembayaran') }}" method="POST" enctype="multipart/form-data">
+       @csrf
+      <div class="px-4 mt-8 w-full lg:w-1/2 ">
         <label for="">Upload Bukti Pembayaran <span class="text-xs text-green">( Khusus untuk Mahasiswa KIPK digantikan dengan KARTU TANDA BIDIKMISI )</span></label>
-        <input class=" field rounded-md text-blue" type="file" name="nama_berkas" id="nama_berkas" required>
+        <input class=" field rounded-md text-blue" type="file" name="bukti_bayar" id="nama_berkas" required>
       </div>
       <div class="mt-2 px-4">
         <p class="text-abu text-xs font-light"> <span class="text-red">*</span>KARTU TANDA BIDIKMISI hanya bisa digunakan di tahun pertama atau masa wajib asrama</p>    
@@ -71,7 +70,8 @@
       </div>
       <div class="p-4 mt-12">
         <button type="submit" class="button">Submit</button>
-      </div> -->
+      </div>
+       </form>
     </div>
   </div>
 

@@ -57,4 +57,9 @@ class Users extends Authenticatable
         );
     }
 
+    public function kamar()
+    {
+        return $this->belongsToMany(pembayaran::class, 'kamar_id');
+    }
+
 }

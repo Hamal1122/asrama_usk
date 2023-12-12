@@ -12,6 +12,9 @@
   </style>
   @vite('resources/css/app.css')
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 </head>
 
 <body class=" bg-abubg ">
@@ -44,7 +47,7 @@
         <li class="menuhover"><a href="{{route ('manage_kamar') }}"><i class="bi bi-sliders mx-4"></i>Manage Kamar</a></li>
         <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
         <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage Pengawas</a></li>
-        <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
+        <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Postingan</a></li>
         <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
         <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form2').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
@@ -70,9 +73,9 @@
               <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
               <li class="menuhover "><a href="{{route ('manage_pembayaran') }}"><i class="bi bi-wallet mx-4"></i>Manage Pembayaran</a></li>
               <li class="menuhover"><a href="{{route ('manage_kamar') }}"><i class="bi bi-sliders mx-4"></i>Manage Kamar</a></li>
-              <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
-              <li class="menuhover"><a href="{{route ('manage_pengawas') }}"><i class="bi bi-person-fill mx-4"></i></i>Manage Pengawas</a></li>
-              <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Informasi</a></li>
+              <li class="menuhover"><a href="{{route ('manage_user') }}"><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
+              <li class="menuhover"><a href="{{route ('manage_pengawas') }}"><i class="bi bi-person-workspace mx-4"></i></i>Manage Pengawas</a></li>
+              <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Postingan</a></li>
               <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form2').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
@@ -104,3 +107,4 @@
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script src="//unpkg.com/alpinejs" defer></script>
+

@@ -3,6 +3,8 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
+
 
 class berkas extends Model
 {
@@ -18,4 +20,13 @@ class berkas extends Model
   return $this->belongsTo(users::class);
 }
 
+public function pembayaran()
+{
+    return $this->hasMany(Pembayaran::class, 'berkas_id', 'id');
 }
+
+}
+
+
+
+

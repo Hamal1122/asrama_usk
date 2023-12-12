@@ -17,7 +17,7 @@
       </div>
 
       <div class="mt-3">
-        <h1 class="text-base mt-2 font-Inter text-abu">Kapasitas : <span> </span> <span class="text-blue"><span class="text-green">2 / </span>{{ $data->kapasitas }}</span><span class="text-blue"> Orang</span></h1>
+        <h1 class="text-base mt-2 font-Inter text-abu">Kapasitas : <span> </span> <span class="text-blue">{{ $data->kapasitas }}</span><span class="text-blue"> Orang</span></h1>
         <h1 class="text-base mt-2 font-Inter text-abu"> Gedung : <span> </span> <span class="text-blue">{{ $data->gedung->nama  }}</span></h1>
         <h1 class="text-base mt-2 font-Inter text-abu"> Kategori : <span> </span> <span class="bg-blue bg-opacity-10 text-blue py-1 px-2 rounded-lg">{{ $data->gedung->kategori_gedung  }}</span></h1>
       </div>
@@ -25,8 +25,9 @@
       <div class="  py-4  rounded-md">
         <h1 class="text-abu">Penghuni :</h1>
         <div class="mt-2 font-Inter text-blue">
-          <h1 class="bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit"><i class="bi bi-person-fill mr-2"></i>Hamal Rizqy Mukhda</h1>
-          <h1 class="bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit mt-2"><i class="bi bi-person-fill mr-2"></i>Afkar Siddiq</h1>
+          @foreach ($penghuni as $p)
+          <h1 class="bg-green mt-2 bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit"><i class="bi bi-person-fill mr-2"></i>{{ $p->user->name }}</h1>
+        @endforeach
         </div>
       </div>
 

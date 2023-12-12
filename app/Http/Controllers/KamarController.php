@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Models\kamar;
 use App\Models\gedung;
 use App\Models\pengawas;
+use App\Models\pembayaran;
+use App\Models\berkas;
+use App\Models\users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -32,23 +36,25 @@ class kamarController extends Controller
     ]);
   }
 
-  public function gender()
-  {
-    return view('/Kamar/gender',  [
-      "title" => "Kamar",
-    ]);
-  }
-
 
   public function manage(Request $request)
-  {
-    $gedung = gedung::all();
-    // Menghitung jumlah kamar untuk setiap gedung
+{
+    // Mendapatkan input pencarian dari form
+    $search = $request->input('search');
+
+    // Query untuk mencari gedung berdasarkan nama
+    $gedung = Gedung::when($search, function ($query) use ($search) {
+        return $query->where('nama', 'LIKE', '%' . $search . '%');
+    })->withCount('kamar')->get();
+    
+    // menghitung jumlah kamar
     foreach ($gedung as $g) {
       $g->jumlahkamar = Kamar::where('gedung_id', $g->id)->count();
     }
+
     return view('/Kamar/manage_kamar', compact('gedung'))->with('i', ($request->input('page', 1) - 1));
-  }
+}
+
 
 
 
@@ -77,6 +83,9 @@ class kamarController extends Controller
   {
     $pengawas = pengawas::where('gedung_id', $gedung_id)->get();
     $kamar = kamar::where('gedung_id', $gedung_id)->get();
+    foreach ($kamar as $k) {
+      $k->jumlahpenghuni = pembayaran::where('kamar_id', $k->id)->count();
+    }
     session::put('halaman_url', request()->fullUrl()); // redirect halaman setelah update
     return view('/Kamar/kamar', compact('kamar','pengawas'))->with('i', ($request->input('page', 1) - 1));
   }
@@ -123,7 +132,8 @@ class kamarController extends Controller
   public function detailkamar($id)
   {
     $data = kamar::find($id);
-    return view('/Kamar/detail_kamar', compact('data'));
+    $penghuni = $data->penghuni;
+    return view('/Kamar/detail_kamar', compact('data', 'penghuni'));
   }
 
   public function semuagedung(Request $request)
@@ -139,6 +149,9 @@ class kamarController extends Controller
   {
     $pengawas = pengawas::where('gedung_id', $gedung_id)->get();
     $kamar = kamar::where('gedung_id', $gedung_id)->get();
+    foreach ($kamar as $k) {
+      $k->jumlahpenghuni = pembayaran::where('kamar_id', $k->id)->count();
+    }
     session::put('halaman_url_user', request()->fullUrl()); // redirect halaman semua kamar 
     return view('/Kamar/semua_kamar', compact('kamar','pengawas'));
   }
@@ -146,6 +159,14 @@ class kamarController extends Controller
   public function detailsemuakamar($id)
   {
     $data = kamar::find($id);
-    return view('/Kamar/info_kamar', compact('data'));
+    $penghuni = $data->penghuni;
+    return view('/Kamar/info_kamar', compact('data', 'penghuni'));
+  }
+
+  public function kamarsaya()
+  {
+   
+   return view('/Kamarsaya/kamarsaya');
   }
 }
+
