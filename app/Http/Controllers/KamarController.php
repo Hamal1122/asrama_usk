@@ -165,8 +165,9 @@ class kamarController extends Controller
 
   public function kamarsaya()
   {
-   
-   return view('/Kamarsaya/kamarsaya');
+    $userId = auth()->user()->id;
+    $data = pembayaran::where('user_id', $userId)->get();
+   return view('/Kamarsaya/kamarsaya', compact('data'));
   }
 }
 

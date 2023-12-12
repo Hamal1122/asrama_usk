@@ -53,6 +53,23 @@ class PembayaranController extends Controller
             return redirect()->route('manage_berkas');
         }
     }
+
+    public function confirm_pembayaran($id)
+    {
+
+        try{
+            $pembayaran = pembayaran::findorFail($id);
+            $pembayaran->status = 1;
+            $pembayaran->save();
+
+            \Log::info('status berkas berhasil diubah');
+            return redirect()->route('manage_pembayaran');
+        }catch(\Exception $e){
+            \Log::error('status berkas gagal diubah');
+            return redirect()->route('manage_pembayaran');
+        }
+    
+    }
     
     function detail_berkas()
     {

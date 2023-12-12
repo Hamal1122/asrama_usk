@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('tanggal_masuk');
             $table->date('tanggal_keluar');
             $table->string('bukti_pembayaran');
-            $table->enum('status', ['0','1']); //0 = belum bayar, 1 = sudah bayar
+            $table->integer('status'); //0 = belum bayar, 1 = sudah bayar 2= riwayat
             $table->timestamps();
         });
     }
