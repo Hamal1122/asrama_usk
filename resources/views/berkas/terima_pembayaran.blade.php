@@ -34,7 +34,7 @@
 
         <div class="mt-4 font-poppins text-sm text-gray-dark ">
             <label for="tanggal_keluar">Tanggal Keluar:</label>
-            <input class="field" type="date" id="tanggal_keluar" name="tanggal_keluar" readonly value="tanggal_keluar">
+            <input class="field" type="date" id="tgl_keluar" name="tanggal_keluar" readonly value="tanggal_keluar">
         </div>
 
       <div class="mt-4">
@@ -54,10 +54,15 @@
             <!-- Opsi Kamar akan diisi secara dinamis menggunakan JavaScript -->
         </select>
     </div>
-
+    <form action="{{route('confirm.data', $pembayaran->id)}}" method="POST" enctype="multipart/form-data">
+       @csrf
+       @method('POST')
       <button type="submit" class="button my-2 px-4 w-fit text-clip">Konfirmasi</button>
+    </form>
       <p class="text-xs font-extralight text-blue">*pastikan semua data sudah benar sebelum menyimpan</p>
   </div>
+
+
   </form>
 </div>
 
@@ -95,7 +100,7 @@
       $('#tanggal_masuk').change(function() {
         var tanggalMulai = $(this).val();
         var tanggalBerakhir = calculateEndDateOneYear(tanggalMulai);
-        $('#tanggal_keluar').val(tanggalBerakhir);
+        $('#tgl_keluar').val(tanggalBerakhir);
       });
 
       function calculateEndDateOneYear(startDate) {

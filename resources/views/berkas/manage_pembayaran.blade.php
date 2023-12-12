@@ -52,7 +52,7 @@
           <a class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $data->id }}" type="" data-nama="{{$data->berkas->user->name}}" href="#">Reject</a>
         </td>
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
-          <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/accept/{{ $data->id }}">Accept</a>
+         <button type="submit"><a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/accept/{{ $data->id }}">Accept</a></button> 
         </td>
       </tr>
 
