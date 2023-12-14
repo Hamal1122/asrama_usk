@@ -37,6 +37,7 @@
             <input class="field" type="date" id="tgl_keluar" name="tanggal_keluar" readonly value="tanggal_keluar">
         </div>
 
+{{-- dropdown pilih gedung --}}
       <div class="mt-4">
         <label class="text-gray-dark" for="">Pilih Gedung</label>
         <select class="field text-gray-dark" id="gedung" name="gedung" onchange="updateKamarDropdown()">
@@ -47,6 +48,7 @@
         </select>
     </div>
 
+{{-- dropdown pilih kamar --}}
     <div class="mt-4">
         <label class="text-gray-dark" for="">Pilih Kamar</label>
         <select class="field text-gray-dark" id="kamar_id" name="kamar_id">
@@ -54,6 +56,8 @@
             <!-- Opsi Kamar akan diisi secara dinamis menggunakan JavaScript -->
         </select>
     </div>
+
+    {{-- Button submit --}}
     <form action="{{route('confirm.data', $pembayaran->id)}}" method="POST" enctype="multipart/form-data">
        @csrf
        @method('POST')

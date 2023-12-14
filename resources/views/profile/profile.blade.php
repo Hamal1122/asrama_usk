@@ -8,7 +8,7 @@
   </div>
 
   <div class="bg-white py-4 mt-4 rounded-md ">
-    <div class="p-4 bg-white flex gap-4 flex flex-wrap justify-between">
+    <div class="p-4 bg-white flex gap-4 flex-wrap justify-between">
 
       <div class="my-auto flex flex-wrap text-gray-dark font-Inter mx-auto md:mx-4">
 
@@ -32,14 +32,23 @@
     </div>
 
   </div>
-  <div class="bg-white p-4 mt-4 rounded-md text-gray-dark font-Inter">
-    <h1 class="text-xl font-bold text-purple">KAMAR 201</h1>
-    <h1 class="mt-4">Gedung Rusunawa A</h1>
-    <p class="text-abu text-xs">Mulai : 1 Januari 2024</p>
-    <p class="text-abu text-xs">Berakhir : 1 Januari 2025</p>
-    <div class="mt-6">
-      <a class="text-center bg-purple  hover:px-10 hover:text-white text-white px-8 py-2 rounded-md transition-all focus:scale-95" href="{{route ('kamarsaya') }}">lihat</a>
+  <div class="mt-4 text-gray-dark font-Inter">
+    <h3>Riwayat :</h3>
+  </div>
+  @foreach ($data as $data)
+  <div class="bg-white p-4 mt-2 rounded-md text-gray-dark font-Inter">
+    <h1 class="text-xl font-bold text-purple">{{$data->kamar->nama}}</h1>
+    <h1 class="mt-4">Gedung {{$data->kamar->gedung->nama}}</h1>
+    <p class="text-abu text-xs">Mulai : {{ date('d F Y', strtotime($data->tanggal_masuk)) }}</p>
+    <p class="text-abu text-xs">Berakhir : {{ date('d F Y', strtotime($data->tanggal_keluar)) }}</p>
+    <div class="mt-3">
+      @if($data->status == 1)
+      <h3 class="bg-green bg-opacity-20 text-green text-xs py-1 px-6 w-fit rounded-full">Aktif</h3>
+      @elseif($berkas->status == 2)
+      <h3 class="bg-abu bg-opacity-20 text-abu text-xs py-1 px-6 w-fit rounded-full">Nonaktif</h3>
+      @endif
     </div>
   </div>
+  @endforeach
 
   @endsection
