@@ -8,13 +8,22 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\User;
+use App\Models\kamar;
+use App\Models\gedung;
+use App\Models\pengawas;
+use App\Models\pembayaran;
+use App\Models\berkas;
+use App\Models\users;
 use Dflydev\DotAccessData\Data;
 
 class ProfileController extends Controller
 {
-  public function profile(){
-    // $data = user::all();
-    return view('/profile/profile');
+  
+  public function profile()
+  {
+    $userId = auth()->user()->id;
+    $data = pembayaran::where('user_id', $userId)->get();
+   return view('/profile/profile', compact('data'));
   }
 
   public function edit(){

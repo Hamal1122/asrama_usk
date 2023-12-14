@@ -28,7 +28,6 @@
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Harga</th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Tanggal</th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> </th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> </th>
       </tr>
     </thead>
 
@@ -43,17 +42,35 @@
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light mr-6">
           <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">{{$data->berkas->jeniskamar}}</h3>
         </td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><spa>{{$data->berkas->durasi}}</spa></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span>{{$data->berkas->durasi}}</span></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><a class="text-blue" href="{{ asset('storage/bukti/' . $data->bukti_pembayaran) }}" target="_blank">Lihat Bukti</a></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->berkas->harga}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->created_at->format('d-m-Y')}}</td>
-   
-        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
-          <a class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $data->id }}" type="" data-nama="{{$data->berkas->user->name}}" href="#">Reject</a>
-        </td>
-        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
-         <button type="submit"><a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/accept/{{ $data->id }}">Accept</a></button> 
-        </td>
+
+    @if($data->kamar_id == 0)
+      <td class="bg-white border-b-silver border-b-4 text-gray-dark px-2 py-4 font-light whitespace-nowrap items-center text-center flex gap-4">
+          <form action="{{ route('confirm.bayar', $data->id) }}" method="POST">
+    @if($data->status == 0)
+          <a class="bg-red bg-opacity-25 text-red px-4 py-[10px] rounded-md hover:bg-red hover:text-white transition-all reject" data-id="{{ $data->id }}" type="" data-nama="{{ $data->berkas->user->name }}" href="#">Reject</a>
+    @elseif($data->status == 1)
+          <a class="bg-red bg-opacity-25 text-red px-4 py-2 rounded-md hover:bg-red hover:text-white transition-all reject" data-id="{{ $data->id }}" type="" data-nama="{{ $data->berkas->user->name }}" href="#">Delete</a>
+    @endif
+
+    @csrf
+    @method('POST')
+    @if($data->status == 0)
+      <button class="bg-green bg-opacity-25 text-green px-4 py-2 rounded-md hover:bg-green hover:text-white transition-all" type="submit">Accept</button>
+    @elseif($data->status == 1)
+      <a class="bg-green bg-opacity-25 text-green px-4 py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/accept/{{ $data->id }}">Tentukan Kamar</a>
+    @endif
+      </form>
+    </td>
+
+      @elseif($data->kamar_id !== 0)
+      <td class="bg-white border-b-silver border-b-4 text-gray-dark px-2 py-4 font-light whitespace-nowrap items-center text-center flex gap-4">
+            <a class="bg-red bg-opacity-25 text-red px-4 py-2 rounded-md hover:bg-red hover:text-white transition-all reject" data-id="{{ $data->id }}" type="" data-nama="{{ $data->berkas->user->name }}" href="#">Delete</a>
+      </td>
+      @endif
       </tr>
 
 @endforeach

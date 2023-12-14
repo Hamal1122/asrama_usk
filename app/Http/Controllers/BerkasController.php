@@ -67,6 +67,7 @@ class BerkasController extends Controller
 
     return back()->with('berhasil', 'Berkas Anda berhasil di upload');
   }
+  
   public function upload_bukti_bayar(Request $request)
     {
         $request->validate(
