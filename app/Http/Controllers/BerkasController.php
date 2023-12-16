@@ -16,15 +16,20 @@ class BerkasController extends Controller
   {
     $userId = auth()->user()->id;
     $uploaded = berkas::where('user_id', $userId)->first();
+    $pembayaran = Pembayaran::where('user_id', $userId)->first();
     $data = berkas::all();
-    if ($uploaded && $uploaded->status == 0) {
+    if (($uploaded && $uploaded->status == 0) && !$pembayaran) {
       return view('berkas/berhasil');
     }
-    if ($uploaded && $uploaded->status == 1) {
+    if (($uploaded && $uploaded->status == 1) && !$pembayaran) {
       return view('berkas/bukti_pembayaran');
-    } else {
+    } 
+    elseif($pembayaran && $pembayaran->status == 1) {
       return view('/berkas/berkas', compact('data'));
     }
+    else {
+      return view('berkas/berkas');
+    } 
   }
   public function tambah(Request $request)
   {
@@ -90,6 +95,7 @@ class BerkasController extends Controller
         // $pembayaran->masa_tinggal = "1tahun";
         // $pembayaran->user_id = auth()->berkas()->durasi;
         $pembayaran->tanggal_masuk = date("Y-m-d");
+        $pembayaran->tanggal_keluar = date("Y-m-d");
         $pembayaran->bukti_pembayaran = $buktiName;
         $pembayaran->status = '0';   
         $pembayaran->save();
