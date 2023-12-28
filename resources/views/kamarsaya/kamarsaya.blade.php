@@ -10,6 +10,7 @@
   <div class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4">
     <div class="">
       @foreach ($data as $data)
+       @if($data->kamar_id !== 0)
       <div class="mt-6">
         <h1 class="text-2xl font-bold">{{$data->kamar->nama}}</h1>
       </div>
@@ -36,6 +37,7 @@
           <h1 class="bg-green mt-2 bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit"><i class="bi bi-person-fill mr-2"></i>Penghuni</h1>
         </div>
       </div>
+      @endif
       @endforeach
 
     </div>

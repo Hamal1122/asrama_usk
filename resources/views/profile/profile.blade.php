@@ -36,6 +36,7 @@
     <h3>Riwayat :</h3>
   </div>
   @foreach ($data as $data)
+  @if($data->kamar_id !== 0)
   <div class="bg-white p-4 mt-2 rounded-md text-gray-dark font-Inter">
     <h1 class="text-xl font-bold text-purple">{{$data->kamar->nama}}</h1>
     <h1 class="mt-4">Gedung {{$data->kamar->gedung->nama}}</h1>
@@ -49,6 +50,8 @@
       @endif
     </div>
   </div>
+  @endif
   @endforeach
+
 
   @endsection
