@@ -24,8 +24,8 @@ class BerkasController extends Controller
     if (($uploaded && $uploaded->status == 1) && !$pembayaran) {
       return view('berkas/bukti_pembayaran');
     } 
-    elseif($pembayaran && $pembayaran->status == 1) {
-      return view('/berkas/berkas', compact('data'));
+    elseif($pembayaran && $pembayaran->kamar_id != 0) {
+      return view('/berkas/berhasilBayar');
     }
     else {
       return view('berkas/berkas');
