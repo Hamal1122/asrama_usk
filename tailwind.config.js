@@ -37,7 +37,7 @@ export default {
     extend: {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],  
-        'Inter': ['Inter', 'sans-serif'],
+        'Inter': ['Poppins', 'sans-serif'],
       }
 
     },
