@@ -11,6 +11,7 @@ use App\Models\kamar;
 use App\Models\User;
 use App\Models\Users;
 use App\Models\berkas;
+use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,9 +40,10 @@ class BerandaController extends Controller
     $jumlah_kamar = kamar::all()->count();
     $jumlah_postingan = beranda::all()->count();
     $jumlah_pengguna = Users::where('role', 1)->count();
-    $lastpost = gedung::orderBy('id', 'desc')->take(5)->get();
-    $data = berkas::orderBy('id', 'desc')->take(5)->get();
-    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'lastpost', 'jumlah_pengguna', 'data'));
+    $pengguna_aktif = pembayaran::orderBy('id', 'desc')->take(5)->get();
+    $jumlah_pengguna_aktif = pembayaran::where('status', 1)->count();
+    $unverified = berkas::orderBy('id', 'desc')->take(5)->get();
+    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'pengguna_aktif', 'jumlah_pengguna', 'unverified','jumlah_pengguna_aktif'));
   }
 
   // menampilkan view informasi

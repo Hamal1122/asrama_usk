@@ -15,15 +15,15 @@
 
   <div class="py-4 px-6 bg-white text-base text-abu mt-4 rounded-md flex items-center gap-4">
     <div>
-      <i class="bi bi-clock-history text-abu"></i>
+      <i class="bi bi-check-circle-fill text-tahiti"></i>
     </div>
     <div> 
-      <h1 class="text-sm"> Anda sudah terdaftar, silahkan cek ke bagian kamar.</h1>
+      <h1 class="text-sm"> Anda sudah terdaftar, silahkan cek kamar anda di menu <a class="text-blue" href="{{route ('kamarsaya') }}">Kamar Saya</a> .</h1> 
     </div>
   </div>
 
   <div class="mt-2 p-4 bg-white w-full h-96 items-center container rounded-md">
-    <img class="w-80 my-8 mx-auto" src="https://img.freepik.com/free-vector/work-time-concept-illustration_114360-1271.jpg?w=740&t=st=1701027947~exp=1701028547~hmac=4da5929336d0cdcce64db384d3e974ff3c3fe7c24615b81222888f31b837465a" alt="">
+    <img class="w-80 my-8 mx-auto" src="https://img.freepik.com/free-vector/flat-youth-day-jumping-people_23-2148576289.jpg?w=996&t=st=1703786826~exp=1703787426~hmac=9c1547964e56557567e25e191856da3685a75eb96833f7a1087c8315454f5d57" alt="">
   </div>
 
 

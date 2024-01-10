@@ -24,7 +24,9 @@
       <div class="flex justify-between items-center">
         <div class="flex gap-2">
           <img class="w-6 h-6 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
-          <h1>AsramaUSK</h1>
+          <div>
+            <h1>AsramaUSK</h1>
+        </div>
         </div>
 
 
