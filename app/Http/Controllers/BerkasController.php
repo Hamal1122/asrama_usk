@@ -19,15 +19,32 @@ class BerkasController extends Controller
     $uploaded = berkas::where('user_id', $userId)->first();
     $pembayaran = Pembayaran::where('user_id', $userId)->first();
     $data = berkas::all();
-    if (($uploaded && $uploaded->status == 0) && !$pembayaran) {
-      return view('berkas/berhasil');
-    }
-    if (($uploaded && $uploaded->status == 1) && !$pembayaran) {
-      return view('berkas/bukti_pembayaran');
-    } elseif ($pembayaran && $pembayaran->kamar_id != 0) {
-      return view('/berkas/berhasilBayar');
+    
+    // if (($uploaded && $uploaded->status == 0) && !$pembayaran) {
+    //   return view('berkas/berhasil');//berhasil upload berkas
+    // }
+    // if (($uploaded && $uploaded->status == 1) && !$pembayaran) {
+    //   return view('berkas/bukti_pembayaran');//melakukan pembayaran
+    // } elseif($pembayaran && $pembayaran->status == 0){
+    //   return view('berkas/tunggubayar');//tunggu verifikasi kamar dan bayar
+    // }
+    // elseif ($pembayaran->status == 1 && $pembayaran->kamar_id != 0) {
+    //   return view('/berkas/berhasilBayar');
+    // } else {
+    //   return view('berkas/berkas');
+    // }
+    if (!$uploaded) {
+      return view('/berkas/berkas', compact('data'));
+    } elseif ($uploaded->status == 0) {
+      return view('/berkas/berhasil', compact('data'));
+    } elseif ($uploaded->status == 1 && !$pembayaran) {
+      return view('/berkas/bukti_pembayaran', compact('data'));
+    } elseif ($uploaded->status == 1 && $pembayaran->status == 0) {
+      return view('/berkas/tunggubayar', compact('data'));
+    } elseif ($uploaded->status == 1 && $pembayaran->status == 1 && $pembayaran->kamar_id == 0) {
+      return view('/berkas/berhasilBayar', compact('data', 'pembayaran'));
     } else {
-      return view('berkas/berkas');
+      return view('/berkas/berhasilBayar', compact('data', 'pembayaran') );
     }
   }
   public function tambah(Request $request)
