@@ -18,7 +18,7 @@
 
 
 
-        <div class="mx-auto md:mx-4">
+        <div class="mx-auto md:mx-4 font-poppins">
           <h3 class="my-2">Nama : <span class="font-bold">{{Auth::user()->name}}</span></h3>
           <h3 class="my-2">NIM : <span class="font-bold">{{Auth::user()->nim}}</span></h3>
           <h3 class="my-2">No.Telpon : <span class="font-bold">{{Auth::user()->no_hp}}</span></h3>
