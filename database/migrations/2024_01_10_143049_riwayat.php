@@ -16,11 +16,8 @@ return new class extends Migration
             $table->id();
             $table->ForeignId('user_id');
             $table->ForeignId('kamar_id');
-            $table->ForeignId('berkas_id');
             $table->date('tanggal_masuk');
             $table->date('tanggal_keluar');
-            $table->string('kategori');
-            $table->string('bukti_pembayaran');
             $table->integer('status'); //0 =menunggu, 1 =aktif 2= riwayat/expired
             $table->timestamps();
         });

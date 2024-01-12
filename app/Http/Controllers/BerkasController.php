@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\berkas;
 use App\Models\Pembayaran;
+use App\Models\Riwayat;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -23,13 +24,11 @@ class BerkasController extends Controller
     }
     if (($uploaded && $uploaded->status == 1) && !$pembayaran) {
       return view('berkas/bukti_pembayaran');
-    } 
-    elseif($pembayaran && $pembayaran->kamar_id != 0) {
+    } elseif ($pembayaran && $pembayaran->kamar_id != 0) {
       return view('/berkas/berhasilBayar');
-    }
-    else {
+    } else {
       return view('berkas/berkas');
-    } 
+    }
   }
   public function tambah(Request $request)
   {
@@ -70,38 +69,40 @@ class BerkasController extends Controller
     $berkas->durasi = $request->durasi;
     $berkas->save();
 
+
+
     return back()->with('berhasil', 'Berkas Anda berhasil di upload');
   }
-  
+
   public function upload_bukti_bayar(Request $request)
-    {
-        $request->validate(
-            [
-                'bukti_bayar' => 'required|mimes:pdf,png,jpg,jpeg|max:10000'
-            ],
-            [
-                'file.required' => 'File tidak boleh kosong',
-                'file.mimes' => 'File tidak sesuai format',
-                'file.max' => 'File maksimal 10MB'
-            ]
-        );
-        $bukti = $request->file('bukti_bayar');
-        $buktiName = date("d-m-y") . "_buktiPembayaran_" . $request->user()->nim . "." . $bukti->extension();
-        $bukti->storeAs('bukti', $buktiName, 'public'); 
+  {
+    $request->validate(
+      [
+        'bukti_bayar' => 'required|mimes:pdf,png,jpg,jpeg|max:10000'
+      ],
+      [
+        'file.required' => 'File tidak boleh kosong',
+        'file.mimes' => 'File tidak sesuai format',
+        'file.max' => 'File maksimal 10MB'
+      ]
+    );
+    $bukti = $request->file('bukti_bayar');
+    $buktiName = date("d-m-y") . "_buktiPembayaran_" . $request->user()->nim . "." . $bukti->extension();
+    $bukti->storeAs('bukti', $buktiName, 'public');
 
-        $pembayaran = new Pembayaran();
-        $pembayaran->user_id = auth()->user()->id;
-        $pembayaran->kamar_id = 0;
-        // $pembayaran->masa_tinggal = "1tahun";
-        // $pembayaran->user_id = auth()->berkas()->durasi;
-        $pembayaran->tanggal_masuk = date("Y-m-d");
-        $pembayaran->tanggal_keluar = date("Y-m-d");
-        $pembayaran->bukti_pembayaran = $buktiName;
-        $pembayaran->status = '0';   
-        $pembayaran->save();
+    $pembayaran = new Pembayaran();
+    $pembayaran->user_id = auth()->user()->id;
+    $pembayaran->kamar_id = 0;
+    // $pembayaran->masa_tinggal = "1tahun";
+    // $pembayaran->user_id = auth()->berkas()->durasi;
+    $pembayaran->tanggal_masuk = date("Y-m-d");
+    $pembayaran->tanggal_keluar = date("Y-m-d");
+    $pembayaran->bukti_pembayaran = $buktiName;
+    $pembayaran->status = '0';
+    $pembayaran->save();
 
-        return back()->with('berhasil', 'Bukti Pembayaran Anda berhasil di upload');
-    }
+    return back()->with('berhasil', 'Bukti Pembayaran Anda berhasil di upload');
+  }
 }
 
 

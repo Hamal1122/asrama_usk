@@ -7,6 +7,8 @@ use App\Models\berkas;
 use App\Models\users;
 use App\Models\gedung;
 use App\Models\kamar;
+use App\Models\Riwayat;
+
 
 use Illuminate\Http\Request;
 
@@ -62,6 +64,7 @@ class PembayaranController extends Controller
             $pembayaran->status = 1;
             $pembayaran->save();
 
+
             \Log::info('status berkas berhasil diubah');
             return redirect()->route('manage_pembayaran');
         }catch(\Exception $e){
@@ -103,7 +106,17 @@ class PembayaranController extends Controller
   {
     $data = pembayaran::find($id);
     $data->update($request->all());
+
+    $riwayat = new Riwayat();
+    $riwayat->user_id = auth()->user()->id;
+    $riwayat->kamar_id = $request->kamar_id;
+    $riwayat->tanggal_masuk = $request->tanggal_masuk;
+    $riwayat->tanggal_keluar = $request->tanggal_keluar;
+    $riwayat->status = '0'; // 0 = masih tinggal, 1 = sudah selesai
+    $riwayat->save();
+
     return redirect()->route('manage_pembayaran')->with('berhasil', 'Data berhasil ditambahkan');
+
   }
 
   public function form($id)
