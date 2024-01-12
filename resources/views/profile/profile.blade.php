@@ -43,9 +43,9 @@
     <p class="text-abu text-xs">Mulai : {{ date('d F Y', strtotime($data->tanggal_masuk)) }}</p>
     <p class="text-abu text-xs">Berakhir : {{ date('d F Y', strtotime($data->tanggal_keluar)) }}</p>
     <div class="mt-3">
-      @if($data->status == 1)
+      @if($data->status == 0)
       <h3 class="bg-green bg-opacity-20 text-green text-xs py-1 px-6 w-fit rounded-full">Aktif</h3>
-      @elseif($berkas->status == 2)
+      @elseif($berkas->status == 1)
       <h3 class="bg-abu bg-opacity-20 text-abu text-xs py-1 px-6 w-fit rounded-full">Nonaktif</h3>
       @endif
     </div>

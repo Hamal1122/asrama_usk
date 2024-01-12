@@ -13,6 +13,7 @@ use App\Models\gedung;
 use App\Models\pengawas;
 use App\Models\pembayaran;
 use App\Models\berkas;
+use App\Models\Riwayat;
 use App\Models\users;
 use Dflydev\DotAccessData\Data;
 
@@ -22,7 +23,7 @@ class ProfileController extends Controller
   public function profile()
   {
     $userId = auth()->user()->id;
-    $data = pembayaran::where('user_id', $userId)->get();
+    $data = Riwayat::where('user_id', $userId)->get();
    return view('/profile/profile', compact('data'));
   }
 

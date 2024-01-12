@@ -41,5 +41,16 @@ class Riwayat extends Model
                 'message' => 'Riwayat gagal diupdate'
             ], 400);
         }
+
+        
+    }
+    public function user() 
+    {
+      return $this->belongsTo(users::class);
+    }
+
+    public function kamar() 
+    {
+      return $this->belongsTo(kamar::class);
     }
 }

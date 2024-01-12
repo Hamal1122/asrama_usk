@@ -21,28 +21,35 @@
         <h1>No.HP&nbsp;&nbsp;: <span class="font-semibold">{{$data->user->no_hp}}</span></h1>
     </div>
     <div class="text-sm text-gray-dark mt-2">
-        <h1>Kategori&nbsp;&nbsp;:  <span class="font-semibold">{{$data->berkas->kategori}}</span></h1>
+        <h1>Kategori&nbsp;&nbsp;:  <span class="font-semibold"></span></h1>
     </div>
     <div class="text-sm text-gray-dark mt-2">
         <h1>Jenis Kelamin&nbsp;&nbsp;:  <span class="font-semibold">{{$data->user->jenis_kelamin}}</span></h1>
     </div>
   </div>
 
-  <div class="bg-white p-4 mt-4 rounded-md text-gray-dark font-Inter">
-        <div>
-            <h1 class="bg-green text-green bg-opacity-20 w-fit rounded-full px-4">Informasi </h1>
-        </div>
-        <div class="mt-4 text-base">
+<div class="py-6 px-4 bg-white my-4 rounded-md">
+    <h1 class="text-gray-dark">Riwayat :</h1>
+  <div class="bg-white p-4 mt-4 rounded-md text-gray-dark font-poppins drop-shadow-md">
+        <div class="mt-4 text-sm">
              Gedung : <span class="text-abu">{{$data->kamar->gedung->nama}}</span>
         </div>
-        <div class="mt-4 text-base">
+        <div class="mt-4 text-sm">
              Kamar : <span class="text-abu">{{$data->kamar->nama}}</span>
         </div>
-        <div class="mt-4 text-base">
+        <div class="mt-4 text-sm">
             Tanggal Masuk :  <span class="text-green">{{ date('d F Y', strtotime($data->tanggal_masuk)) }}</span>
         </div>
-        <div class="mt-4 text-base">
+        <div class="mt-4 text-sm">
             Tanggal Keluar : <span class="text-red">{{ date('d F Y', strtotime($data->tanggal_keluar)) }}</span>
         </div>
+        <div class="mt-4 text-sm">
+        @if($data->status == 0)
+            Status : <span class="bg-green text-green bg-opacity-20 w-fit rounded-full px-4 font-poppins">Aktif </span>
+        @elseif($data->status == 1)
+            Status : <span class="bg-red text-red bg-opacity-20 w-fit rounded-full px-4 font-poppins">Nonaktif </span>
+        @endif
+        </div>
   </div>
+</div>
   @endsection
