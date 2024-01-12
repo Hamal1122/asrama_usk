@@ -17,15 +17,9 @@
     <div>
       <i class="bi bi-check-circle-fill text-tahiti"></i>
     </div>
-    @if($pembayaran->kamar_id != 0)
     <div> 
-      <h1 class="text-sm"> Anda sudah terdaftar, silahkan cek kamar anda di menu <a class="text-blue" href="{{route ('kamarsaya') }}">Kamar Saya</a> .</h1> 
+      <h1 class="text-sm"> Pembayaran anda sedang di verifikasi. harap tunggu admin untuk menentukan kamar anda.</h1> 
     </div>
-    @else
-    <div> 
-      <h1 class="text-sm"> Anda sudah terdaftar, silahkan tunggu kamar anda atau hubungi admin.</h1> 
-    </div>
-    @endif
   </div>
 
   <div class="mt-2 p-4 bg-white w-full h-96 items-center container rounded-md">
