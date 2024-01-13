@@ -24,6 +24,7 @@ class ProfileController extends Controller
   {
     $userId = auth()->user()->id;
     $data = Riwayat::where('user_id', $userId)->get();
+    // dd($data);
    return view('/profile/profile', compact('data'));
   }
 

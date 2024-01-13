@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use app\Models\Users;
+use App\Models\Kamar;
 use Illuminate\Support\Facades\DB;
 
 class Riwayat extends Model
@@ -21,36 +23,36 @@ class Riwayat extends Model
         'status',
     ];
 
-    public function updateRiwayat(){
+    public function user()
+    {
+        return $this->belongsTo(Users::class, 'user_id');
+    }
+    public function kamar()
+    {
+        return $this->belongsTo(Kamar::class);
+    }
+    public function updateRiwayat()
+    {
         DB::beginTransaction();
-        try{
+        try {
             $today = Carbon::now()->toDateString();
 
             DB::table('riwayat')
-            ->where('tanggal_keluar', '=', $today)
-            ->update(['status' => 1]);
+                ->where('tanggal_keluar', '=', $today)
+                ->update(['status' => 1]);
 
             DB::commit();
             return response()->json([
                 'message' => 'Riwayat berhasil diupdate'
             ], 200);
-        }
-        catch(\Exception $e){
+        } catch (\Exception $e) {
             DB::rollback();
             return response()->json([
                 'message' => 'Riwayat gagal diupdate'
             ], 400);
         }
 
-        
-    }
-    public function user() 
-    {
-      return $this->belongsTo(users::class);
-    }
 
-    public function kamar() 
-    {
-      return $this->belongsTo(kamar::class);
     }
+    
 }

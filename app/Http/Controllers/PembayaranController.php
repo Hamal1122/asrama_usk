@@ -107,11 +107,15 @@ class PembayaranController extends Controller
     $data = pembayaran::find($id);
     $data->update($request->all());
 
+    $idUser = $request->id;
+    $kategori = 
+    
     $riwayat = new Riwayat();
-    $riwayat->user_id = auth()->user()->id;
+    $riwayat->user_id = $idUser;
     $riwayat->kamar_id = $request->kamar_id;
     $riwayat->tanggal_masuk = $request->tanggal_masuk;
     $riwayat->tanggal_keluar = $request->tanggal_keluar;
+    $riwayat->kategori = $request->kategori;
     $riwayat->status = '0'; // 0 = masih tinggal, 1 = sudah selesai
     $riwayat->save();
 
