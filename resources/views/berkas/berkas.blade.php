@@ -13,7 +13,7 @@
     <h3 class="py-2">Upload Berkas Pengajuan Kamar</h3>
   </div>
 
-  <div class="bg-white text-abu text-sm font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">
+  <div class="bg-white text-abu text-xs font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">
     <div class="px-4 py-2">
       <h3 class="text-blue">Informasi:</h3>
       <p class="mt-2">- Lengkapi data kamu sesuai dengan ketentuan yang berlaku </p>
@@ -28,7 +28,7 @@
       <div class="container mx-auto py-4 bg-white mt-4 rounded-md">
         <div class="grid grid-cols-12">
           <div class="col-span-12 lg:col-span-6 px-6 gap-6 flex-col flex text-gray-dark lg:w-2/3">
-            <h1 class="font-Inter text-blue text-lg">Berkas Pengajuan Kamar</h1>
+            <h1 class="font-Inter text-blue text-base">Berkas Pengajuan Kamar</h1>
             @csrf
 
             <div>
@@ -59,7 +59,7 @@
           <!-- Form Pengajuan Kamar -->
           <div class="col-span-12 lg:col-span-6 ">
             <div class="col-span-12 lg:col-span-6 px-6 gap-6 flex-col flex lg:w-2/3 mt-8 lg:mt-0">
-              <h1 class="font-Inter text-blue text-lg">Form Pengajuan Kamar</h1>
+              <h1 class="font-Inter text-blue text-base">Form Pengajuan Kamar</h1>
 
               <div>
                 <label class="text-gray-dark" for="">Kategori Gedung</label>

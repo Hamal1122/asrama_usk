@@ -23,7 +23,7 @@ public function gedung()
 
 public function penghuni()
   {
-    return $this->hasMany(pembayaran::class, 'kamar_id');
+    return $this->hasMany(Riwayat::class, 'kamar_id');
   }
 
 }

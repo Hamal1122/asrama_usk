@@ -25,7 +25,7 @@
 <div class=" overflow-x-auto">
   <table class="table-auto font-semibold text-sm overflow-x-auto ">
     <thead class="rounded-md">
-      <tr>
+      <tr class="font-poppins text-sm">
         <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
         <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama </th>
         <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> NIM</th>
@@ -43,7 +43,7 @@
 
     <tbody>
       @foreach ($berkas as $berkas)
-      <tr class="">
+      <tr class="font-poppins text-xs">
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-4  text-left font-light">{{ ++$i }}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$berkas->user->name}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$berkas->user->nim}}</td>
@@ -54,7 +54,7 @@
           @if($berkas->status == 0)
           <h3 class="mt-2 bg-abu  bg-opacity-10 text-abu px-2 py-1 text-center rounded-full text-sm font-extralight">Menunggu</h3>
           @elseif($berkas->status == 1)
-          <h3 class="mt-2 bg-green  bg-opacity-10 text-green text-center px-2 py-1 rounded-full text-sm font-extralight">Diterima</h3>
+          <h3 class="mt-2 bg-green  bg-opacity-10 text-green text-center px-2 py-1 rounded-full text-xs font-poppins">Diterima</h3>
           @endif
         </td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light whitespace-nowrap"><span class="text-abu">{{$berkas->kategori}}</span></td>

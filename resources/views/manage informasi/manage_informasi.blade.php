@@ -18,8 +18,8 @@
   @endif -->
 
   <div class="p-4 bg-gray-soft my-4 rounded-md">
-    <div class="my-4">
-      <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-8 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambahInformasi') }}"><i class="bi bi-plus"></i>Tambah Postingan</a>
+    <div class="my-4 font-poppins text-xs">
+      <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-6 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambahInformasi') }}"><i class="bi bi-plus"></i>Tambah Postingan</a>
     </div>
 
     <div>

@@ -18,7 +18,7 @@
 
 
 
-        <div class="mx-auto md:mx-4">
+        <div class="mx-auto md:mx-4 font-poppins">
           <h3 class="my-2">Nama : <span class="font-bold">{{Auth::user()->name}}</span></h3>
           <h3 class="my-2">NIM : <span class="font-bold">{{Auth::user()->nim}}</span></h3>
           <h3 class="my-2">No.Telpon : <span class="font-bold">{{Auth::user()->no_hp}}</span></h3>
@@ -43,9 +43,9 @@
     <p class="text-abu text-xs">Mulai : {{ date('d F Y', strtotime($data->tanggal_masuk)) }}</p>
     <p class="text-abu text-xs">Berakhir : {{ date('d F Y', strtotime($data->tanggal_keluar)) }}</p>
     <div class="mt-3">
-      @if($data->status == 1)
+      @if($data->status == 0)
       <h3 class="bg-green bg-opacity-20 text-green text-xs py-1 px-6 w-fit rounded-full">Aktif</h3>
-      @elseif($berkas->status == 2)
+      @elseif($berkas->status == 1)
       <h3 class="bg-abu bg-opacity-20 text-abu text-xs py-1 px-6 w-fit rounded-full">Nonaktif</h3>
       @endif
     </div>

@@ -16,7 +16,7 @@
 <div class="mt-4 relative overflow-x-auto">
   <table class="table-auto font-semibold text-sm w-full rtl:text-right">
     <thead class="rounded-md">
-      <tr>
+      <tr class="font-poppins text-sm   ">
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama </th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> NIM</th>
@@ -33,7 +33,7 @@
 
     <tbody>
     @foreach ($data as $data)
-      <tr>
+      <tr class="font-poppins text-xs">
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-4  text-left font-light">{{ ++$i }}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->berkas->user->name}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$data->berkas->user->nim}}</td>

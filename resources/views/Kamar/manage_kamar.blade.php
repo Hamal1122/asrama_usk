@@ -17,12 +17,6 @@
   <div class="mt-4 p-4 bg-white rounded-md">
 
     <div class="flex gap-4 items-center">
-      <div class="my-4">
-        <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-4 py-3 rounded-md transition-all focus:scale-95" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
-      </div>
-      <div class="my-4">
-        <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-4 py-3 rounded-md transition-all focus:scale-95" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
-      </div>
       <form action="/manage_kamar" method="get">
         <div class="mt-3 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md border border-gray-soft">
           <div>
@@ -31,6 +25,33 @@
               <input type="search" name="search" id="search" placeholder="Cari gedung" class="py-1 px-2 rounded-sm text-sm">
         </div>
         </form>
+      <div class="my-4">
+        <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-4 py-3 rounded-md transition-all focus:scale-95" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</a>
+      </div>
+      <div class="my-4">
+        <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-4 py-3 rounded-md transition-all focus:scale-95" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</a>
+      </div>
+
+      <div class="relative">
+    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-gray-dark bg-white border border-abu border-opacity-10 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" onclick="toggleDropdown()">Kategori Gedung
+        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+    </button>
+
+    <!-- Menu dropdown -->
+    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44  absolute mt-2">
+        <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownDefaultButton">
+            <li>
+                <a href="#" class="block px-4 py-2 text-gray-dark hover:text-white hover:bg-blue">Laki - laki</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 text-gray-dark hover:text-white hover:bg-blue">Perempuan</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
     </div>
 
 
@@ -94,6 +115,15 @@
       });
   });
 </script>
+
+{{-- dropdwown --}}
+<script>
+    function toggleDropdown() {
+        var dropdown = document.getElementById('dropdown');
+        dropdown.classList.toggle('hidden');
+    }
+</script>
+
 <script>
   @if(Session::has('berhasil'))
   toastr.success("{{ Session::get('berhasil') }}")

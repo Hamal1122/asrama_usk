@@ -25,7 +25,8 @@
     <!-- login -->
     <form action="{{ route('login') }}" method="POST" class="w-auto h-fit bottom-0 px-4 md:px-8  py-6 m-auto bg-white shadow-md rounded-lg z-0 items-center flex flex-wrap gap-4">
       <div class="hidden md:block">
-        <img class="w-fit h-[500px] rounded-lg" src="https://img.freepik.com/free-vector/neighbours-windows-illustration_1284-65010.jpg?w=740&t=st=1700107573~exp=1700108173~hmac=7d2f56ef41ed4b3bd36d6f8194217870145068251f4881c595cd781e3bd9cdcc" alt="">
+        <img class="w-[420px] h-fit rounded-md" src="images/bglogin.png">
+
       </div>
 
       <div class="items-center px-8 gap-20 ">
