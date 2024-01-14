@@ -31,7 +31,7 @@
 
     <table class="table-auto font-semibold text-sm w-full rounded-md border border-gray-soft">
       <thead class="rounded-md">
-        <tr>
+        <tr class="font-poppins text-xs">
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">No</th>
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Nama Kamar</th>
           <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Nama Gedung</th>
@@ -44,7 +44,7 @@
       @foreach ($kamar as $kamar)
 
       <tbody>
-        <tr class="">
+        <tr class="font-poppins text-xs">
           <td class="bg-white border-b-silver border-b-4 text-gray-dark w-fit text-left px-6 py-6 tracking-wide font-light">{{ ++$i }}</td>
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->nama }}</td>
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->gedung->nama }}</td>

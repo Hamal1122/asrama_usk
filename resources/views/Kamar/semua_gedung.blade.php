@@ -14,13 +14,13 @@
         <img class="w-[240px] h-fit rounded-md" src="https://img.freepik.com/free-vector/home-interior-background-theme_23-2148647102.jpg?w=1060&t=st=1700195447~exp=1700196047~hmac=1ddae94ec8b8af95ed88a89a734c52ff005ecf81862a1c80f94fffaedf14d926" alt="">
       </div>
       <div>
-        <h1 class="mt-2 font-semibold text-base">{{ $gedung->nama }}</h1>
+        <h1 class="mt-2 font-semibold text-sm">{{ $gedung->nama }}</h1>
       </div>
-      <div class="mt-2 flex gap-4">
+      <div class="mt-2 flex gap-4 text-xs">
         <h3 class="bg-blue bg-opacity-10 text-purple py-1 px-2 rounded-lg w-fit font-extralight">{{ $gedung->kategori_gedung }}</h3>
         <h3 class=" bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">{{ $gedung->jumlahkamar }}<span> Kamar</span></h3>
       </div>
-      <div class="mt-6 w-full flex justify-between">
+      <div class="mt-6 w-full flex justify-between text-xs">
         <a href="/semuakamar/{{ $gedung[ 'id' ] }}" class="text-center bg-purple  hover:text-white hover:px-10 text-white px-8 py-2 rounded-md transition-all focus:scale-95">Detail</a>
       </div>
     </div>
