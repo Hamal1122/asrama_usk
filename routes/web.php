@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Request;
 // Route::get('/manage_berkas',[BerkasController::class, 'manage'])->name('manage_berkas');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //admin
 Route::middleware(['auth', 'user-role:admin'])->group(function () {

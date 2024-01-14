@@ -17,6 +17,9 @@
         <input type="text" name="nama" id="nama" class="field" placeholder="" value="{{$pembayaran->berkas->user->name}}" required readonly/>
       </div>
 
+      <input type="hidden" name="id" value="{{$pembayaran->berkas->user->id}}">
+      <input type="hidden" name="kategori" value="{{$pembayaran->berkas->kategori}}">
+
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label for="text" class="text-gray-dark">NIM </label>
         <input type="text" name="nama" id="nama" class="field" placeholder="" value="{{$pembayaran->berkas->user->nim}}" required readonly />

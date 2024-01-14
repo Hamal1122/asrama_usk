@@ -45,7 +45,7 @@
     <div class="mt-3">
       @if($data->status == 0)
       <h3 class="bg-green bg-opacity-20 text-green text-xs py-1 px-6 w-fit rounded-full">Aktif</h3>
-      @elseif($berkas->status == 1)
+      @elseif($data->status == 1)
       <h3 class="bg-abu bg-opacity-20 text-abu text-xs py-1 px-6 w-fit rounded-full">Nonaktif</h3>
       @endif
     </div>

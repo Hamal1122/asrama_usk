@@ -23,7 +23,7 @@ class UserController extends Controller
     function user(Request $request)
     {
     if ($request->has('search')) {
-        $data = Riwayat::whereHas('user', function ($query) use ($request) {
+        $data = Riwayat::whereHas('users', function ($query) use ($request) {
             $query->where('nim', 'LIKE', '%' . $request->search . '%');
         })->get();
 
