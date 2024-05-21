@@ -25,14 +25,14 @@
 <div class=" relative overflow-x-auto">
   <table class="table-auto font-semibold text-sm w-full rtl:text-right">
     <thead class="rounded-md">
-      <tr class="font-poppins text-sm">
+      <tr class="font-poppins text-xs">
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama </th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> NIM</th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Email</th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> No. HP</th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Kategori Mahasiswa</th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Jenis Kelamin</th>
+        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Status</th>
+        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Tanggal</th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> </th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> </th>
       </tr>
@@ -45,12 +45,18 @@
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->user->name}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$data->user->nim}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$data->user->email}}</td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$data->user->no_hp}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$data->kategori}}</td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$data->user->jenis_kelamin}}</td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light mr-6">
+          @if($data->status == 0)
+          <h3 class="mt-2 bg-green  bg-opacity-10 text-green px-2 py-1 text-center rounded-full text-xs font-light">Aktif</h3>
+          @elseif($data->status == 1)
+          <h3 class="mt-2 bg-abu  bg-opacity-10 text-abu text-center px-2 py-1 rounded-full text-xs font-poppins">Nonaktif</h3>
+          @endif
+        </td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{ date('d F Y', strtotime($data->tanggal_masuk)) }}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"></td>
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-4  text-left font-light">
-          <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/detail_user/{{ $data[ 'id' ] }}">Detail</a>
+          <a class="bg-blue bg-opacity-25 text-blue px-4  py-2 rounded-md hover:bg-blue hover:text-white transition-all" href="/detail_user/{{ $data[ 'id' ] }}">Detail</a>
         </td>
       </tr>
       @endforeach

@@ -14,15 +14,15 @@
     }
 
     .menuaktif {
-        @apply text-purple;
+        @apply text-purple text-sm;
     }
 
     .menuhover {
-        @apply transition-all my-4 text-left p-4 cursor-pointer rounded-lg font-Inter text-sm text-abu hover:bg-bermuda hover:text-purple;
+        @apply transition-all my-4 text-left p-4 cursor-pointer rounded-lg font-poppins text-sm text-abu hover:bg-bermuda hover:text-purple;
     }
 
     .logout {
-        @apply transition-all text-left p-4 rounded-lg text-base font-Inter text-red hover:bg-red hover:bg-opacity-10 hover:text-red;
+        @apply transition-all text-left p-4 rounded-lg text-sm font-poppins text-red hover:bg-red hover:bg-opacity-10 hover:text-red;
     }
 
     /* Inputfield css */

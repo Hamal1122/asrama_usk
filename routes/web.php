@@ -11,7 +11,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KamarsayaController;
 use App\Http\Controllers\PengawasController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\KeuanganController;
 use App\Models\kamar;
+use App\Models\keuangan;
 use Illuminate\Support\Facades\Request;
 
 
@@ -48,7 +50,7 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     // manage gedung 
     Route::get('/manage_kamar', [KamarController::class, 'manage'])->name('manage_kamar'); // halaman manage kamar
     Route::post('/tambah_gedung', [KamarController::class, 'tambah'])->name('tambah gedung'); // menambahkan gedung
-    Route::get('/tambah_gedung', [KamarController::class, 'tampil'])->name('tambah gedung'); // halaman form tambah gedung
+    // Route::get('/tambah_gedung', [KamarController::class, 'tampil'])->name('tambah gedung'); // halaman form tambah gedung
     Route::get('/tampil_gedung/{id}', [KamarController::class, 'tampilgedung'])->name('tampilgedung'); // menampilkan data gendung
     Route::post('/edit_gedung/{id}', [KamarController::class, 'editgedung'])->name('tampilgedung'); // update data gedung
     Route::get('/update_gedung/{id}', [KamarController::class, 'updategedung'])->name('updatekamar'); // menampilkan form edit gedung
@@ -58,7 +60,7 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::get('/gedung/{id}', [KamarController::class, 'isigedung'])->name('isigedung'); // menampilkan kamar kamar di dalam gedung berdasarkan id gedung
     Route::get('detail_kamar/{id}', [KamarController::class, 'detailkamar'])->name('detailkamar'); // menampilkan detail kamar
     Route::post('/tambah_kamar', [KamarController::class, 'tambahkamar'])->name('tambah kamar'); // menambahkan data kamar
-    Route::get('/tambah_kamar', [KamarController::class, 'formtambahkamar'])->name('tambah kamar'); // menampilkan form tambah kamar
+    // Route::get('/tambah_kamar', [KamarController::class, 'formtambahkamar'])->name('tambah kamar'); // menampilkan form tambah kamar
     Route::get('/update_kamar/{id}', [KamarController::class, 'updatekamar'])->name('updatekamar'); // tampilkan form edit kamar
     Route::post('/edit_kamar/{id}', [KamarController::class, 'editkamar'])->name('editkamar'); // proses edit kamar
     Route::get('/delete_kamar/{id}', [KamarController::class, 'deletekamar'])->name('deletekamar'); // delete data kamar
@@ -70,6 +72,10 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::post('/edit_pengawas/{id}', [PengawasController::class, 'edit'])->name('edit_pengawas');
     Route::get('/update_pengawas/{id}', [PengawasController::class, 'formedit'])->name('edit_pengawas');
     Route::get('/delete_pengawas/{id}', [PengawasController::class, 'delete'])->name('deletekamar'); // delete data kamar
+
+    // manage keuangan
+    Route::get('/manage_keuangan', [KeuanganController::class, 'index'])->name('manage_keuangan');
+
 
      // manage user
      Route::get('/manage_user', [UserController::class, 'user'])->name('manage_user'); 
@@ -103,9 +109,11 @@ Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
     Route::post('/upload_berkas/upload', [BerkasController::class, 'upload'])->name('berkas.upload'); // proses upload berkas
     Route::get('/bukti_pembayaran', [PembayaranController::class, 'bukti'])->name('bukti_pembayaran'); // menampilkan halaman upload bukti pembayaran
     Route::post('/bukti_pembayaran/upload', [BerkasController::class, 'upload_bukti_bayar'])->name('upload.bukti_pembayaran'); // proses upload bukti pembayaran
+    
+});
 
-   
-
+Route::middleware(['auth', 'user-role:superadmin'])->group(function () {
+    
     
 });
 

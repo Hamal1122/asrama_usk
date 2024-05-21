@@ -21,6 +21,9 @@ class Riwayat extends Model
         'tanggal_keluar',
         'kategori',
         'status',
+        'harga',
+        'jeniskamar',
+        'durasi',
     ];
 
     public function user()

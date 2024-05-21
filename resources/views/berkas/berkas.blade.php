@@ -69,7 +69,7 @@
               <div>
                 <label class="text-gray-dark" for="">Masa Sewa</label>
                 <select class="field text-gray-dark" id="durasi" name="durasi">
-                  <option value="1tahun">1 Tahun</option>
+                  <option value="1 tahun">1 Tahun</option>
                 </select>
               </div>
 
@@ -78,12 +78,12 @@
                 <select class="field text-gray-dark" id="jenisKamar" name="jenisKamar" onchange="updateHarga()" required>
                   <option value="">Masukkan Pilihan</option>
                   <option value="2orang">Kapasitas 2 Orang</option>
-                  <option value="4orang">Kapasitas  4 Orang</option>
+                  <option value="4orang">Kapasitas 4 Orang</option>
                 </select>
               </div>
               <div>
                 <label class="text-gray-dark" for="harga">Total Harga</label>
-                <input class="field text-abu" type="text" name="harga" id="harga" readonly>
+                <input class="field text-abu" type="number" name="harga" id="harga" readonly>
               </div>
 
             </div>
@@ -124,11 +124,11 @@
 
       // Logika penentuan harga berdasarkan jenis kamar
       if (jenisKamar === "2orang") {
-        harga = "Rp. 2.400.000";
+        harga = 2400000;
       } else if (jenisKamar === "4orang") {
-        harga = "Rp. 1.200.000";
+        harga = 1200000;
       } else {
-        harga = "Rp. 0";
+        harga = 0;
       }
 
       // Menyimpan harga pada input dengan id "harga"

@@ -14,19 +14,6 @@
     <h3 class="py-2">Lihat Kamar</h3>
   </div>
 
-  <div class=" mt-3 py-4  rounded-md bg-white px-6 flex justify-between">
-    <div>
-      <div>
-        <h1 class="text-abu">Pengawas :</h1>
-      </div>
-        <div class="mt-2 font-Inter text-blue">
-          @foreach ($pengawas as $data)
-          <h1 class="bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit"><i class="bi bi-person-fill mr-2"></i>{{ $data->nama}} <span>- 0{{ $data->no_hp}} </span></h1>
-          @endforeach
-        </div>
-    </div>
-  </div>
-
   <div class="mt-4 p-4 bg-white rounded-md">
 
     <table class="table-auto font-semibold text-sm w-full rounded-md border border-gray-soft">
@@ -51,7 +38,7 @@
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light"><span class="text-green">{{ $kamar->jumlahpenghuni }}<span class="text-abu"><span> / </span>{{ $kamar->kapasitas }} Orang</span></span></td>
            <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light">{{ $kamar->formatRupiah('harga') }}</td>
           <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-6 tracking-wide text-left font-light mr-6">
-            <a class="bg-yellow bg-opacity-25 text-yellow px-4  py-2 rounded-md hover:bg-yellow hover:text-white transition-all" href="/detail_kamar/{{ $kamar[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i></a>
+            <a class="bg-blue bg-opacity-25 text-blue px-4  py-2 rounded-md hover:bg-blue hover:text-white transition-all" href="/detail_kamar/{{ $kamar[ 'id' ] }}"><i class="bi bi-door-closed-fill mx-2"></i></i></a>
             <a class="bg-green bg-opacity-25 text-green px-4  py-2 rounded-md hover:bg-green hover:text-white transition-all" href="/update_kamar/{{ $kamar->id }}"><i class="bi bi-pencil-square mx-2"></i></a>
             <a href="#" class="bg-red bg-opacity-25 text-red px-4  py-2 rounded-md hover:bg-red hover:text-white transition-all delete" data-id="{{ $kamar->id }}" type="" data-nama="{{ $kamar->nama }}"><i class=" bi bi-trash-fill mx-2"></i></a>
           </td>

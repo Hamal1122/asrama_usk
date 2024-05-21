@@ -17,7 +17,7 @@ class Users extends Seeder
         $data = [
             [
                 'name' => 'admin',
-                'email' => 'admin123@gmail.com',
+                'email' => 'admin1@gmail.com',
                 'nim' => '11111',
                 'no_hp' => '081234567890',
                 'role' => 0,
@@ -42,7 +42,27 @@ class Users extends Seeder
                 'role' => 1,
                 'jenis_kelamin' => 'laki-laki',
                 'password' => Hash::make('hamal12345'),
-            ]
+            ],
+
+            [
+                'name' => 'Ardi',
+                'email' => 'ardi@gmail.com',
+                'nim' => '2008107010041',
+                'no_hp' => '082292389762',
+                'role' => 1,
+                'jenis_kelamin' => 'laki-laki',
+                'password' => Hash::make('ardil12345'),
+            ],
+
+            [
+                'name' => 'lukman',
+                'email' => 'lukman@gmail.com',
+                'nim' => '2008107010042',
+                'no_hp' => '082292389762',
+                'role' => 1,
+                'jenis_kelamin' => 'laki-laki',
+                'password' => Hash::make('lukmanl12345'),
+            ],
         ];
         foreach ($data as $key => $value) {
             DB::table('users')->insert($value);

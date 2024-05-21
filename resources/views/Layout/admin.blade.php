@@ -13,6 +13,7 @@
   @vite('resources/css/app.css')
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 </head>
@@ -46,7 +47,6 @@
         <li class="menuhover"><a class=" @if(Request::is('beranda_admin')) menuaktif @endif" href="{{route ('beranda_admin') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Dashboard</a></li>
         <li class="menuhover"><a class=" @if(Request::is('manage_kamar')) menuaktif @endif"  href="{{route ('manage_kamar') }}"><i class="bi bi-sliders mx-4"></i>Manage Kamar</a></li>
         <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage User</a></li>
-        <li class="menuhover"><a href=""><i class="bi bi-person-fill mx-4"></i></i>Manage Pengawas</a></li>
         <li class="menuhover "><a href="{{route ('manage_informasi') }}"><i class="bi bi-info-square-fill mx-4"></i>Manage Postingan</a></li>
         <li class="menuhover "><a href="{{route ('manage_berkas') }}"><i class="bi bi-file-earmark-check-fill mx-4"></i>Manage Berkas</a></li>
         <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -65,17 +65,17 @@
           <nav class="bg-white h-screen text-center px-4 fixed w-fit">
             <div class="flex flex-row justify-center gap-4 font-Inter p-4 mx-auto px-12">
               <img class="w-8 h-8 " src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" alt="">
-              <h3 class=" py-2 font-Inter text-sm">Asrama USK</h3>
+              <h3 class=" py-2 font-poppins text-sm">Asrama USK</h3>
             </div>
-            <h2 class="py-4  font-Inter font-bold">Menu</h2>
+            <h2 class="py-4  font-poppins font-bold">Menu</h2>
             <ul class="">
               <li class="menuhover"><a class=" @if(Request::is('beranda_admin')) menuaktif @endif" href="{{route ('beranda_admin') }}"><i class="bi bi-grid-1x2-fill  mx-4"></i>Dashboard</a></li>
-              <li class="menuhover"><a class=" @if(Request::is('manage_berkas')) menuaktif @endif" href="{{route ('manage_berkas') }}"><i class="bi bi-sliders  mx-4"></i>Manage Berkas</a></li>
-              <li class="menuhover"><a class=" @if(Request::is('manage_pembayaran')) menuaktif @endif" href="{{route ('manage_pembayaran') }}"><i class="bi bi-sliders  mx-4"></i>Manage Pembayaran</a></li>
-              <li class="menuhover"><a class=" @if(Request::is('manage_kamar')) menuaktif @endif" href="{{route ('manage_kamar') }}"><i class="bi bi-sliders  mx-4"></i>Manage Kamar</a></li>
-              <li class="menuhover"><a class=" @if(Request::is('manage_user')) menuaktif @endif" href="{{route ('manage_user') }}"><i class="bi bi-sliders  mx-4"></i>Manage Pengguna</a></li>
-              <li class="menuhover"><a class=" @if(Request::is('manage_pengawas')) menuaktif @endif" href="{{route ('manage_pengawas') }}"><i class="bi bi-sliders  mx-4"></i>Manage Pengawas</a></li>
-              <li class="menuhover"><a class=" @if(Request::is('manage_informasi')) menuaktif @endif" href="{{route ('manage_informasi') }}"><i class="bi bi-sliders  mx-4"></i>Manage Postingan</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('manage_berkas')) menuaktif @endif" href="{{route ('manage_berkas') }}"><i class="bi bi-archive-fill  mx-4"></i>Manage Berkas</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('manage_pembayaran')) menuaktif @endif" href="{{route ('manage_pembayaran') }}"><i class="bi bi-calendar3-event-fill mx-4"></i>Manage Pembayaran</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('manage_kamar')) menuaktif @endif" href="{{route ('manage_kamar') }}"><i class="bi bi-door-closed-fill mx-4"></i>Manage Kamar</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('manage_user')) menuaktif @endif" href="{{route ('manage_user') }}"><i class="bi bi-people-fill mx-4"></i>Manage Pengguna</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('manage_keuangan')) menuaktif @endif" href="{{route ('manage_keuangan') }}"><i class="bi bi-credit-card-2-front-fill mx-4"></i>Manage Keuangan</a></li>
+              <li class="menuhover"><a class=" @if(Request::is('manage_informasi')) menuaktif @endif" href="{{route ('manage_informasi') }}"><i class="bi bi-sticky-fill mx-4"></i>Manage Postingan</a></li>
               <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form2').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>

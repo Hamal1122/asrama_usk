@@ -11,7 +11,9 @@ use App\Models\kamar;
 use App\Models\User;
 use App\Models\Users;
 use App\Models\berkas;
+use App\Models\keuangan;
 use App\Models\Pembayaran;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,8 +36,23 @@ class BerandaController extends Controller
   }
 
   // menampilkan view dasboard admin
-  public function admin()
+  public function admin(Request $request)
   {
+    $jumlah_kipk = berkas::where('kategori', 'KIP')->count();
+    $jumlah_reguler = berkas::where('kategori', 'Reguler')->count();
+    $jumlah_internasional = berkas::where('kategori', 'Internasional')->count();
+    $jumlah_gedungpr = gedung::where('kategori_gedung', 'perempuan')->count();
+    $jumlah_gedunglk = gedung::where('kategori_gedung', 'laki-laki')->count();
+    $lasttransaction = pembayaran::orderBy('id', 'desc')->take(5)->get();
+    $chart = berkas::selectRaw('YEAR(created_at) as year,MONTH(created_at) as month, SUM(harga) as count')
+    ->where('created_at', '>=', Carbon::now()->subYears(4))
+    ->groupBy('year', 'month')
+    ->orderBy('year', 'asc')
+    ->orderBy('month', 'asc')
+    ->get()
+    ->toArray();
+
+
     $jumlah_gedung = gedung::all()->count();
     $jumlah_kamar = kamar::all()->count();
     $jumlah_postingan = beranda::all()->count();
@@ -43,7 +60,7 @@ class BerandaController extends Controller
     $pengguna_aktif = pembayaran::orderBy('id', 'desc')->take(5)->get();
     $jumlah_pengguna_aktif = pembayaran::where('status', 1)->count();
     $unverified = berkas::orderBy('id', 'desc')->take(5)->get();
-    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'pengguna_aktif', 'jumlah_pengguna', 'unverified','jumlah_pengguna_aktif'));
+    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'pengguna_aktif', 'jumlah_pengguna', 'unverified','jumlah_pengguna_aktif', 'jumlah_kipk','jumlah_reguler', 'jumlah_internasional','jumlah_gedungpr','jumlah_gedunglk','lasttransaction', 'chart' ))->with('i', ($request->input('page', 1) - 1));
   }
 
   // menampilkan view informasi

@@ -51,6 +51,8 @@ class LoginController extends Controller
                 return redirect()->route('beranda_admin');
             }else if (auth()->user()->role == 'mahasiswa'){
                 return redirect()->route('beranda');
+            }else if (auth()->user()->role == 'superadmin'){
+                return redirect()->route('beranda_admin');
             }
         }else{
             return redirect()->route('login')->with('error','NIM atau Password salah');

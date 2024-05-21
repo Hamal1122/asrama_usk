@@ -25,7 +25,7 @@
 <div class=" overflow-x-auto">
   <table class="table-auto font-semibold text-sm overflow-x-auto ">
     <thead class="rounded-md">
-      <tr class="font-poppins text-sm">
+      <tr class="font-poppins text-xs">
         <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
         <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama </th>
         <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> NIM</th>
@@ -61,12 +61,12 @@
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->kategorigedung}}</span></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->jeniskamar}}</span></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$berkas->durasi}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light whitespace-nowrap"><span class="text-abu">{{$berkas->harga}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light whitespace-nowrap"><span class="text-abu">{{$berkas->formatRupiah('harga')}}</span></td>
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-2 py-2  text-left font-light">
           @if($berkas->status == 0)
           <a class="bg-red bg-opacity-25 text-red px-4  py-[10px] rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Reject</a>
           @elseif($berkas->status == 1)
-          {{-- <a class="bg-red bg-opacity-25 text-red px-4  py-[10px] rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Delete</a> --}}
+          <a class="bg-red bg-opacity-25 text-red px-4  py-[10px] rounded-md hover:bg-red hover:text-white transition-all reject"  data-id="{{ $berkas->id }}" type="" data-nama="{{ $berkas->user->name }}" href="#">Delete</a>
           @endif
         </td>
         
@@ -84,6 +84,7 @@
 
     </tbody>
   </table>
+  {{ $paginate->links() }}
 </div>
 
 <script>

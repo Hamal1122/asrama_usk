@@ -29,7 +29,8 @@ class PembayaranController extends Controller
         }else{
         $berkas = berkas::orderBy('id', 'desc')->get();
         }
-        return view('/berkas/manage_berkas', compact('berkas'))->with('i', ($request->input('page', 1) - 1));
+        $paginate = \App\Models\berkas::paginate(10);
+        return view('/berkas/manage_berkas', compact('berkas','paginate'))->with('i', ($request->input('page', 1) - 1));
     
     }
 
@@ -92,7 +93,7 @@ class PembayaranController extends Controller
     {
         $data = Pembayaran::all();
         $berkas = berkas::all();
-        return view('/berkas/manage_pembayaran', compact('data', 'berkas'))->with('i', ($request->input('page', 1) - 1));
+        return view('/berkas/manage_pembayaran', compact('data', 'berkas' ))->with('i', ($request->input('page', 1) - 1));
     }
 
     public function reject_pembayaran($id)
@@ -116,6 +117,9 @@ class PembayaranController extends Controller
     $riwayat->tanggal_masuk = $request->tanggal_masuk;
     $riwayat->tanggal_keluar = $request->tanggal_keluar;
     $riwayat->kategori = $request->kategori;
+    $riwayat->harga = '1200000';
+    $riwayat->jeniskamar = '4Orang';
+    $riwayat->durasi = '1tahun';
     $riwayat->status = '0'; // 0 = masih tinggal, 1 = sudah selesai
     $riwayat->save();
 

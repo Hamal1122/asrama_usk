@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->ForeignId('user_id');
             $table->integer('status');
-            $table->enum('kategori',['KIP', 'reguler', 'internasional']);
+            $table->enum('kategori',['KIP', 'Reguler', 'Internasional']);
             $table->string('nama_berkas');
-            $table->enum('kategorigedung',['laki-laki','perempuan']);
+            $table->enum('kategorigedung',['Laki-laki','Perempuan']);
             $table->string('jeniskamar');
-            $table->string('harga');
-            $table->enum('durasi',['1tahun']);
+            $table->bigInteger('harga');
+            $table->enum('durasi',['1 tahun']);
             $table->timestamps();
         });
     }

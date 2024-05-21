@@ -8,10 +8,11 @@
   </div>
 
   <div class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4">
+    <div class="border border-dashed p-8 rounded-md">
     <div class="">
       @foreach ($data as $data)
        @if($data->kamar_id !== 0)
-      <div class="mt-6">
+      <div class="">
         <h1 class="text-2xl font-bold">{{$data->kamar->nama}}</h1>
       </div>
 
@@ -19,6 +20,7 @@
         <h1 class="text-base mt-2 font-Inter text-abu">Kapasitas : {{$data->kamar->kapasitas}} orang </h1>
         <h1 class="text-base mt-2 font-Inter text-abu"> Gedung : {{$data->kamar->gedung->nama}}</h1>
         <h1 class="text-base mt-2 font-Inter text-abu"> Kategori : {{$data->kamar->gedung->kategori_gedung}} </h1>
+        <h1 class="text-base mt-2 font-Inter text-abu"> Harga : {{$data->kamar->formatRupiah('harga')}} / Tahun</h1>
       </div>
 
       <div class="mt-6 w-fit text-abu">
@@ -31,15 +33,10 @@
         <div class="field mt-2">{{ date('d F Y', strtotime($data->tanggal_keluar)) }}</div>
       </div>
 
-      {{-- <div class=" mt-3 py-4  rounded-md">
-        <h1 class="text-abu">Penghuni :</h1>
-        <div class="mt-2 font-Inter text-blue">
-          <h1 class="bg-green mt-2 bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit"><i class="bi bi-person-fill mr-2"></i>Penghuni</h1>
-        </div>
-      </div> --}}
       @endif
       @endforeach
 
     </div>
+  </div>
   </div>
   @endsection

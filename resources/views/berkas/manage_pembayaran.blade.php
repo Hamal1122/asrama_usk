@@ -16,7 +16,7 @@
 <div class="mt-4 relative overflow-x-auto">
   <table class="table-auto font-semibold text-sm w-full rtl:text-right">
     <thead class="rounded-md">
-      <tr class="font-poppins text-sm   ">
+      <tr class="font-poppins text-xs   ">
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama </th>
         <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> NIM</th>
@@ -40,11 +40,11 @@
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$data->berkas->kategori}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light">{{$data->berkas->user->jenis_kelamin}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light mr-6">
-          <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-extralight">{{$data->berkas->jeniskamar}}</h3>
+          <h3 class="mt-2 bg-green bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit font-light">{{$data->berkas->jeniskamar}}</h3>
         </td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><span>{{$data->berkas->durasi}}</span></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light"><a class="text-blue" href="{{ asset('storage/bukti/' . $data->bukti_pembayaran) }}" target="_blank">Lihat Bukti</a></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->berkas->harga}}</td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->berkas->formatRupiah('harga') }}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->created_at->format('d-m-Y')}}</td>
 
     @if($data->kamar_id == 0)
@@ -72,6 +72,7 @@
       </td>
       @endif
       </tr>
+      
 
 @endforeach
     </tbody>
