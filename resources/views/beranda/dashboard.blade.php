@@ -39,7 +39,7 @@
 
         <div class="flex flex-wrap gap-2 md:gap-8 items-center px-6 ">
           <div>
-            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-thin ">Tahap 1</div>
+            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-light ">Tahap 1</div>
           </div>
           <div>
             <p class="font-light text-xs bg-gray-dark bg-opacity-5 px-2 py-2 rounded-lg"> Melengkapi berkas yang dibutuhkan untuk pengajuan kamar di menu <a class="text-blue" href="{{route ('berkas') }}">Pengajuan Berkas</a> .</p>
@@ -48,7 +48,7 @@
 
         <div class="flex flex-wrap gap-2 md:gap-8 items-center px-6 mt-8">
           <div>
-            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-thin ">Tahap 2</div>
+            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-light ">Tahap 2</div>
           </div>
           <div>
             <p class="font-light text-xs bg-gray-dark bg-opacity-5 px-2 py-2 rounded-lg">Melengkapi formulir pengajuan kamar untuk mengajukan kamar ke pihak Asrama USK . </p>
@@ -57,7 +57,7 @@
 
         <div class="flex flex-wrap gap-2 md:gap-8 items-center px-6 mt-8">
           <div>
-            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-thin ">Tahap 3</div>
+            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-light ">Tahap 3</div>
           </div>
           <div>
             <p class="font-light text-xs bg-gray-dark bg-opacity-5 px-2 py-2 rounded-lg">Pihak Asrama USK mengecek dan memvalidasi bahwa data yang anda upload lengkap dan sesuai.</p>
@@ -66,7 +66,7 @@
 
         <div class="flex flex-wrap gap-2 md:gap-8 items-center px-6 mt-8">
           <div>
-            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-thin ">Tahap 4</div>
+            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-light ">Tahap 4</div>
           </div>
           <div>
             <p class="font-light text-xs bg-gray-dark bg-opacity-5 px-2 py-2 rounded-lg">Setelah data anda telah diverifikasi oleh pihak Asrama USK , anda dapat langsung menyelesaikan proses pembayaran dalam waktu 1 x 24 Jam</p>
@@ -75,7 +75,7 @@
 
         <div class="flex flex-wrap gap-2 md:gap-8 items-center px-6 mt-8">
           <div>
-            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-thin ">Tahap 5</div>
+            <div class="bg-blue text-blue bg-opacity-20 px-2 py-1 rounded-lg text-xs font-light ">Tahap 5</div>
           </div>
           <div>
             <p class="font-light text-xs bg-gray-dark bg-opacity-5 px-2 py-2 rounded-lg">Setelah semua proses diatas selesai , pihak Asrama USK akan menyediakan kamar kepada anda yang bisa dilihat di menu <a class="text-blue" href="{{route ('kamarsaya') }}">Kamar Saya</a></p>

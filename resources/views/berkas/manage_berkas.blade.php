@@ -14,13 +14,28 @@
 </div>
 
 <form action="/manage_berkas" method="get">
-<div class="mt-4 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
-  <div>
-  <i class="bi bi-search"></i>
-  </div>
-      <input type="search" name="search" id="search" placeholder="Search NIM" class="py-1 px-2 rounded-sm text-sm">
-</div>
-</form>
+      <div class="flex gap-6">
+          <div class="mt-4 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
+            <div>
+            <i class="bi bi-search"></i>
+            </div>
+                <input type="text" value="{{ request('search') }}" name="search" id="search" placeholder="Search NIM" class="py-1 px-2 rounded-sm text-sm">
+          </div>
+
+         <div class="mt-4 flex items-center text-gray-dark  bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
+          <i class="bi bi-funnel text-blue"></i>
+        <select name="kategori">
+            <option value="">Select Category</option>
+            @foreach($categories as $kategori)
+                <option value="{{ $kategori }}" {{ request('kategori') == $kategori ? 'selected' : '' }}>
+                    {{ $kategori }}
+                </option>
+            @endforeach
+        </select>
+        <button type="submit" class="text-blue">Cari</button>
+      </div>
+      </div>
+  </form>
 
 <div class=" overflow-x-auto">
   <table class="table-auto font-semibold text-sm overflow-x-auto ">
@@ -42,7 +57,7 @@
     </thead>
 
     <tbody>
-      @foreach ($berkas as $berkas)
+      @foreach ($data as $berkas)
       <tr class="font-poppins text-xs">
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-4  text-left font-light">{{ ++$i }}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$berkas->user->name}}</td>

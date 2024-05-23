@@ -25,7 +25,7 @@
     <!-- login -->
     <form action="{{ route('login') }}" method="POST" class="w-auto h-fit bottom-0 px-4 md:px-8  py-6 m-auto bg-white shadow-md rounded-lg z-0 items-center flex flex-wrap gap-4">
       <div class="hidden md:block">
-        <img class="w-[420px] h-fit rounded-md" src="images/bglogin.png">
+        <img class="w-[420px] h-fit rounded-md" src="images/gambar.png">
 
       </div>
 

@@ -13,7 +13,32 @@
   <h3 class="py-2">Manage Keuangan</h3>
 </div>
 
+<form action="/manage_keuangan" method="get">
+      <div class="flex gap-6">
+          <div class="mt-4 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
+            <div>
+            <i class="bi bi-search"></i>
+            </div>
+                <input type="text" value="{{ request('search') }}" name="search" id="search" placeholder="Search NIM" class="py-1 px-2 rounded-sm text-sm">
+          </div>
+
+         <div class="mt-4 flex items-center text-gray-dark  bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
+          <i class="bi bi-funnel text-blue"></i>
+        <select name="kategori">
+            <option value="">Select Category</option>
+            @foreach($categories as $kategori)
+                <option value="{{ $kategori }}" {{ request('kategori') == $kategori ? 'selected' : '' }}>
+                    {{ $kategori }}
+                </option>
+            @endforeach
+        </select>
+        <button type="submit" class="text-blue">Cari</button>
+      </div>
+      </div>
+  </form>
+
 <div class=" overflow-x-auto mt-6">
+  @if($data->isNotEmpty())
   <table class="table-auto font-semibold text-sm overflow-x-auto w-full ">
     <thead class="rounded-md">
       <tr class="font-poppins text-xs">
@@ -31,20 +56,20 @@
     </thead>
 
     <tbody>
-      @foreach ($data as $data)
+      @foreach ($data as $data => $item)
       <tr class="font-poppins text-xs">
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-4  text-left font-light">{{ ++$i }}</td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{ date('d F Y', strtotime($data->created_at)) }}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->berkas->user->name}}</td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$data->berkas->user->nim}}</td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light whitespace-nowrap"><span class="text-abu">{{$data->berkas->kategori}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$data->berkas->jeniskamar}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$data->berkas->durasi}}</span></td>
-        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light whitespace-nowrap"><span class="text-abu">{{$data->berkas->formatRupiah('harga')}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{ date('d F Y', strtotime($item->created_at)) }}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$item->berkas->user->name}}</td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$item->berkas->user->nim}}</td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light whitespace-nowrap"><span class="text-abu">{{$item->berkas->kategori}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$item->berkas->jeniskamar}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{$item->berkas->durasi}}</span></td>
+        <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light whitespace-nowrap"><span class="text-abu">{{$item->berkas->formatRupiah('harga')}}</span></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light mr-6">
-          @if($data->status == 0)
+          @if($item->status == 0)
           <h3 class="mt-2 bg-abu  bg-opacity-10 text-abu px-2 py-1 text-center rounded-full text-xs font-extralight">menunggu</h3>
-          @elseif($data->status == 1)
+          @elseif($item->status == 1)
           <h3 class="mt-2 bg-green  bg-opacity-10 text-green text-center px-2 py-1 rounded-full text-xs font-poppins">Berhasil</h3>
           @endif
         </td>
@@ -53,7 +78,11 @@
 
     </tbody>
   </table>
+  @else
+  <p>No data found</p>
+@endif
 </div>
+{{ $paginate->links() }}
 
 <script>
   $('.reject').click(function() {

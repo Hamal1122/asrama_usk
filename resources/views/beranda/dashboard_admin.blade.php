@@ -66,7 +66,7 @@
 </div>
 
 <div class="bg-white px-4 py-8 mt-4 w-full rounded-md ">
-  <h1 class="text-center text-base text-gray-dark ">Total Trasaksi</h1>
+  <h1 class="text-center text-base text-gray-dark ">Total Pendapatan</h1>
   <h3 class="text-center mb-4 text-xs">Pertahun</h3>
   <canvas id="transaksiChart"  width="100" height="30"></canvas>
 </div>

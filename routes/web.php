@@ -12,7 +12,9 @@ use App\Http\Controllers\KamarsayaController;
 use App\Http\Controllers\PengawasController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KeuanganController;
+use App\Http\Controllers\kirimEmailController;
 use App\Models\kamar;
+use App\Http\Controllers\Mail;
 use App\Models\keuangan;
 use Illuminate\Support\Facades\Request;
 
@@ -22,10 +24,12 @@ use Illuminate\Support\Facades\Request;
 // Route::get('/manage_berkas',[BerkasController::class, 'manage'])->name('manage_berkas');
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 //admin
 Route::middleware(['auth', 'user-role:admin'])->group(function () {
+
+    
 
     Route::get('/manage_informasi', [BerandaController::class, 'informasi'])->name('manage_informasi');// manage informasi(postingan)
     Route::get('/tambah_informasi', [BerandaController::class, 'tambahInformasi'])->name('tambahInformasi'); // menambah postingan
@@ -88,6 +92,7 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
 
 //mahasiswa (User)
 Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
+
     // Beranda
     Route::get('/', [BerandaController::class, 'beranda'])->name('beranda');// menampilkan halaman beranda admin
     Route::get('post/{id}', [BerandaController::class, 'detail'])->name('postingan');// menampilkan halaman detail postingan

@@ -57,9 +57,18 @@ class Users extends Authenticatable
         );
     }
 
+    protected $dispatchesEvents = [
+        'updated' => \App\Events\UserStatusChanged::class,
+    ];
+
     public function kamar()
     {
         return $this->belongsToMany(pembayaran::class, 'kamar_id');
+    }
+
+    public function status()
+    {
+        return $this->belongsToMany(pembayaran::class);
     }
 
 }

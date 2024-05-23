@@ -22,22 +22,30 @@ class keuanganController extends Controller
 {
   public function index(Request $request)
   {
-    if($request->has('search')){
-      $data = Pembayaran::whereHas('user', function ($query) use ($request) {
-          $query->where('nim', 'LIKE', '%' . $request->search . '%');
-      })->get();
+      $query = Pembayaran::query();
 
-      if ($berkas->isEmpty()) 
-      {
-          return view ('/berkas/eror');
+      if ($request->has('search')) {
+          $query->whereHas('user', function ($query) use ($request) {
+              $query->where('nim', 'LIKE', '%' . $request->search . '%');
+          });
       }
 
-  }else{
-  $data = Pembayaran::orderBy('id', 'desc')->get();
-  }
-  return view('/manage_keuangan/manage_keuangan', compact('data'))->with('i', ($request->input('page', 1) - 1));
-  }
+      if ($request->has('kategori') && !empty($request->kategori)) {
+          $query->whereHas('berkas', function ($query) use ($request) {
+              $query->where('kategori', $request->kategori);
+          });
+      }
 
-  
+      $data = $query->orderBy('id', 'desc')->get();
+
+      if ($data->isEmpty() && $request->has('search')) {
+          return view('berkas/eror');
+      }
+
+      $categories = Berkas::select('kategori')->distinct()->pluck('kategori');
+      $paginate = $query->paginate(10);
+
+      return view('manage_keuangan/manage_keuangan', compact('data', 'categories','paginate'))->with('i', ($request->input('page', 1) - 1));
+  }
 }
 
