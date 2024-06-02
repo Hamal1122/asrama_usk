@@ -24,30 +24,29 @@ use Illuminate\Http\Request;
 class PembayaranController extends Controller
 {
     public function index(Request $request)
-  {
-      $query = berkas::query();
+    {
+        $query = berkas::query();
 
-      if ($request->has('search')) {
-          $query->whereHas('user', function ($query) use ($request) {
-              $query->where('nim', 'LIKE', '%' . $request->search . '%');
-          });
-      }
+        if ($request->has('search')) {
+            $query->whereHas('user', function ($query) use ($request) {
+                $query->where('nim', 'LIKE', '%' . $request->search . '%');
+            });
+        }
 
-      if ($request->has('kategori') && !empty($request->kategori)) {
-        $query->where('kategori', $request->kategori);
+        if ($request->has('kategori') && !empty($request->kategori)) {
+            $query->where('kategori', $request->kategori);
+        }
+
+        $data = $query->orderBy('id', 'desc')->get();
+
+        if ($data->isEmpty() && $request->has('search')) {
+            return "empty";
+        }
+        $paginate = $query->paginate(10);
+        $categories = Berkas::select('kategori')->distinct()->pluck('kategori');
+
+        return view('berkas/manage_berkas', compact('data', 'categories', 'paginate'))->with('i', ($request->input('page', 1) - 1));
     }
-
-      $data = $query->orderBy('id', 'desc')->get();
-
-      if ($data->isEmpty() && $request->has('search')) {
-          return "empty";
-      }
-      $paginate = $query->paginate(10);
-
-      $categories = Berkas::select('kategori')->distinct()->pluck('kategori');
-
-      return view('berkas/manage_berkas', compact('data', 'categories', 'paginate'))->with('i', ($request->input('page', 1) - 1));
-  }
 
 
     public function reject($id)
@@ -80,7 +79,7 @@ class PembayaranController extends Controller
             $pembayaran = pembayaran::findorFail($id);
             $pembayaran->status = 1;
             $pembayaran->save();
-            Mail::to($pembayaran->user->email)->send(new kirimEmail($pembayaran));
+            
 
 
 
@@ -133,7 +132,7 @@ class PembayaranController extends Controller
 
       $categories = Berkas::select('kategori')->distinct()->pluck('kategori');
 
-      return view('manage_keuangan/manage_keuangan', compact('data', 'categories'))->with('i', ($request->input('page', 1) - 1));
+      return view('berkas/manage_pembayaran', compact('data', 'categories', 'paginate'))->with('i', ($request->input('page', 1) - 1));
   }
 
     public function reject_pembayaran($id)
@@ -163,6 +162,7 @@ class PembayaranController extends Controller
     $riwayat->durasi = '1tahun';
     $riwayat->status = '0'; // 0 = masih tinggal, 1 = sudah selesai
     $riwayat->save();
+    Mail::to($data->user->email)->send(new kirimEmail($data));
 
     return redirect()->route('manage_pembayaran')->with('berhasil', 'Data berhasil ditambahkan');
 

@@ -25,7 +25,7 @@ class Users extends Seeder
                 'password' => Hash::make('asramausk'),
             ],
             [
-                'name' => 'mahasiswa',
+                'name' => 'Gatot Kaca Roamer',
                 'email' => 'user123@gmail.com',
                 'nim' => '22222',
                 'no_hp' => '081234567898',
@@ -35,7 +35,7 @@ class Users extends Seeder
             ],
 
             [
-                'name' => 'Hamal',
+                'name' => 'Hamal Rizqy Mukhda',
                 'email' => 'hamalrizky09@gmail.com',
                 'nim' => '2008107010045',
                 'no_hp' => '082292389762',
@@ -45,8 +45,8 @@ class Users extends Seeder
             ],
 
             [
-                'name' => 'Ardi',
-                'email' => 'ardi@gmail.com',
+                'name' => 'Abi selimumm',
+                'email' => 'm.khawarilputra@gmail.com',
                 'nim' => '2008107010041',
                 'no_hp' => '082292389762',
                 'role' => 1,
@@ -55,13 +55,13 @@ class Users extends Seeder
             ],
 
             [
-                'name' => 'lukman',
-                'email' => 'lukman@gmail.com',
+                'name' => 'khairunnisa',
+                'email' => 'kkhairunnisa1122@gmail.com',
                 'nim' => '2008107010042',
                 'no_hp' => '082292389762',
                 'role' => 1,
                 'jenis_kelamin' => 'laki-laki',
-                'password' => Hash::make('lukmanl12345'),
+                'password' => Hash::make('nisa12345'),
             ],
         ];
         foreach ($data as $key => $value) {

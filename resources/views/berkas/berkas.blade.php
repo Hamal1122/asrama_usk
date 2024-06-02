@@ -35,7 +35,9 @@
               <label for="">Pilih Kategori</label>
               <select class="field text-gray-dark" id="kategori" name="kategori" required>
                 <option class="text-abu" value="">Plih Kategori Pengguna</option>
-                <option value="KIP">Mahasiswa KIPK</option>
+                @if (!$hasKIPK)
+                    <option value="KIP">Mahasiswa KIPK</option>
+                @endif
                 <option value="reguler">Mahasiswa Reguler</option>
                 <option value="internasional">Mahasiswa Internasonal</option>
               </select>
@@ -145,5 +147,10 @@
   toastr.success("{{ Session::get('berhasil') }}")
   @endif
 </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
 
   @endsection

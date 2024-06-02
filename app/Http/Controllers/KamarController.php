@@ -39,6 +39,7 @@ class kamarController extends Controller
 
   public function manage(Request $request)
 {
+
   $ged = gedung::all();
     // Mendapatkan input pencarian dari form
     $search = $request->input('search');
@@ -54,7 +55,7 @@ class kamarController extends Controller
     }
     $paginate = \App\Models\gedung::paginate(5);
 
-    return view('/Kamar/manage_kamar', compact('gedung', 'ged', 'paginate'))->with('i', ($request->input('page', 1) - 1));
+    return view('/Kamar/manage_kamar', compact('gedung', 'ged', 'paginate',))->with('i', ($request->input('page', 1) - 1));
 }
 
 
@@ -138,13 +139,25 @@ class kamarController extends Controller
   }
 
   public function semuagedung(Request $request)
-  {
-    $gedung = gedung::all();
-    foreach ($gedung as $g) {
-      $g->jumlahkamar = Kamar::where('gedung_id', $g->id)->count();
+{
+    $kategori = $request->input('kategori_gedung');
+
+    if ($kategori) {
+        // Apply filter based on the selected category
+        $gedung = gedung::where('kategori_gedung', $kategori)->get();
+    } else {
+        // If no filter is selected, get all gedung
+        $gedung = gedung::whereIn('kategori_gedung', ['perempuan', 'laki-laki'])->get();
     }
-    return view('/Kamar/semua_gedung', compact('gedung'));
-  }
+
+    foreach ($gedung as $g) {
+        $g->jumlahkamar = Kamar::where('gedung_id', $g->id)->count();
+    }
+
+    return view('/Kamar/semua_gedung', compact('gedung', 'kategori'));
+}
+
+
 
   public function semuakamar($gedung_id, Request $request)
   {

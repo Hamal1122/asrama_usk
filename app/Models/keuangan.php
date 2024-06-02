@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
 use App\Traits\HasFormatRupiah;
+use Illuminate\Support\Carbon;
 
 
 class keuangan extends Model

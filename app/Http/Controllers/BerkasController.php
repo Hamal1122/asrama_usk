@@ -19,24 +19,12 @@ class BerkasController extends Controller
     $uploaded = berkas::where('user_id', $userId)->first();
     $pembayaran = Pembayaran::where('user_id', $userId)->first();
     $data = berkas::all();
-    
-    // if (($uploaded && $uploaded->status == 0) && !$pembayaran) {
-    //   return view('berkas/berhasil');//berhasil upload berkas
-    // }
-    // if (($uploaded && $uploaded->status == 1) && !$pembayaran) {
-    //   return view('berkas/bukti_pembayaran');//melakukan pembayaran
-    // } elseif($pembayaran && $pembayaran->status == 0){
-    //   return view('berkas/tunggubayar');//tunggu verifikasi kamar dan bayar
-    // }
-    // elseif ($pembayaran->status == 1 && $pembayaran->kamar_id != 0) {
-    //   return view('/berkas/berhasilBayar');
-    // } else {
-    //   return view('berkas/berkas');
-    // }
+    $hasKIPK = Riwayat::where('user_id', $userId)->where('kategori', 'KIP')->exists();
+
     if (!$uploaded) {
-      return view('/berkas/berkas', compact('data'));
+      return view('/berkas/berkas', compact('data', 'hasKIPK'));
     } elseif ($uploaded->status == 0) {
-      return view('/berkas/berhasil', compact('data'));
+      return view('/berkas/berhasil', compact('data', 'hasKIPK'));
     } elseif ($uploaded->status == 1 && !$pembayaran) {
       return view('/berkas/bukti_pembayaran', compact('data'));
     } elseif ($uploaded->status == 1 && $pembayaran->status == 0) {
@@ -90,6 +78,17 @@ class BerkasController extends Controller
 
     return back()->with('berhasil', 'Berkas Anda berhasil di upload');
   }
+
+  public function checkKipk()
+    {
+        // Cek apakah ada kategori 'KIPK' dalam data riwayat
+        $exists = riwayat::where('kategori', 'KIP')->exists();
+
+        // Kembalikan response JSON
+        return response()->json(['exists' => $exists]);
+    }
+
+
 
   public function upload_bukti_bayar(Request $request)
   {

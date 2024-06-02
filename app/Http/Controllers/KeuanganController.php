@@ -9,20 +9,20 @@ use App\Models\kamar;
 use App\Models\gedung;
 use App\Models\pengawas;
 use App\Models\pembayaran;
+use App\Models\Riwayat;
 use App\Models\berkas;
 use App\Models\users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class keuanganController extends Controller
+class KeuanganController extends Controller
 {
   public function index(Request $request)
   {
-      $query = Pembayaran::query();
+      $query = riwayat::query();
 
       if ($request->has('search')) {
           $query->whereHas('user', function ($query) use ($request) {
@@ -31,10 +31,8 @@ class keuanganController extends Controller
       }
 
       if ($request->has('kategori') && !empty($request->kategori)) {
-          $query->whereHas('berkas', function ($query) use ($request) {
-              $query->where('kategori', $request->kategori);
-          });
-      }
+        $query->where('kategori', $request->kategori);
+    }
 
       $data = $query->orderBy('id', 'desc')->get();
 

@@ -7,6 +7,24 @@
     <h3 class="py-2">Semua Gedung</h3>
   </div>
 
+  <!-- Filter Form -->
+    <form method="GET" action="{{ url('/semua_gedung') }}">
+ <div class="flex gap-6">
+    <div class="mt-4 flex items-center text-gray-dark  bg-white w-fit px-4  transition-all py-2 gap-2 rounded-md">
+        <label class="text-abu" for="kategori_gedung">Filter Kategori Gedung:</label>
+        <select class="text-blue" name="kategori_gedung" id="kategori_gedung">
+            <option value="">Semua</option>
+            <option value="perempuan" {{ request('kategori_gedung') == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
+            <option value="laki-laki" {{ request('kategori_gedung') == 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+        </select>
+        <div class="bg-purple text-white p-2 rounded-md">
+          <button  type="submit">Filter</button>
+      </div>
+    </div>
+  
+  </div>
+    </form>
+
   <div class="bg-gray-soft flex flex-wrap p-4 mt-4 font-light text-sm text-gray-dark gap-4 container mx-auto">
     @foreach ($gedung as $gedung)
     <div class=" bg-white p-4 rounded-md">

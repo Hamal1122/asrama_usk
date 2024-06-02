@@ -1,6 +1,5 @@
-<h3>Mohon Maaf, Pembayaran anda Ditolak </h3>
+<h2>Mohon Maaf, {{ $name }}</h2>
+<h3>Berkas Pengajuan Kamar anda Ditolak </h3>
 <p>Dimohon untuk menyertakan bukti pembayaran yang valid sesuai dengan ketentuan</p>
-<p>Silahkan cek kembali data data anda</p>
-
 <p>Terima Kasih</p>
 <p>asramausk@usk.ac.id</p>

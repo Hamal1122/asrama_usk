@@ -27,7 +27,7 @@
           <div>
             <h1>AsramaUSK</h1>
         </div>
-        </div>
+     </div>
 
 
         <ion-icon @click="navOpen = ! navOpen" class="text-3xl bg-purple text-white rounded-md order-3 lg:hidden " name="menu-outline"></ion-icon>

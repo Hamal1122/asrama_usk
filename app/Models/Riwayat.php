@@ -8,10 +8,12 @@ use Illuminate\Support\Carbon;
 use app\Models\Users;
 use App\Models\Kamar;
 use Illuminate\Support\Facades\DB;
+use App\Traits\HasFormatRupiah;
 
 class Riwayat extends Model
 {
     use HasFactory;
+    use HasFormatRupiah;
 
     protected $table = 'riwayat';
     protected $fillable = [

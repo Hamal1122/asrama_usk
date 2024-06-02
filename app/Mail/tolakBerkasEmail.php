@@ -31,10 +31,10 @@ class tolakBerkasEmail extends Mailable
     public function build()
     {
        return $this->subject('Asrama USK - Pengajuan Berkas Ditolak')
-       ->view('tolakBerkasEmail', [
-        'name'=>$this->berkas->user->name,
-        'nim'=>$this->berkas->user->nim,
-       ]);
+                    ->view('tolakBerkasEmail', [
+                        'name'=>$this->berkas->user->name,
+                        'nim'=>$this->berkas->user->nim,
+                    ]);
     }
 
     /**

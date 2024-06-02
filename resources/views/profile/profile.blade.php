@@ -62,10 +62,11 @@
     </div>
 
   </div>
+  @foreach ($data as $data)
   <div class="mt-4 text-gray-dark font-poppins bg-white p-4 rounded-md">
     <h3>Riwayat :</h3>
   
-    @foreach ($data as $data)
+    
     @if($data->kamar_id !== 0)
     <div class="bg-white p-4 mt-2 rounded-md text-gray-dark  border border-dashed  font-poppins">
       <div class="flex justify-between w-full items-center">

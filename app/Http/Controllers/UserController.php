@@ -19,19 +19,16 @@ class UserController extends Controller
         $data = Riwayat::find($id);
         return view('/user/detail_user', compact('data'))->with('i', ($request->input('page', 1) - 1));
     }
-
     function user(Request $request)
     {
     if ($request->has('search')) {
         $data = Riwayat::whereHas('user', function ($query) use ($request) {
             $query->where('nim', 'LIKE', '%' . $request->search . '%');
         })->get();
-
         
     } else {
         $data = Riwayat::orderBy('id', 'desc')->get();
     }
-
     return view('/user/manage_user', compact('data'))->with('i', ($request->input('page', 1) - 1));
     }
 }

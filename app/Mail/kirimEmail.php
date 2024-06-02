@@ -33,6 +33,10 @@ class kirimEmail extends Mailable
        ->view('kirimEmail', [
         'name'=>$this->pembayaran->user->name,
         'nim'=>$this->pembayaran->user->nim,
+        'kamar'=>$this->pembayaran->kamar->nama,
+        'gedung'=>$this->pembayaran->kamar->gedung->nama,
+        'mulai'=>$this->pembayaran->tanggal_masuk,
+        'akhir'=>$this->pembayaran->tanggal_keluar,
        ]);
     }
 
