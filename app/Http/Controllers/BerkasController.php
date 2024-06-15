@@ -19,14 +19,15 @@ class BerkasController extends Controller
     $uploaded = berkas::where('user_id', $userId)->first();
     $pembayaran = Pembayaran::where('user_id', $userId)->first();
     $data = berkas::all();
+    $berkas = berkas::where('user_id', $userId)->get();
     $hasKIPK = Riwayat::where('user_id', $userId)->where('kategori', 'KIP')->exists();
 
     if (!$uploaded) {
-      return view('/berkas/berkas', compact('data', 'hasKIPK'));
+      return view('/berkas/berkas', compact('data', 'hasKIPK' ,'berkas'));
     } elseif ($uploaded->status == 0) {
       return view('/berkas/berhasil', compact('data', 'hasKIPK'));
     } elseif ($uploaded->status == 1 && !$pembayaran) {
-      return view('/berkas/bukti_pembayaran', compact('data'));
+      return view('/berkas/bukti_pembayaran', compact('data','berkas'));
     } elseif ($uploaded->status == 1 && $pembayaran->status == 0) {
       return view('/berkas/tunggubayar', compact('data'));
     } elseif ($uploaded->status == 1 && $pembayaran->status == 1 && $pembayaran->kamar_id == 0) {

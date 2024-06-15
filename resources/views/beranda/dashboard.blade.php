@@ -98,7 +98,7 @@
     </div>
   @else
     <div class="py-4">
-      <div class="bg-white text-gray-dark text-sm font-poppins px-6 py-6 rounded-md">
+      <div class="bg-white text-gray-dark text-sm font-poppins px-6 py-6 rounded-md shadow-md">
         <div class="order-2 gap-6">
           <div class="flex justify-between">
             <div>
@@ -114,7 +114,7 @@
             <h3 class="mt-4 text-abu"><i class="bi bi-geo-alt mr-2"></i>Tempat : <span class=" font-light  bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit">{{ $post->tempat }}</h3>
           </div>
           <div class="mt-8">
-            <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-8 py-2 rounded-md transition-all focus:scale-95" href="/post/{{ $post[ 'id' ] }}"> Detail</a>
+            <a class="text-center bg-purple hover:text-white hover:px-10 text-white px-8 py-2 rounded-md transition-all focus:shadow" href="/post/{{ $post[ 'id' ] }}"> Detail</a>
           </div>
         </div>
       </div>

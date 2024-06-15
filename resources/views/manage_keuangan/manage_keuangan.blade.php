@@ -37,20 +37,20 @@
       </div>
   </form>
 
-<div class=" overflow-x-auto mt-6">
+<div class=" overflow-x-auto mt-6 bg-white shadow-md p-4 rounded-md">
   @if($data->isNotEmpty())
   <table class="table-auto font-semibold text-sm overflow-x-auto w-full ">
     <thead class="rounded-md">
       <tr class="font-poppins text-xs">
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Tanggal</th>
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama </th>
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> NIM</th>
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Kategori</th>
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Jenis Kamar</th>
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Durasi</th>
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Harga</th>
-        <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Status Pembayaran</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">No</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Tanggal</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">Nama </th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> NIM</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Kategori</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Jenis Kamar</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Durasi</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Harga</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Status Pembayaran</th>
 
       </tr>
     </thead>

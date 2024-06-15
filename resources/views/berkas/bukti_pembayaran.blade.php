@@ -37,16 +37,55 @@
     </div>
   </div>
 
-  <div>
-    <h1></h1>
+<div class="lg:flex gap-4">
+  <div class="mt-2 p-4 bg-white w-full lg:w-1/2 rounded-md font-poppins text-gray-dark shadow-md">
+    <h1 class="font-semibold text-center">Detail Pengajuan</h1>
+    @foreach ($berkas as $data)
+    <div class="mt-4 gap-2 text-sm">
+      <div>
+        <h3>Nama</h3>
+        <div class="field text-abu">{{$data->user->name}}</div>
+      </div>
+
+      <div class="mt-3">
+        <h3>Kategori</h3>
+        <div class="field text-abu">{{$data->kategori}}</div>
+      </div>
+
+      <div class="mt-3">
+        <h3>Kategori Gedung</h3>
+        <div class="field text-abu">{{$data->kategorigedung}}</div>
+      </div>
+
+      <div class="mt-3">
+        <h3>jenis Kamar</h3>
+        <div class="field text-abu">{{$data->jeniskamar}}</div>
+      </div>
+
+      <div class="mt-3">
+        <h3>Durasi</h3>
+        <div class="field text-abu">{{$data->durasi}}</div>
+      </div>
+
+      <div class="mt-3">
+        <h3>Harga</h3>
+        <div class="field text-abu">{{$data->formatRupiah('harga') }}</div>
+      </div>
+        
+    </div>
+    @endforeach
   </div>
 
-  <div class="mt-2 p-4 bg-white w-full h-fit items-center container rounded-md">
+
+
+
+  <div class="mt-2 p-4 bg-white w-full h-fit shadow-md items-center container rounded-md">
     <div>
+      <h1 class="mb-4 font-semibold text-gray-dark text-center">Form Pembayaran</h1>
       <div class=" w-full lg:w-1/2 px-4">
-        <label for="">Pilih Bank</label>
+        <label clas for="">Informasi Bank</label>
         <select class="field text-gray-dark" id="kategori" name="kategori" required>
-          <option class="text-abu" value="">Pilih</option>
+          <option class="text-abu" value="">Lihat</option>
           <option value="">BSI SYARIAH - 12345677 a/n Admin</option>
           <option value="">BPD ACEH - 12345677 a/n Admin </option>
           <option value="">MANDIRI - 12345677 a/n Admin</option>
@@ -60,21 +99,21 @@
      
        <form action="{{ route('upload.bukti_pembayaran') }}" method="POST" enctype="multipart/form-data">
        @csrf
-      <div class="px-4 mt-8 w-full lg:w-1/2 ">
-        <label for="">Upload Bukti Pembayaran <span class="text-xs text-green">( Khusus untuk Mahasiswa KIPK digantikan dengan KARTU TANDA BIDIKMISI )</span></label>
-        <input class=" field rounded-md text-blue" type="file" name="bukti_bayar" id="nama_berkas" required>
-      </div>
-      <div class="mt-2 px-4">
-        <p class="text-abu text-xs font-light"> <span class="text-red">*</span>KARTU TANDA BIDIKMISI hanya bisa digunakan di tahun pertama atau masa wajib asrama</p>    
-        <p class="text-red text-xs font-light"> <span class="text-red">*</span>Jika Kedapatan Melakukan Kecurangan akan diberikan sanksi yang setimpal !!</p>    
-      </div>
-      <div class="p-4 mt-12">
-        <button type="submit" class="button">Submit</button>
-      </div>
+        <div class="px-4 mt-8 w-full lg:w-1/2 ">
+          <label for="">Upload Bukti Pembayaran <span class="text-xs text-green">( Khusus untuk Mahasiswa KIPK digantikan dengan KARTU TANDA BIDIKMISI )</span></label>
+          <input class=" field rounded-md text-blue" type="file" name="bukti_bayar" id="nama_berkas" required>
+        </div>
+        <div class="mt-2 px-4">
+          <p class="text-abu text-xs font-light"> <span class="text-red">*</span>KARTU TANDA BIDIKMISI hanya bisa digunakan di tahun pertama atau masa wajib asrama</p>    
+          <p class="text-red text-xs font-light"> <span class="text-red">*</span>Jika Kedapatan Melakukan Kecurangan akan diberikan sanksi yang setimpal !!</p>    
+        </div>
+        <div class="p-4 mt-12">
+          <button type="submit" class="button">Submit</button>
+        </div>
        </form>
     </div>
   </div>
-
+</div>
 
 
 

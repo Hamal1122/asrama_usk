@@ -29,7 +29,7 @@
         <div class="mt-4">
           <button type="button" class="close button my-2 px-4 w-fit text-clip bg-red hover:bg-red hover:bg-opacity-30 hover:text-red">Cancel</button>
           <button type="button" id="submitForm" class="button my-2 px-4 w-fit text-clip bg-green hover:bg-green hover:bg-opacity-30 hover:text-green ">Tambah</button>
-          <p class="text-xs font-extralight text-blue">*Pastikan semua data sudah benar sebelum menyimpan</p>
+          <p class="text-xs font-light text-blue">*Pastikan semua data sudah benar sebelum menyimpan</p>
         </div>
         </form>
       </div>

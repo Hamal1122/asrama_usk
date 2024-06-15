@@ -14,6 +14,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\kirimEmailController;
 use App\Models\kamar;
+use App\Models\Riwayat;
 use App\Http\Controllers\Mail;
 use App\Models\keuangan;
 use Illuminate\Support\Facades\Request;
@@ -24,7 +25,10 @@ use Illuminate\Support\Facades\Request;
 // Route::get('/manage_berkas',[BerkasController::class, 'manage'])->name('manage_berkas');
 Auth::routes();
 
-
+Route::get('/update-riwayat', function () {
+    $riwayat = new Riwayat();
+    return $riwayat->updateRiwayat();
+});
 
 //admin
 Route::middleware(['auth', 'user-role:admin'])->group(function () {
@@ -117,10 +121,6 @@ Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
     
 });
 
-Route::middleware(['auth', 'user-role:superadmin'])->group(function () {
-    
-    
-});
 
 
 

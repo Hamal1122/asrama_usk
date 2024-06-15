@@ -25,7 +25,7 @@
     <section>
       <!-- form upload berkas -->
 
-      <div class="container mx-auto py-4 bg-white mt-4 rounded-md">
+      <div class="container mx-auto py-4 shadow-md bg-white mt-4 rounded-md">
         <div class="grid grid-cols-12">
           <div class="col-span-12 lg:col-span-6 px-6 gap-6 flex-col flex text-gray-dark lg:w-2/3">
             <h1 class="font-Inter text-blue text-base">Berkas Pengajuan Kamar</h1>

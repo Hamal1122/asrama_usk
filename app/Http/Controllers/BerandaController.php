@@ -11,6 +11,7 @@ use App\Models\kamar;
 use App\Models\User;
 use App\Models\Users;
 use App\Models\berkas;
+use App\Models\riwayat;
 use App\Models\keuangan;
 use App\Models\Pembayaran;
 use Carbon\Carbon;
@@ -43,8 +44,8 @@ class BerandaController extends Controller
     $jumlah_internasional = berkas::where('kategori', 'Internasional')->count();
     $jumlah_gedungpr = gedung::where('kategori_gedung', 'perempuan')->count();
     $jumlah_gedunglk = gedung::where('kategori_gedung', 'laki-laki')->count();
-    $lasttransaction = pembayaran::orderBy('id', 'desc')->take(5)->get();
-    $chart = berkas::selectRaw('YEAR(created_at) as year,MONTH(created_at) as month, SUM(harga) as count')
+    $lasttransaction = riwayat::orderBy('id', 'desc')->take(5)->get();
+    $chart = riwayat::selectRaw('YEAR(created_at) as year,MONTH(created_at) as month, SUM(harga) as count')
     ->where('created_at', '>=', Carbon::now()->subYears(4))
     ->groupBy('year', 'month')
     ->orderBy('year', 'asc')

@@ -55,7 +55,7 @@ class LoginController extends Controller
                 return redirect()->route('beranda_admin');
             }
         }else{
-            return redirect()->route('login')->with('error','NIM atau Password salah');
+            return redirect()->route('login')->with('error','NIM/NIP atau Password yang anda masukkan salah');
         }
     }
 }

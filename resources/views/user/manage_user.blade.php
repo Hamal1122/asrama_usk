@@ -10,7 +10,7 @@
 
 <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
   <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
-  <h3 class="py-2">Manage User</h3>
+  <h3 class="py-2">Daftar Pengguna</h3>
 </div>
 
 <form action="/manage_user" method="get">
@@ -22,19 +22,19 @@
 </div>
 </form>
 
-<div class=" relative overflow-x-auto">
+<div class=" relative overflow-x-auto bg-white shadow-md p-4 rounded-md">
   <table class="table-auto font-semibold text-sm w-full rtl:text-right">
     <thead class="rounded-md">
       <tr class="font-poppins text-xs">
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama </th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> NIM</th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Email</th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Kategori Mahasiswa</th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Status</th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Tanggal</th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> </th>
-        <th scope="col" class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> </th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">No</th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">Nama </th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> NIM</th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Email</th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Kategori Mahasiswa</th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Status</th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Tanggal</th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> </th>
+        <th scope="col" class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> </th>
       </tr>
     </thead>
 

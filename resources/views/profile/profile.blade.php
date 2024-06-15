@@ -7,7 +7,7 @@
     <h3 class="py-2">Profile</h3>
   </div>
 
-  <div class="bg-white py-4 mt-4 rounded-md ">
+  <div class="bg-white py-4 mt-4 rounded-md shadow-md">
     <div class="p-4flex gap-4 flex-wrap justify-between">
 
       <div class="my-auto flex flex-wrap text-gray-dark font-Inter mx-auto md:mx-4 w-1/2">
@@ -62,11 +62,26 @@
     </div>
 
   </div>
-  @foreach ($data as $data)
-  <div class="mt-4 text-gray-dark font-poppins bg-white p-4 rounded-md">
-    <h3>Riwayat :</h3>
-  
-    
+ 
+
+   <!-- collapse content -->
+  <div class="relative w-full overflow-hidden mt-4 ">
+    <input type="checkbox" class="peer absolute top-0 inset-x-0 w-full h-12  cursor-pointer opacity-0">
+    <div class="bg-white rounded-md h-12 w-full flex items-center p-4">
+      <h1 class="text-gray-dark text-sm font-semibold">Riwayat Kamar</h1>
+    </div>
+
+    <!-- arrow -->
+    <div class="absolute top-3 right-3 text-gray-dark transition-transform duration-500  rotate-0 peer-checked:rotate-180">
+      <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
+    </div>
+
+    <!-- content -->
+    <div class="bg-white overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-[1000px] rounded-md mt-1 text-gray-dark">
+      <div class="p-4 py-8">
+
+         @foreach ($data as $data)
+  <div class="mt-4 text-gray-dark font-poppins bg-white p-4 rounded-md"> 
     @if($data->kamar_id !== 0)
     <div class="bg-white p-4 mt-2 rounded-md text-gray-dark  border border-dashed  font-poppins">
       <div class="flex justify-between w-full items-center">
@@ -82,10 +97,16 @@
       <h1 class="mt-4">Gedung {{$data->kamar->gedung->nama}}</h1>
       <p class="text-abu text-xs mt-2">Mulai : {{ date('d F Y', strtotime($data->tanggal_masuk)) }}</p>
       <p class="text-abu text-xs ">Berakhir : {{ date('d F Y', strtotime($data->tanggal_keluar)) }}</p>
+      <p class="text-abu text-xs ">Harga : {{$data->formatRupiah('harga')}}</p>
     </div>
 </div>
   @endif
   @endforeach
+
+      </div>
+    </div>
+  </div>
+  <!-- End collapse content -->
 
 
   @endsection

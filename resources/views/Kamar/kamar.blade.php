@@ -9,22 +9,22 @@
 
 
 <div class="col-span-12 lg:col-span-10 w-full px-4">
-  <div class="bg-white py-2 rounded-md px-4 text-sm font-poppins text-blue flex gap-4">
+  <div class="bg-purple py-2 rounded-md px-4 text-sm font-poppins text-white flex gap-4">
     <a href="{{route ('manage_kamar') }}" class="bi bi-arrow-left-short px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
     <h3 class="py-2">Lihat Kamar</h3>
   </div>
 
   <div class="mt-4 p-4 bg-white rounded-md">
 
-    <table class="table-auto font-semibold text-sm w-full rounded-md border border-gray-soft">
+    <table class="table-auto font-semibold text-sm w-full bg-white shadow-md p-4 rounded-md">
       <thead class="rounded-md">
         <tr class="font-poppins text-xs">
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">No</th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Nama Kamar</th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Nama Gedung</th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Kapasitas</th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left ">Harga Kamar</th>
-          <th class="bg-purple bg-opacity-10 text-purple px-6 py-2 tracking-wide text-left "></th>
+          <th class="bg-white border-b-2 border-opacity-20 text-purple px-6 py-4 tracking-wide text-left ">No</th>
+          <th class="bg-white border-b-2 border-opacity-20 text-purple px-6 py-4 tracking-wide text-left ">Nama Kamar</th>
+          <th class="bg-white border-b-2 border-opacity-20 text-purple px-6 py-4 tracking-wide text-left ">Nama Gedung</th>
+          <th class="bg-white border-b-2 border-opacity-20 text-purple px-6 py-4 tracking-wide text-left ">Kapasitas</th>
+          <th class="bg-white border-b-2 border-opacity-20 text-purple px-6 py-4 tracking-wide text-left ">Harga Kamar</th>
+          <th class="bg-white border-b-2 border-opacity-20 text-purple px-6 py-4 tracking-wide text-left "></th>
         </tr>
       </thead>
 

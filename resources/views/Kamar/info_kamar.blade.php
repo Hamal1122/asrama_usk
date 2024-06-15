@@ -7,7 +7,7 @@
     <h3 class="py-2">{{ $data->nama }}</h3>
   </div>
 
-  <div class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4">
+  <div class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4 shadow-md">
     <div class="">
       <div class="bg-abu bg-opacity-20 p-10 mx-auto text-center font-poppins text-3xl rounded-md font-bold text-abu">
         <h1>{{ $data->nama }}</h1>

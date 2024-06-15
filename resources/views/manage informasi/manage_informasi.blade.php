@@ -9,7 +9,7 @@
 <div class="col-span-12 lg:col-span-10 w-full px-4">
   <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
     <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
-    <h3 class="py-2">Manage Informasi </h3>
+    <h3 class="py-2">Manage Postingan </h3>
   </div>
 
 
@@ -17,17 +17,17 @@
   <div class="bg-green bg-opacity-10 text-green px-4  py-4 rounded-md mt-2"><i class="bi bi-check-circle-fill px-2"></i>{{ $message }}</div>
   @endif -->
 
-  <div class="p-4 bg-gray-soft my-4 rounded-md">
+  <div class="p-4 bg-white my-4 rounded-md">
     <div class="my-4 font-poppins text-xs">
-      <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-6 py-4 rounded-md transition-all focus:scale-95"" href="{{route ('tambahInformasi') }}"><i class="bi bi-plus"></i>Tambah Postingan</a>
+      <a class="text-center bg-green  hover:text-white hover:px-10 text-white px-6 py-4 rounded-md transition-all focus:scale-95" href="{{route ('tambahInformasi') }}"><i ></i>Buat Postingan Baru</a>
     </div>
 
     <div>
-      <h1 class="font-Inter text-sm mt-6 ">Data Informasi :</h1>
+      <h1 class="font-Inter text-sm mt-12 text-gray font-semibold ">Data Informasi :</h1>
     </div>
 
     @foreach ($data as $post)
-    <div class="bg-white text-gray-dark text-sm font-poppins px-4 py-4 rounded-md mt-4">
+    <div class="bg-white shadow-lg text-gray-dark text-sm font-poppins px-4 py-4 rounded-md mt-4">
       <div class="order-2 gap-6">
         <div class="flex justify-between">
           <div>

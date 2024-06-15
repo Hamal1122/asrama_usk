@@ -14,11 +14,11 @@
     }
 
     .menuaktif {
-        @apply text-purple text-sm;
+        @apply text-purple text-sm ;
     }
 
     .menuhover {
-        @apply transition-all my-4 text-left p-4 cursor-pointer rounded-lg font-poppins text-sm text-abu hover:bg-bermuda hover:text-purple;
+        @apply transition-all my-4 text-left p-4 cursor-pointer rounded-lg font-poppins text-sm text-abu hover:bg-bermuda hover:text-purple hover:shadow-md;
     }
 
     .logout {

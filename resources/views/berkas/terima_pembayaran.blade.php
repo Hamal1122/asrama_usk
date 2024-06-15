@@ -17,6 +17,11 @@
         <input type="text" name="nama" id="nama" class="field" placeholder="" value="{{$pembayaran->berkas->user->name}}" required readonly/>
       </div>
 
+      <div class="mt-4 font-poppins text-sm text-gray-dark ">
+        <label for="text" class="text-gray-dark">Jenis Kelamin </label>
+        <input type="text" name="nama" id="nama" class="field" placeholder="" value="{{$pembayaran->berkas->user->jenis_kelamin}}" required readonly/>
+      </div>
+
       <input type="hidden" name="id" value="{{$pembayaran->berkas->user->id}}">
       <input type="hidden" name="kategori" value="{{$pembayaran->berkas->kategori}}">
 
@@ -46,7 +51,7 @@
         <select class="field text-gray-dark" id="gedung" name="gedung" onchange="updateKamarDropdown()">
             <option value="">Pilih Gedung</option>
             @foreach ($gedung as $data)
-                <option value="{{$data->id}}">{{$data->nama}}</option>
+                <option value="{{$data->id}}">{{$data->nama}} - {{$data->kategori_gedung}} </option>
             @endforeach
         </select>
     </div>

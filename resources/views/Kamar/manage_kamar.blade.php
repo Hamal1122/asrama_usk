@@ -36,17 +36,17 @@
     </div>
 
 
-    <div class="overflow-y-auto">
-      <table class="table-auto justify-end font-semibold text-sm w-full rounded-md min-w-full mt-4 border border-gray-soft ">
+    <div class="overflow-y-auto bg-white shadow-md p-4 rounded-md mt-4">
+      <table class="table-auto justify-end font-semibold text-sm w-full rounded-md min-w-full mt-4 ">
         <thead class="rounded-md">
           <tr class="font-poppins text-xs">
-            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">No</th>
-            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left ">Nama Gedung</th>
-            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Kategori</th>
-            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "> Jumlah Kamar </th>
-            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "></th>
-            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "></th>
-            <th class="bg-purple bg-opacity-10  text-purple px-6 py-2 tracking-wide text-left "></th>
+            <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">No</th>
+            <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">Nama Gedung</th>
+            <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Kategori</th>
+            <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Jumlah Kamar </th>
+            <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "></th>
+            <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "></th>
+            <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "></th>
           </tr>
         </thead>
         @foreach ($gedung as $gedung)

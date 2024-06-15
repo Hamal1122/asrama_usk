@@ -25,9 +25,9 @@
   </div>
     </form>
 
-  <div class="bg-gray-soft flex flex-wrap p-4 mt-4 font-light text-sm text-gray-dark gap-4 container mx-auto">
+  <div class="bg-white flex flex-wrap p-4 mt-4 font-light text-sm text-gray-dark gap-4 container mx-auto rounded-lg">
     @foreach ($gedung as $gedung)
-    <div class=" bg-white p-4 rounded-md">
+    <div class=" bg-white p-4 rounded-xl shadow-xl">
       <div>
         <img class="w-[240px] h-fit rounded-md" src="https://img.freepik.com/free-vector/home-interior-background-theme_23-2148647102.jpg?w=1060&t=st=1700195447~exp=1700196047~hmac=1ddae94ec8b8af95ed88a89a734c52ff005ecf81862a1c80f94fffaedf14d926" alt="">
       </div>
