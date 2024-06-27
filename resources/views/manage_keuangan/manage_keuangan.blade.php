@@ -14,6 +14,7 @@
 </div>
 
 <form action="/manage_keuangan" method="get">
+  <div class="flex justify-between">
       <div class="flex gap-6">
           <div class="mt-4 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
             <div>
@@ -34,8 +35,15 @@
         </select>
         <button type="submit" class="text-blue">Cari</button>
       </div>
+    </div>
+    <div class="mt-4 flex text-center items-center">
+      <div class="bg-green text-white px-4 py-2  hover:bg-green hover:bg-opacity-20 hover:text-green transition-all  rounded-md">
+          <i class="bi bi-file-earmark-arrow-down-fill"></i>
+          <a href="{{ url('manage_keuangan/export/excel') }}">Export Excel</a>
       </div>
-  </form>
+    </div>
+</div>
+</form>
 
 <div class=" overflow-x-auto mt-6 bg-white shadow-md p-4 rounded-md">
   @if($data->isNotEmpty())

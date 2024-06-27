@@ -30,10 +30,10 @@
       <input type="text" name="tempat" id="tempat" class="field" required />
     </div>
 
-    <div class="mt-4 font-poppins text-sm text-gray-dark ">
-      <label for="text" class="text-gray-dark">Deskripsi</label>
-      <input type="text" name="deskripsi" id="deskripsi" class="field " />
-    </div>
+    <div class="mt-4 font-poppins text-sm text-gray-dark">
+  <label for="deskripsi" class="text-gray-dark">Deskripsi</label>
+  <textarea name="deskripsi" id="deskripsi" class="field" rows="4" width: 100% height="150"></textarea>
+</div>
 
     <button type="submit" class="button my-2 px-4 w-fit text-clip">Upload</button>
 </div>

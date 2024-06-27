@@ -11,7 +11,7 @@ class RiwayatSeeder extends Seeder
     public function run()
     {
         DB::table('riwayat')->insert([
-            'user_id' => 3, // Pastikan user dengan ID ini ada
+            'user_id' => 2, // Pastikan user dengan ID ini ada
             'kamar_id' => 1, // Pastikan kamar dengan ID ini ada
             'tanggal_masuk' => Carbon::now()->subDays(3)->toDateString(),
             'tanggal_keluar' => Carbon::now()->toDateString(),

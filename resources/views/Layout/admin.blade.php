@@ -20,7 +20,7 @@
 
 </head>
 
-<body class=" bg-abubg ">
+<body class=" bg-abubg max-h-max ">
 
   <nav class=" fixed w-screen py-2 px-8 bg-white" x-data="{navOpen : false}">
     <div class="container mx-auto">

@@ -7,10 +7,10 @@
     <h3 class="py-2">Kamar Saya</h3>
   </div>
 
-  <div class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4">
-    <div class="border border-dashed p-8 rounded-md">
+<div class=" lg:flex gap-4">
+  <div class="bg-white text-gray-dark text-sm font-Inter p-4 w-full lg:w-3/4 rounded-md mt-4 shadow-md">
+    <div class="p-8 rounded-md">
     <div class="">
-    <img class="w-full h-1/2 rounded-md" src="images/gambar_kamar.png">
       @foreach ($data as $data)
        @if($data->kamar_id !== 0)
       <div class="mt-4">
@@ -18,26 +18,49 @@
       </div>
 
       <div class="mt-3">
-        <h1 class="text-sm mt-2 font-poppins text-gray-dark">Kapasitas : {{$data->kamar->kapasitas}} orang </h1>
-        <h1 class="text-sm mt-2 font-poppins text-gray-dark"> Gedung : {{$data->kamar->gedung->nama}}</h1>
-        <h1 class="text-sm mt-2 font-poppins text-gray-dark"> Kategori : {{$data->kamar->gedung->kategori_gedung}} </h1>
-        <h1 class="text-sm mt-2 font-poppins text-gray-dark"> Harga : {{$data->kamar->formatRupiah('harga')}} / Tahun</h1>
+        <div>
+          <h1 class="text-sm mt-2 font-poppins text-gray-dark">Kapasitas</h1>
+          <div class="field">{{$data->kamar->kapasitas}} Orang</div>
+        </div>
+
+        <div>
+          <h1 class="text-sm mt-2 font-poppins text-gray-dark">Gedung</h1>
+          <div class="field">{{$data->kamar->gedung->nama}}</div>
+        </div>
+        <div>
+          <h1 class="text-sm mt-2 font-poppins text-gray-dark">Kategori</h1>
+          <div class="field">{{$data->kamar->gedung->kategori_gedung}}</div>
+        </div>
+
+        <div>
+          <h1 class="text-sm mt-2 font-poppins text-gray-dark">Harga</h1>
+          <div class="field"> {{$data->kamar->formatRupiah('harga')}} / Tahun</div>
+        </div>
       </div>
-
-      <div class="mt-6 w-fit text-abu">
-        <label class="text-green" for="">Tanggal Masuk</label>
-        <div class="field mt-2">{{ date('d F Y', strtotime($data->tanggal_masuk)) }}</div>
-      </div>
-
-      <div class="mt-6 w-fit text-abu">
-        <label class="text-red" for="">Tanggal Keluar</label>
-        <div class="field mt-2">{{ date('d F Y', strtotime($data->tanggal_keluar)) }}</div>
-      </div>
-
-      @endif
-      @endforeach
-
     </div>
   </div>
   </div>
+
+  <div class=" bg-white text-gray-dark text-sm font-Inter p-12 w-full lg:w-1/4 rounded-md mt-4 shadow-md">
+    <h1 class="font-poppins font-semibold text-lg">Tanggal Menginap</h1>
+
+    <div class="mt-12 w-full text-abu">
+      <label class="text-gray-dark" for="">Masa Sewa</label>
+      <div class="field  mt-2">{{ $data->berkas->durasi }}</div>
+    </div>
+
+    <div class="mt-6 w-full text-abu">
+      <label class="text-green" for="">Tanggal Masuk</label>
+      <div class="field  mt-2">{{ date('d F Y', strtotime($data->tanggal_masuk)) }}</div>
+    </div>
+    
+
+    <div class="mt-6 w-full text-abu">
+      <label class="text-red" for="">Tanggal Keluar</label>
+      <div class="field mt-2">{{ date('d F Y', strtotime($data->tanggal_keluar)) }}</div>
+    </div>
+  </div>
+  @endif
+  @endforeach
+</div>
   @endsection

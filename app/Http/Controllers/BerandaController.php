@@ -71,6 +71,11 @@ class BerandaController extends Controller
     return view('/manage informasi/manage_informasi', compact('data'));
   }
 
+  public function main()
+  {
+    return view('/landingpage/landing');
+  }
+
   // menampilkan view tambah informasi
   public function tambahInformasi()
   {

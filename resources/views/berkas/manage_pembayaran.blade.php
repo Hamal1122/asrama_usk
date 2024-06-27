@@ -67,7 +67,7 @@
 
       @elseif($data->kamar_id !== 0)
       <td class="bg-white border-b-silver border-b-4 text-gray-dark px-2 py-4 font-light whitespace-nowrap items-center text-center flex gap-4">
-            <div class="bg-blue bg-opacity-5 text-blue px-4 py-2 rounded-md transition-all">Berhasil</div>
+            <div class="bg-blue bg-opacity-5 text-blue px-4 py-2 rounded-md transition-all">Success</div>
       </td>
       @endif
       </tr>
@@ -89,7 +89,7 @@
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
+            cancelButtonColor: '#C7C8CC',
             confirmButtonText: 'Accept'
         }).then((result) => {
             if (result.isConfirmed) {
@@ -109,13 +109,13 @@
 
         Swal.fire({
             title: 'Peringatan!',
-            text: "Kamu yakin semua data sudah di cek dengan benar?",
+            text: "Kamu yakin untuk menolak pembayaran pengguna " + name,
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
+            confirmButtonColor: '#EE4E4E',
+            cancelButtonColor: '#C7C8CC',
             confirmButtonText: 'Reject',
-            cancelButtonText: 'Batal'
+            cancelButtonText: 'Cancel'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location = "/reject_pembayaran/" + id;

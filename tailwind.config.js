@@ -16,7 +16,7 @@ export default {
     transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
-      'purple': '#3f3cbb',
+      'purple': '#4747ff',
       'midnight': '#121063',
       'metal': '#565584',
       'tahiti': '#3ab7bf',
@@ -29,6 +29,7 @@ export default {
       'abu' : '#7F8487',
       'bone' : '#F1F6F9',
       'abubg' : '#ebedf5',
+      'blues' : '#AEE2FF',
 
 
 
@@ -42,6 +43,8 @@ export default {
 
     },
   },
-  plugins: [],
+  plugins: [
+   
+  ],
 }
 

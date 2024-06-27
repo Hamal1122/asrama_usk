@@ -2,45 +2,45 @@
 <div class="col-span-12 lg:col-span-10 w-full px-4">
     <div class="font-semibold text-2xl text-gray-dark mb-4">
         <h1>
-            Dashboard Admin
+            Beranda Admin
         </h1>
     </div>
     <div class="bg-white py-8 rounded-2xl font-poppins text-gray-dark flex gap-8 justify-center shadow-md">
 
-        <div class="bg-blue text-white py-6 px-6 w-48 rounded-xl">
-            <div class="text-2xl">
+        <div class="bg-blue text-white py-6 px-6 w-48 rounded-2xl">
+            <div class="text-5xl">
                 <h1>{{ $jumlah_gedung }}</h1>
             </div>
             <div class="text-xs">
                 <h1>Total Gedung</h1>
             </div>
         </div>
-        <div class="bg-midnight text-white py-6 px-6 w-48 rounded-xl">
-            <div class="text-2xl">
+        <div class="bg-midnight text-white py-6 px-6 w-48 rounded-2xl">
+            <div class="text-5xl">
                 <h1>{{ $jumlah_kamar }}</h1>
             </div>
             <div class="text-xs">
                 <h1>Total Kamar</h1>
             </div>
         </div>
-        <div class="bg-tahiti text-white py-6 px-6 w-48 rounded-xl">
-            <div class="text-2xl">
+        <div class="bg-tahiti text-white py-6 px-6 w-48 rounded-2xl">
+            <div class="text-5xl">
                 <h1>{{ $jumlah_pengguna }}</h1>
             </div>
             <div class="text-xs">
                 <h1>Total Pengguna</h1>
             </div>
         </div>
-        <div class="bg-bluehover text-white py-6 px-6 w-48 rounded-xl">
-            <div class="text-2xl">
+        <div class="bg-bluehover text-white py-6 px-6 w-48 rounded-2xl">
+            <div class="text-5xl">
                 <h1>{{$jumlah_pengguna_aktif }}</h1>
             </div>
             <div class="text-xs">
                 <h1>Pengguna Aktif</h1>
             </div>
         </div>
-        <div class="bg-purple text-white py-8 px-6 w-48 rounded-xl">
-            <div class="text-2xl">
+        <div class="bg-purple text-white py-8 px-6 w-48 rounded-2xl">
+            <div class="text-5xl">
                 <h1>{{$jumlah_postingan }}</h1>
             </div>
             <div class="text-xs">
@@ -115,21 +115,15 @@
         label: 'Tampilkan data',
         data: [ {{ $jumlah_kipk}}, {{ $jumlah_reguler }},{{ $jumlah_internasional }}  ],
         backgroundColor: [
-        'rgb(255, 99, 132)',
-      'rgb(75, 192, 192)',
-      'rgb(255, 205, 86)',
-      'rgb(201, 203, 207)',
-      'rgb(54, 162, 235)'
+        'rgb(0,250,154)',
+        'rgb(65,105,225)',
+        'rgb(255,255,0)',
+      
     ],
-
     borderColor: [
-        'rgb(255, 99, 132)',
-        'rgb(255, 159, 64)',
-        'rgb(255, 205, 86)',
-        'rgb(75, 192, 192)',
-        'rgb(54, 162, 235)',
-        'rgb(153, 102, 255)',
-        'rgb(201, 203, 207)'
+        'rgb(0,250,154)',
+        'rgb(65,105,225)',
+        'rgb(255,255,0)',
     ],
         borderWidth: 1
       }]
@@ -137,12 +131,26 @@
     options: {
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          ticks: {
+            display: true // Hide the labels on the y-axis
+          }
+        },
+        x: {
+          ticks: {
+            display: true // Hide the labels on the x-axis
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false // Hide the dataset labels in the legend
         }
       }
     }
   });
 </script>
+
 
 
 
@@ -167,17 +175,31 @@
                   label: 'Tampilkan data',
                   data: data,
                   fill: false,
-                  borderColor: 'rgb(75, 192, 192)',
+                  borderColor: 'rgb(65,105,225)',
                   tension: 0.1
               }]
           },
           options: {
-              scales: {
-                  y: {
-                      beginAtZero: true
-                  }
-              }
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            display: true // Hide the labels on the y-axis
           }
+        },
+        x: {
+          ticks: {
+            display: true // Hide the labels on the x-axis
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false // Hide the dataset labels in the legend
+        }
+      }
+    }
+          
       });
   });
 

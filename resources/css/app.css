@@ -10,7 +10,7 @@
 
     /* button css */
     .button {
-        @apply bg-purple text-white hover:bg-bluehover transition-all border w-full py-2 mx-auto text-center rounded-md px-2;
+        @apply bg-purple text-white hover:bg-blue transition-all border w-full py-2 mx-auto text-center rounded-lg px-2;
     }
 
     .menuaktif {
@@ -27,7 +27,7 @@
 
     /* Inputfield css */
     .field {
-        @apply h-9 px-3 py-2 focus:border-blue focus:outline-none border w-full border-gray-dark rounded-md font-Inter border-opacity-25;
+        @apply h-9 px-3 py-2 focus:border-purple focus:outline-none border w-full border-gray-dark rounded-lg font-Inter border-opacity-25;
     }
 
     .badge {

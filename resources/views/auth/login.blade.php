@@ -15,9 +15,9 @@
   <div class="flex flex-wrap bg-purple h-screen">
 
     <!-- login -->
-    <form action="{{ route('login') }}" method="POST" class="w-auto h-fit bottom-0 px-4 md:px-8 py-10 m-auto bg-white shadow-lg rounded-lg z-0 items-center flex flex-wrap gap-4">
+    <form action="{{ route('login') }}" method="POST" class="w-auto h-fit bottom-0 px-4 md:px-8 py-6 m-auto bg-white shadow-lg rounded-3xl z-0 items-center flex flex-wrap gap-10">
       <div class="hidden md:block">
-        <img class="w-[420px] h-fit rounded-md" src="images/login.svg">
+        <img class="w-[350px] h-fit rounded-xl" src="images/login3.svg">
       </div>
 
       <div class="items-center px-8 gap-20">
@@ -29,9 +29,9 @@
           </div>
         </div>
 
-        <div class="mt-10">
+        <div class="mt-16">
           <div>
-            <h1 class="text-center text-xl font-poppins font-semibold">Sign In</h1>
+            <h1 class="text-left text-5xl font-poppins font-black">Sign In</h1>
           </div>
           @csrf
           @if (session('error'))
@@ -39,7 +39,7 @@
               {{ session('error') }}
             </div>
           @endif
-          <div class="mt-4 font-poppins text-sm">
+          <div class="mt-16 font-poppins text-sm">
             <label for="nim">NPM</label>
             <input type="nim" name="nim" id="nim" class="field" placeholder="NPM" autofocus required value="{{ old('nim') }}" />
           </div>
@@ -50,7 +50,7 @@
           </div>
 
           <!-- Button login -->
-          <div class="mt-4">
+          <div class="mt-16 font-poppins">
             <button type="submit" class="button">Login</button>
           </div>
         </div>

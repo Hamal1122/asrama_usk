@@ -83,16 +83,20 @@
     <div>
       <h1 class="mb-4 font-semibold text-gray-dark text-center">Form Pembayaran</h1>
       <div class=" w-full lg:w-1/2 px-4">
-        <label clas for="">Informasi Bank</label>
-        <select class="field text-gray-dark" id="kategori" name="kategori" required>
-          <option class="text-abu" value="">Lihat</option>
-          <option value="">BSI SYARIAH - 12345677 a/n Admin</option>
-          <option value="">BPD ACEH - 12345677 a/n Admin </option>
-          <option value="">MANDIRI - 12345677 a/n Admin</option>
-          <option value="">BRI - 12345677 a/n Admin</option>
-          <option value="">BNI- 12345677 a/n Admin</option>
-          <option value="">KIPK</option>
-        </select>
+        <div class="flex text-center items-center gap-4 font-poppins text-sm text-gray-dark">
+          <img class="w-11" src="https://1.bp.blogspot.com/-uBcG0Wx6QVE/YBvz5jBBq9I/AAAAAAAAH4c/w0boQaSfo3IMLc7RBEGIRObQP4eUSKQ_QCLcBGAsYHQ/s1682/logo-bsi.png" alt="">
+          <h3>1121078568 a/n Admin</h3>
+        </div>
+
+        <div class="mt-4 flex text-center items-center gap-4 font-poppins text-sm text-gray-dark">
+          <img class="w-11" src="https://4.bp.blogspot.com/-tceaeWKDv00/UNhHf_6AdZI/AAAAAAAAERE/hR3lYKZxCiQ/s1600/Logo+Bank+BRI.jpg" alt="">
+          <h3>1121078568 a/n Admin</h3>
+        </div>
+
+        <div class="mt-4 flex text-center items-center gap-4 font-poppins text-sm text-gray-dark">
+          <img class="w-11" src="https://1.bp.blogspot.com/-uvochOQIWow/XADqw_y60WI/AAAAAAAABpk/v3qynTi0p5otpIGZN_DOcs0pz5q_K6DmgCLcBGAs/s1600/bank-aceh.jpg" alt="">
+          <h3>1121078568 a/n Admin</h3>
+        </div>
       </div>
 
      
@@ -100,11 +104,11 @@
        <form action="{{ route('upload.bukti_pembayaran') }}" method="POST" enctype="multipart/form-data">
        @csrf
         <div class="px-4 mt-8 w-full lg:w-1/2 ">
-          <label for="">Upload Bukti Pembayaran <span class="text-xs text-green">( Khusus untuk Mahasiswa KIPK digantikan dengan KARTU TANDA BIDIKMISI )</span></label>
+          <label for="">Upload Bukti Pembayaran <span class="text-xs text-green">( Khusus untuk Kategori KIPK digantikan dengan KARTU TANDA BIDIKMISI )</span></label>
           <input class=" field rounded-md text-blue" type="file" name="bukti_bayar" id="nama_berkas" required>
         </div>
         <div class="mt-2 px-4">
-          <p class="text-abu text-xs font-light"> <span class="text-red">*</span>KARTU TANDA BIDIKMISI hanya bisa digunakan di tahun pertama atau masa wajib asrama</p>    
+          <p class="text-abu text-xs font-light"> <span class="text-red">*</span>Dimohon untuk mengupload bukti pembayaran dengan jujur dan sesuai dengan ketentuan yang berlaku</p>    
           <p class="text-red text-xs font-light"> <span class="text-red">*</span>Jika Kedapatan Melakukan Kecurangan akan diberikan sanksi yang setimpal !!</p>    
         </div>
         <div class="p-4 mt-12">

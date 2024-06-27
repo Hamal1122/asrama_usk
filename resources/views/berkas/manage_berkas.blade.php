@@ -142,8 +142,8 @@
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Accept'
+            cancelButtonColor: '#C7C8CC',
+            confirmButtonText: 'Terima'
         }).then((result) => {
             if (result.isConfirmed) {
                 document.getElementById('confirmForm').submit();
@@ -153,23 +153,26 @@
 </script>
 
 {{-- sweetalert reject --}}
+
+
 <script>
     document.getElementById('rejectButton').addEventListener('click', function(event) {
         event.preventDefault();
-         var id = this.getAttribute('data-id');
+        var id = this.getAttribute('data-id');
         var name = this.getAttribute('data-nama');
 
         Swal.fire({
-            title: 'Peringatan !',
-            text: "kamu yakin semua data sudah di cek dengan benar",
+            title: 'Peringatan!',
+            text: "Kamu yakin untuk menolak pembayaran pengguna " + name,
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Reject'
-        }).then((willDelete) => {
-            if (willDelete) {
-                 window.location = "/reject/" + id + ""
+            confirmButtonColor: '#EE4E4E',
+            cancelButtonColor: '#C7C8CC',
+            confirmButtonText: 'Reject',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "/reject/" + id;
             }
         });
     });

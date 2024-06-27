@@ -12,11 +12,13 @@ use App\Models\pembayaran;
 use App\Models\Riwayat;
 use App\Models\berkas;
 use App\Models\users;
+use App\Exports\ExportTransaksi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KeuanganController extends Controller
 {
@@ -44,6 +46,10 @@ class KeuanganController extends Controller
       $paginate = $query->paginate(10);
 
       return view('manage_keuangan/manage_keuangan', compact('data', 'categories','paginate'))->with('i', ($request->input('page', 1) - 1));
+  }
+
+  function export_excel(){
+    return Excel::download(new ExportTransaksi, "transaksi.xlsx");
   }
 }
 
