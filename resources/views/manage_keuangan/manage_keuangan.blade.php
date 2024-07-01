@@ -37,10 +37,8 @@
       </div>
     </div>
     <div class="mt-4 flex text-center items-center">
-      <div class="bg-green text-white px-4 py-2  hover:bg-green hover:bg-opacity-20 hover:text-green transition-all  rounded-md">
-          <i class="bi bi-file-earmark-arrow-down-fill"></i>
-          <a href="{{ url('manage_keuangan/export/excel') }}">Export Excel</a>
-      </div>
+      <a class="px-4 py-3 hover:bg-green hover:text-white transition-all rounded-md bg-tahiti text-white"
+         href="{{ url('manage_keuangan/export/excel') }}"><i class="bi bi-download mr-2"></i>Export Excel</a>
     </div>
 </div>
 </form>
@@ -51,6 +49,7 @@
     <thead class="rounded-md">
       <tr class="font-poppins text-xs">
         <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">No</th>
+        <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">kode Transaksi</th>
         <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> Tanggal</th>
         <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left ">Nama </th>
         <th class="bg-white border-b-2 border-opacity-20  text-purple px-6 py-4 tracking-wide text-left "> NIM</th>
@@ -67,6 +66,7 @@
       @foreach ($data as $data => $item)
       <tr class="font-poppins text-xs">
         <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-4  text-left font-light">{{ ++$i }}</td>
+        <td class="bg-white border-b-silver border-b-4  text-gray-dark px-6 py-4  text-left font-light">{{$item->nomor_resi}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-2 tracking-wide text-left font-light"><span class="text-abu">{{ date('d F Y', strtotime($item->created_at)) }}</span></td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$item->user->name}}</td>
         <td class="bg-white border-b-silver border-b-4 text-gray-dark px-6 py-4 tracking-wide text-left font-light whitespace-nowrap">{{$item->user->nim}}</td>

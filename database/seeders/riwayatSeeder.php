@@ -13,8 +13,8 @@ class RiwayatSeeder extends Seeder
         DB::table('riwayat')->insert([
             'user_id' => 2, // Pastikan user dengan ID ini ada
             'kamar_id' => 1, // Pastikan kamar dengan ID ini ada
-            'tanggal_masuk' => Carbon::now()->subDays(3)->toDateString(),
-            'tanggal_keluar' => Carbon::now()->toDateString(),
+            'tanggal_masuk' => Carbon::now()->subDays(3)->toDateString(), //input 3 hari sebelum hari ini
+            'tanggal_keluar' => Carbon::now()->toDateString(), //input hari ini
             'kategori' => 'KIP',
             'status' => 0,
             'harga' => 2400000,

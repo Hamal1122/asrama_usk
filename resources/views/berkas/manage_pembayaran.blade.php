@@ -67,7 +67,7 @@
 
       @elseif($data->kamar_id !== 0)
       <td class="bg-white border-b-silver border-b-4 text-gray-dark px-2 py-4 font-light whitespace-nowrap items-center text-center flex gap-4">
-            <div class="bg-blue bg-opacity-5 text-blue px-4 py-2 rounded-md transition-all">Success</div>
+            <div class="bg-blue bg-opacity-5 text-blue px-4 py-2 rounded-md transition-all">Berhasil</div>
       </td>
       @endif
       </tr>

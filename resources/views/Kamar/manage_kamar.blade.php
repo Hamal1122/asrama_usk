@@ -18,18 +18,19 @@
 
     <div class="flex gap-4 items-center">
       <form action="/manage_kamar" method="get">
-        <div class="mt-3 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md border border-gray-soft">
+        <div class="mt-3 flex items-center bg-white w-fit px-4  transition-all py-2 gap-2 rounded-md border border-gray-soft">
           <div>
           <i class="bi bi-search"></i>
           </div>
               <input type="search" name="search" id="search" placeholder="Cari gedung" class="py-1 px-2 rounded-sm text-xs">
         </div>
-        </form>
+      </form>
+
       <div class="my-4">
-        <button id="openModalBtn" class="text-center bg-purple hover:text-white hover:px-10 text-white px-4 py-3 rounded-md transition-all focus:scale-95 font-poppins text-xs" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</button>
+        <button id="openModalBtn" class="text-center bg-purple hover:text-white hover:py-4 text-white px-4 py-3 rounded-md transition-all focus:scale-95 font-poppins text-xs" href="{{route ('tambah gedung') }}"><i class="bi bi-plus"><span> </span></i>Tambah Gedung</button>
       </div>
       <div class="my-4">
-        <button id="openModalBtnKamar" class="text-center bg-green  hover:text-white hover:px-10 text-white px-4 py-3 rounded-md transition-all focus:scale-95 font-poppins text-xs" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</button>
+        <button id="openModalBtnKamar" class="text-center bg-green  hover:text-white hover:py-4 text-white px-4 py-3 rounded-md transition-all focus:scale-95 font-poppins text-xs" href="{{route ('tambah kamar') }}"><i class="bi bi-plus"><span> </span></i>Tambah Kamar</button>
       </div>
 </div>
 

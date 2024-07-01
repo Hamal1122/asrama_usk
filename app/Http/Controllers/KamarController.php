@@ -11,6 +11,8 @@ use App\Models\pengawas;
 use App\Models\pembayaran;
 use App\Models\berkas;
 use App\Models\users;
+use \Mpdf\Mpdf;
+use App\Models\riwayat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -178,10 +180,22 @@ class kamarController extends Controller
   }
 
   public function kamarsaya()
-  {
+{
     $userId = auth()->user()->id;
-    $data = pembayaran::where('user_id', $userId)->get();
-   return view('/Kamarsaya/kamarsaya', compact('data'));
+    $data = riwayat::where('user_id', $userId)->where('status', 0)->get();
+    return view('/Kamarsaya/kamarsaya', compact('data'));
+}
+
+  public function view_pdf()
+  {
+    $mpdf = new Mpdf();
+    $userId = auth::user()->id;
+    $data = riwayat::where('user_id', $userId)->where('status', 0)->get();
+    $html = view('/Kamarsaya/resi', compact('data'))->render();
+    $mpdf->WriteHTML($html);
+    $mpdf->Output();
   }
+
+
 }
 

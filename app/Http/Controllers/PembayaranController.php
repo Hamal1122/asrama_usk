@@ -15,6 +15,7 @@ use App\Mail\tolakBerkasEmail;
 use App\Mail\tolakPembayaranEmail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Str;
 
 
 
@@ -144,29 +145,33 @@ class PembayaranController extends Controller
     }
 
     public function accept(Request $request, $id)
-  {
+{
     $data = pembayaran::find($id);
     $data->update($request->all());
 
     $idUser = $request->id;
-    $kategori = 
-    
+    $kategori = $request->kategori;
+
+    // Generate automatic receipt number with 6 characters
+    $nomorResi = 'TR' . str_pad(mt_rand(0, 999999), 6, '0', STR_PAD_LEFT);
+
     $riwayat = new Riwayat();
     $riwayat->user_id = $idUser;
     $riwayat->kamar_id = $request->kamar_id;
     $riwayat->tanggal_masuk = $request->tanggal_masuk;
     $riwayat->tanggal_keluar = $request->tanggal_keluar;
-    $riwayat->kategori = $request->kategori;
+    $riwayat->kategori = $kategori;
     $riwayat->harga = '1200000';
     $riwayat->jeniskamar = '4Orang';
     $riwayat->durasi = '1tahun';
     $riwayat->status = '0'; // 0 = masih tinggal, 1 = sudah selesai
+    $riwayat->nomor_resi = $nomorResi; // Assign the generated receipt number
     $riwayat->save();
+
     Mail::to($data->user->email)->send(new kirimEmail($data));
 
     return redirect()->route('manage_pembayaran')->with('berhasil', 'Data berhasil ditambahkan');
-
-  }
+}
 
   public function form($id)
   {

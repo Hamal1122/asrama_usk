@@ -38,10 +38,6 @@ class KeuanganController extends Controller
 
       $data = $query->orderBy('id', 'desc')->get();
 
-      if ($data->isEmpty() && $request->has('search')) {
-          return view('berkas/eror');
-      }
-
       $categories = Berkas::select('kategori')->distinct()->pluck('kategori');
       $paginate = $query->paginate(10);
 

@@ -30,6 +30,7 @@ export default {
       'bone' : '#F1F6F9',
       'abubg' : '#ebedf5',
       'blues' : '#AEE2FF',
+      'hijau' : '#36BA98',
 
 
 

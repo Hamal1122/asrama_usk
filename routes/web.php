@@ -106,6 +106,7 @@ Route::middleware(['auth', 'user-role:mahasiswa'])->group(function () {
 
     // KamarSaya
     Route::get('/kamarsaya', [KamarController::class, 'kamarsaya'])->name('kamarsaya'); // menampilkan halaman Kamar saya
+    Route::get('/lihat_resi', [KamarController::class, 'view_pdf'])->name('view_pdf'); // menampilkan halaman Kamar saya
 
 
     // profile

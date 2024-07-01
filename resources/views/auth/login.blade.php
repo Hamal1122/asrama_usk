@@ -39,7 +39,7 @@
               {{ session('error') }}
             </div>
           @endif
-          <div class="mt-16 font-poppins text-sm">
+          <div class="mt-10 font-poppins text-sm">
             <label for="nim">NPM</label>
             <input type="nim" name="nim" id="nim" class="field" placeholder="NPM" autofocus required value="{{ old('nim') }}" />
           </div>
@@ -50,9 +50,15 @@
           </div>
 
           <!-- Button login -->
-          <div class="mt-16 font-poppins">
-            <button type="submit" class="button">Login</button>
+        <div class="text-center mt-6">
+          <div class="font-poppins">
+            <button type="submit" class="bg-purple text-white hover:border px-6 py-2 rounded-md transition-all w-full">Login</button>
           </div>
+          <div class="mt-6 font-poppins">
+            <a href="{{ route('landingPage') }}" class="bg-transparent border px-6 text-purple  lg:px-14 py-2 rounded-md hover:bg-purple hover:text-purple transition-all hover:bg-opacity-20 w-full">Kembali Ke landingpage</a>
+          </div>
+        </div>
+
         </div>
       </div>
     </form>

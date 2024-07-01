@@ -23,6 +23,7 @@ return new class extends Migration
             $table->enum('durasi',['1tahun']);
             $table->enum('kategori',['KIP', 'reguler', 'internasional']);
             $table->integer('status'); //0 =menunggu, 1 =aktif 2= riwayat/expired
+            $table->string('nomor_resi');
             $table->timestamps();
         });
     }

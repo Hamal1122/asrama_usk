@@ -42,8 +42,6 @@ class BerandaController extends Controller
     $jumlah_kipk = berkas::where('kategori', 'KIP')->count();
     $jumlah_reguler = berkas::where('kategori', 'Reguler')->count();
     $jumlah_internasional = berkas::where('kategori', 'Internasional')->count();
-    $jumlah_gedungpr = gedung::where('kategori_gedung', 'perempuan')->count();
-    $jumlah_gedunglk = gedung::where('kategori_gedung', 'laki-laki')->count();
     $lasttransaction = riwayat::orderBy('id', 'desc')->take(5)->get();
     $chart = riwayat::selectRaw('YEAR(created_at) as year,MONTH(created_at) as month, SUM(harga) as count')
     ->where('created_at', '>=', Carbon::now()->subYears(4))
@@ -61,7 +59,7 @@ class BerandaController extends Controller
     $pengguna_aktif = pembayaran::orderBy('id', 'desc')->take(5)->get();
     $jumlah_pengguna_aktif = pembayaran::where('status', 1)->count();
     $unverified = berkas::orderBy('id', 'desc')->take(5)->get();
-    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'pengguna_aktif', 'jumlah_pengguna', 'unverified','jumlah_pengguna_aktif', 'jumlah_kipk','jumlah_reguler', 'jumlah_internasional','jumlah_gedungpr','jumlah_gedunglk','lasttransaction', 'chart' ))->with('i', ($request->input('page', 1) - 1));
+    return view('/beranda/dashboard_admin', compact('jumlah_gedung', 'jumlah_kamar', 'jumlah_postingan', 'pengguna_aktif', 'jumlah_pengguna', 'unverified','jumlah_pengguna_aktif', 'jumlah_kipk','jumlah_reguler', 'jumlah_internasional','lasttransaction', 'chart' ))->with('i', ($request->input('page', 1) - 1));
   }
 
   // menampilkan view informasi

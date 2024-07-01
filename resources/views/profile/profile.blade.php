@@ -35,13 +35,6 @@
           </div>
 
           <div class="mt-4">
-            <h3 class="my-2">Program Studi </h3>
-            <div class="field">
-              <h3 class="font-bold">Informatika</h3>
-            </div>
-          </div>
-
-          <div class="mt-4">
             <h3 class="my-2">Email </h3>
             <div class="field">
               <h3 class="font-bold">{{Auth::user()->email}}</h3>
