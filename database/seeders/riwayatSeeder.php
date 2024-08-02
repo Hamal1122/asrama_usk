@@ -20,6 +20,7 @@ class RiwayatSeeder extends Seeder
             'harga' => 2400000,
             'jeniskamar' => '4orang',
             'durasi' => '1tahun',
+            'nomor_resi' => 'COBA11'
         ]);
     }
 }

@@ -9,9 +9,9 @@
     <h3 class="py-2">{{ $data->nama }}</h3>
   </div>
 
-  <div class="flex gap-4">
+  <div class="flex gap-4 mb-4">
     <div
-      class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4 shadow-md w-3/4">
+      class="bg-white text-gray-dark text-sm font-Inter px-6 py-6  rounded-md mt-4  shadow-md w-3/4">
       <div class>
         <div
           class="bg-abu bg-opacity-20 p-10 mx-auto text-center font-poppins text-3xl rounded-md font-bold text-abu">
@@ -32,7 +32,17 @@
           </div>
           <div>
             <h1 class="mt-4">Kategori</h1>
-            <div cla  ss="field">{{ $data->gedung->kategori_gedung }}</div>
+            <div class="field">{{ $data->gedung->kategori_gedung }}</div>
+          </div>
+          
+          <div>
+            <h1 class="mt-4">Harga Kamar</h1>
+            <div class="field">Rp. 4.800.000</div>
+          </div>
+
+          <div>
+            <h1 class="mt-4">Harga perorangan</h1>
+            <div class="field">{{$data->formatRupiah('harga')}}</div>
           </div>
 
         </div>
@@ -46,7 +56,7 @@
         <div class="mt-6 font-Inter text-blue">
           @foreach ($penghuni as $p)
           <h1
-            class="bg-green mt-2 bg-opacity-10 text-green py-1 px-2 rounded-lg w-fit"><i
+            class="bg-blue mt-2 bg-opacity-10 text-blue py-1 px-2 rounded-lg w-fit"><i
               class="bi bi-person-fill mr-2"></i>{{ $p->user->name }}</h1>
           @endforeach
         </div>

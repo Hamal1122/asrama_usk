@@ -14,7 +14,7 @@
 
   <div class=" font-poppins font-bold bg-white text-purple px-8 rounded-md mt-4 flex flex-wrap justify-between items-center mx-auto my-auto py-6 mx-auto lg:py-4">
     <div>
-      <h1 class="text-2xl md:text-3xl text-abu">Selamat Datang, di</h1>
+      <h1 class="text-2xl md:text-3xl text-abu">👋 Selamat Datang, di</h1>
       <h1 class="text-3xl md:text-5xl">Asrama USK</h1>
       <h1 class="text-sm md:text-base">Layanan Pengajuan Asrama Untuk Mahasiswa USK</h1>
     </div>

@@ -14,6 +14,30 @@
   <h3 class="py-2">Manage Pembayaran</h3>
 </div>
 
+<form action="/manage_pembayaran" method="get">
+      <div class="flex gap-6">
+          <div class="mt-4 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
+            <div>
+            <i class="bi bi-search"></i>
+            </div>
+                <input type="text" value="{{ request('search') }}" name="search" id="search" placeholder="Cari NIM" class="py-1 px-2 rounded-sm text-sm">
+          </div>
+
+         <div class="mt-4 flex items-center text-gray-dark  bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
+          <i class="bi bi-funnel text-blue"></i>
+        <select name="kategori">
+            <option value="">Pilih Category</option>
+            @foreach($categories as $kategori)
+                <option value="{{ $kategori }}" {{ request('kategori') == $kategori ? 'selected' : '' }}>
+                    {{ $kategori }}
+                </option>
+            @endforeach
+        </select>
+        <button type="submit" class="text-blue">Cari</button>
+      </div>
+      </div>
+  </form>
+
 <div class="mt-4 relative overflow-x-auto bg-white shadow-md p-4 rounded-md">
   <table class="table-auto font-semibold text-sm w-full rtl:text-right ">
     <thead class="rounded-md">

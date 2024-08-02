@@ -31,10 +31,14 @@ class KeuanganController extends Controller
               $query->where('nim', 'LIKE', '%' . $request->search . '%');
           });
       }
-
+      
       if ($request->has('kategori') && !empty($request->kategori)) {
         $query->where('kategori', $request->kategori);
-    }
+      }
+      
+            if ($request->has('nomor_resi') && !empty($request->nomor_resi)) {
+              $query->where('nomor_resi', 'LIKE', '%' . $request->nomor_resi . '%');
+          }
 
       $data = $query->orderBy('id', 'desc')->get();
 

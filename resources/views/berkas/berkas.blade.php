@@ -15,9 +15,8 @@
 
   <div class="bg-white text-abu text-xs font-poppins px-4  py-2 rounded-md flex gap-6 mt-4">
     <div class="px-4 py-2">
-      <h3 class="text-blue">Informasi:</h3>
-      <p class="mt-2">- Lengkapi data kamu sesuai dengan ketentuan yang berlaku </p>
-      <p class="mt-2">- Dimohon Untuk mengupload dengan teliti</p>
+      <h3 class="text-blue py-2">Template Surat:</h3>
+      <p class="mt-2">- Surat Pernyataan Masuk Asrama <span class="px-4 text-green"><a href="\template\pernyataan.pdf">  Download</a></span> </p> 
     </div>
   </div>
 
@@ -49,6 +48,7 @@
 
             <div class="">
               <p class="text-abu text-xs font-semibold">*Berkas yang Diperlukan <span class="text-green text-xs">(digabung dalam satu file .pdf)</span></p>
+              <p class="text-abu mt-2 text-xs"><span class="text-red">*</span>Foto KTP</p>
               <p class="text-abu mt-2 text-xs"><span class="text-red">*</span>Kartu Tanda Mahasiswa (KTM)</p>
               <p class="text-abu mt-2 text-xs"><span class="text-red">*</span>Kartu Kesehatan (BPJS/ASKES/DLL)</p>
               <p class="text-abu mt-2 text-xs"><span class="text-red">*</span>Surat Domisili (Surat Pindah Sementara Ke Banda Aceh)</p>

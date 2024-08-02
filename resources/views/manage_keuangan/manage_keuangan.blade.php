@@ -10,7 +10,7 @@
 
 <div class="bg-purple py-2   rounded-md px-4 text-sm font-poppins text-white flex gap-4">
   <a href="" class="  px-2 my-auto hover:bg-purple hover:bg-opacity-25 text-xl rounded-md"></a>
-  <h3 class="py-2">Manage Keuangan</h3>
+  <h3 class="py-2">Riwayat Transaksi</h3>
 </div>
 
 <form action="/manage_keuangan" method="get">
@@ -20,13 +20,20 @@
             <div>
             <i class="bi bi-search"></i>
             </div>
-                <input type="text" value="{{ request('search') }}" name="search" id="search" placeholder="Search NIM" class="py-1 px-2 rounded-sm text-sm">
+                <input type="text" value="{{ request('search') }}" name="search" id="search" placeholder="Cari NIM" class="py-1 px-2 rounded-sm text-sm">
+          </div>
+
+          <div class="mt-4 flex items-center bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
+            <div>
+            <i class="bi bi-search"></i>
+            </div>
+                <input type="text" value="{{ request('nomor_resi') }}" name="nomor_resi" id="nomor_resi" placeholder="Cari kode transaksi" class="py-1 px-2 rounded-sm text-sm">
           </div>
 
          <div class="mt-4 flex items-center text-gray-dark  bg-white w-fit px-4 hover:gap-6 transition-all py-2 gap-2 rounded-md">
           <i class="bi bi-funnel text-blue"></i>
         <select name="kategori">
-            <option value="">Select Category</option>
+            <option value="">Pilih Category</option>
             @foreach($categories as $kategori)
                 <option value="{{ $kategori }}" {{ request('kategori') == $kategori ? 'selected' : '' }}>
                     {{ $kategori }}

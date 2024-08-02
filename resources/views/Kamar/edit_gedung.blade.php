@@ -19,7 +19,7 @@
 
       <div class="mt-4">
         <label class="text-gray-dark " for="">Pilih Kategori</label>
-        <select class="field text-gray-dark" id="kategori" name="kategori_gedung">
+        <select class="field text-gray-dark" id="kategori" name="kategori_gedung" required>
           <option value="{{ $data->id }}">{{ $data->kategori_gedung }}</option>
           <option value="laki-laki">Laki-laki</option>
           <option value="perempuan">Perempuan</option>

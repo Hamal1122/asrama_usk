@@ -27,8 +27,8 @@
 
       <div class="mt-4 font-poppins text-sm text-gray-dark ">
         <label class="text-gray-dark" for="">Kapasitas</label>
-        <select class="field text-gray-dark" id="kapasitas" name="kapasitas">
-          <option value="{{ $data->id }}">Pilih kapasitas</option>
+        <select class="field text-gray-dark" id="kapasitas" name="kapasitas" >
+          <option value="{{ $data->id }}">{{ $data->kapasitas }}</option>
           <option value="2">2 Orang</option>
           <option value="4">4 Orang</option>
         </select>

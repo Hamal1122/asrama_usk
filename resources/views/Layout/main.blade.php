@@ -83,7 +83,8 @@
 
 
               <li class="menuhover "><a class="@if(Request::is('kamarsaya')) menuaktif @endif" href="{{route ('kamarsaya') }}"><i class="bi bi-door-closed-fill mx-4"></i>Kamar Saya</a></li>
-              <li class="logout "><a href="{{ route('logout') }}" onclick="event.preventDefault();
+              <hr class="text-gray-dark opacity-40">
+              <li class="logout mt-2 "><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left mx-4"></i>Logout</a></li>
             </ul>
           </nav>

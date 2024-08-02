@@ -71,4 +71,9 @@ class Users extends Authenticatable
         return $this->belongsToMany(pembayaran::class);
     }
 
+    public function berkas()
+    {
+        return $this->belongsToMany(berkas::class);
+    }
+
 }

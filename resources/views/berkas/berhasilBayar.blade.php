@@ -19,7 +19,7 @@
     </div>
     @if($pembayaran->kamar_id != 0)
     <div> 
-      <h1 class="text-sm"> Anda sudah terdaftar, silahkan cek kamar anda di menu <a class="text-blue" href="{{route ('kamarsaya') }}">Kamar Saya</a> .</h1> 
+      <h1 class="text-sm"> Kamar anda sudah tersedia, silahkan cek kamar anda di menu <a class="text-blue" href="{{route ('kamarsaya') }}">Kamar Saya</a> .</h1> 
     </div>
     @else
     <div> 

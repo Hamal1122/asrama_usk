@@ -40,9 +40,6 @@ class PembayaranController extends Controller
 
         $data = $query->orderBy('id', 'desc')->get();
 
-        if ($data->isEmpty() && $request->has('search')) {
-            return "empty";
-        }
         $paginate = $query->paginate(10);
         $categories = Berkas::select('kategori')->distinct()->pluck('kategori');
 
@@ -124,10 +121,6 @@ class PembayaranController extends Controller
       }
 
       $data = $query->orderBy('id', 'desc')->get();
-
-      if ($data->isEmpty() && $request->has('search')) {
-          return view('berkas/eror');
-      }
 
       $paginate = $query->paginate(10);
 

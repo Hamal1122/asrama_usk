@@ -7,15 +7,24 @@
     <h3 class="py-2">Beranda</h3>
   </div>
 
-  <div class="bg-white text-gray-dark text-sm font-Inter px-4 py-4 rounded-md mt-4">
+  <div class="bg-white text-gray-dark text-sm font-Inter p-6 rounded-md mt-4">
     <div class="order-2 gap-6">
       <h1 href="" class="text-3xl mb-2 font-semibold">{{ $post->judul }}</h1>
       <div class="my-2 mt-6">
-        <h3 class="mt-4 text-abu"><i class="bi bi-calendar-check mr-2"></i>Tanggal Mulai : <span class="font-bold">{{ date('d F Y', strtotime($post->tgl_mulai)) }}</span><span class="mx-4 bg-green bg-opacity-20 px-2 py-1 text-sm text-green rounded-full ">{{ date('H:i', strtotime($post->tgl_mulai)) }} WIB</h3>
-        <h3 class="mt-4 text-abu"><i class="bi bi-calendar-x mr-2"></i>Tanggal Selesai : <span class="font-bold">{{ date('d F Y', strtotime($post->tgl_berakhir)) }}</span><span class="mx-4 bg-red bg-opacity-20 px-2 py-1 text-sm text-red rounded-full ">{{ date('H:i', strtotime($post->tgl_berakhir)) }} WIB</h3>
-        <h3 class="mt-6 text-abu"><i class="bi bi-geo-alt mr-2"></i>Tempat : <span class=" font-thin  bg-abu bg-opacity-10 text-abu py-1 px-2 rounded-lg w-fit">Asrama USk</h3>
-        <h2 class="font-thin flex-wrap mt-4 text-abu">Deskripsi :</h2>
-        <p class="bg-blue bg-opacity-10 mt-2 py-4 px-4 rounded-md">{{ $post["deskripsi"] }}</p>
+        <h3 class="mt-4 text-abu"><i class=" bi bi-calendar-check mr-2"></i>Tanggal Mulai : </h3>
+        <div class="flex">
+          <div class="field font-bold w-fit mt-2">{{ date('d F Y', strtotime($post->tgl_mulai)) }}</div>
+          <div class="mx-4 field w-fit mt-2 border-green">{{ date('H:i', strtotime($post->tgl_mulai)) }} WIB</div>
+        </div>
+        <h3 class="mt-4 text-abu"><i class=" bi bi-calendar-check mr-2"></i>Tanggal Berakhir : </h3>
+        <div class="flex">
+          <div class="field font-bold w-fit mt-2">{{ date('d F Y', strtotime($post->tgl_berakhir)) }}</div>
+          <div class="mx-4 field w-fit mt-2 border-red">{{ date('H:i', strtotime($post->tgl_berakhir)) }} WIB</div>
+        </div>
+        <h3 class="mt-4 text-abu"><i class="bi bi-geo-alt mr-2"></i>Tempat : </h3>
+          <div class="field w-fit mt-2 border-green">{{$post->tempat}}</div>
+        <h2 class="font-light flex-wrap mt-4 text-abu">Deskripsi :</h2>
+        <p class="bg-blue bg-opacity-5 mt-2 py-4 px-4 rounded-md">{{ $post["deskripsi"] }}</p>
       </div>
     </div>
   </div>

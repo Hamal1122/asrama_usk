@@ -18,7 +18,7 @@
   <div>
   <i class="bi bi-search"></i>
   </div>
-      <input type="search" name="search" id="search" placeholder="Search NIM" class="py-1 px-2 rounded-sm text-sm">
+      <input type="search" name="search" id="search" placeholder="Cari NIM" class="py-1 px-2 rounded-sm text-sm">
 </div>
 </form>
 

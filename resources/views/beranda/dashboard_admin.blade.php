@@ -196,7 +196,7 @@
           data: {
               labels: labels,
               datasets: [{
-                  label: 'Tampilkan data',
+                  label: 'Total Pendapatan ',
                   data: data,
                   fill: false,
                   borderColor: 'rgb(65,105,225)',

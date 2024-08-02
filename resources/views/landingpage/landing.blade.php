@@ -34,7 +34,7 @@
       </head>
 
 <body class="relative">
-    <nav class= "bg-purple bg-opacity-70 shadow-md fixed flex justify-between w-full px-6 py-4">
+    <nav class= "absolute bg-purple bg-opacity-70 shadow-md fixed flex justify-between w-full px-6 py-4">
         <div class="flex-1 text-white">
           <a class="btn btn-ghost text-sm">Asrama USK</a>
         </div>
@@ -152,6 +152,67 @@
         </div>
       </div>
     </section>
+
+    <section class="bg-purple h-screen py-12 px-24 mx-auto" id="section4">
+      <div class="mt-6 flex justify-between gap-20">
+
+
+
+        <div class=" w-1/2 mt-10 text-white">
+          <h1 class="text-left items-center text-4xl font-black  font-poppins">Download template Surat yang diperlukan !</h1>
+          <p class="text-left items-center text-sm font-light font-poppins mt-4">Silahkan download template surat yang kamu butuhkan untuk melakukan pengajuan kamar di web Asrama USK, pastikan template yang kamu dowload sesuai yaa !!</p>
+
+          <div class="text-lg font-poppins items-center font-medium gap-6  mt-10">
+            <h1 class="text-yellow">Surat Pernyataan Tinggal di Asrama ( Mahasiswa Reguler )</h1>
+            <div class="mt-6">
+              <a class="px-6 py-3 border rounded-lg hover:bg-white hover:text-purple transition-all" href="\template\pernyataan.pdf">Download</a>
+            </div> 
+          </div>
+
+          <div class="text-lg font-poppins items-center font-medium gap-6  mt-10">
+            <h1 class="text-yellow">Surat Pernyataan Tinggal di Asrama ( Mahasiswa KIPK )</h1>
+            <div class="mt-6">
+              <a class="px-6 py-3 border rounded-lg hover:bg-white hover:text-purple transition-all" href="\template\pernyataan_kip.pdf">Download</a>
+            </div> 
+          </div>
+          
+
+        </div>
+
+        <div class="w-1/2">
+          <img class="w-[700px]" src="images/berkas2.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-purple h-screen py-12 px-24 mx-auto" id="section5">
+      <div class="container mt-6 flex justify-between gap-20 items-center text-center">
+        <div class="mx-auto">
+          <h1 class="text-center items-center text-3xl font-black text-white mt-6  font-poppins">Budaya Asrama</h1>
+          <div class="flex my-auto mt-20 gap-4">
+            <div class="bg-white p-10">
+              <h1>hhhhh</h1>
+            </div>
+            <div class="bg-white p-10">
+              <h1>hhhhh</h1>
+            </div>
+            <div class="bg-white p-10">
+              <h1>hhhhh</h1>
+            </div>
+            <div class="bg-white p-10">
+              <h1>hhhhh</h1>
+            </div>
+            <div class="bg-white p-10">
+              <h1>hhhhh</h1>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </section>
+
+    
 
 
    

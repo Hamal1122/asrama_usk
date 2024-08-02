@@ -20,17 +20,15 @@ use Dflydev\DotAccessData\Data;
 class ProfileController extends Controller
 {
   
-  public function profile()
-  {
-    $userId = auth()->user()->id;
-    $data = Riwayat::where('user_id', $userId)->get();
-    // dd($data);
-   return view('/profile/profile', compact('data'));
-  }
+    public function profile()
+    {
+      $userId = auth()->user()->id;
+      $data = Riwayat::where('user_id', $userId)->get();
+      $prosesBerkas = berkas::where('user_id', $userId)->get();
+      $prosesBayar = pembayaran::where('user_id', $userId)->get();
+      // dd($data);
+    return view('/profile/profile', compact('data','prosesBerkas','prosesBayar'));
+    }
 
-  public function edit(){
-    return view('/profile/edit_profile',  [
-      "title" => "Profil",
-    ]); 
-  }
+
 }

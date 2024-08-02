@@ -5,7 +5,7 @@
 
     <style>
         body {      
-            font-family: Arial, sans-serif;
+            font-family: monospace, sans-serif;
             line-height: 1.6;
             background-color: #f2f2f2;
             padding: 20px;
@@ -18,14 +18,27 @@
             border: 1px solid #ccc;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            font-size: 24px;
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 0;
+            max-width: 50px;
+            max-height: 50px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            font-size: 18px;
             text-align: center;
+           
         }
         h2 {
             font-size: 16px;
             text-align: center;
-
         }
         h3 {
             font-size: 10px;
@@ -33,8 +46,8 @@
             margin-bottom: 8px;
         }
         h4 {
-            font-size: 14px;
-            text-align: left;;
+            font-size: 12px;
+            text-align: left;
         }
         ul {
             padding: 0;
@@ -42,16 +55,27 @@
         }
         li {
             margin-bottom: 8px;
+            font-size: 10px;
             padding: 8px;
             background-color: #f9f9f9;
-            /* border-left: 3px solid #646464; */
+        }
+
+        span {
+            margin-bottom: 8px;
+            font-size: 12px;
+            padding: 8px;
+            font-weight: bold;
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Struk Pembayaran</h1>
-        <h2>Asrama Universitas Syiah Kuala</h2>
+        <div class="header">
+            <img src="http://sipil.usk.ac.id/wp-content/uploads/2018/02/Logo-Unsyiah-Kuning-HD-1012x972-Transparan-1.png" width="42" height="42" alt="Logo"> <!-- Replace with the path to your logo image -->
+            <h1>Struk Pembayaran</h1>
+            <h2>Asrama Universitas Syiah Kuala</h2>
+        </div>
         <hr>
         <ul>
             @foreach($data as $item)
@@ -83,8 +107,11 @@
                 <li>Berhasil</li>
 
                 <hr>
+                <h4>Harga Kamar</h4>
+                <li>Rp. 4.800.000</li>
+
                 <h4>Total Harga</h4>
-                <li>{{$item->kamar->formatRupiah('harga')}}</li>
+                <li>Rp. 4.800.000 / {{$item->kamar->kapasitas}} = <span>{{$item->kamar->formatRupiah('harga')}}</span></li>
             @endforeach
         </ul>
     </div>
